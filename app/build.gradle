@@ -1,0 +1,48 @@
+plugins {
+    id 'com.android.application'
+
+}
+android {
+    namespace 'com.example.spiritualread'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.spiritualread"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation'com.google.gms:google-services:3.0.0'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.android.support:appcompat-v7'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:31.3.0')
+
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-auth'
+
+    // Also add the dependency for the Google Play services library and specify its version
+    implementation 'com.google.android.gms:play-services-auth:20.4.1'
+
+    androidTestImplementation 'com.android.support.test:runner'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
