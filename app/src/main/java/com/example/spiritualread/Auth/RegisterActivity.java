@@ -10,8 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.spiritualread.R;
-//import com.google.firebase.auth.AuthResult;
-//import com.google.firebase.auth.FirebaseAuth;
+
 
 public class RegisterActivity extends AppCompatActivity {
     EditText etRegEmail,  etRegPassword;
@@ -32,12 +31,8 @@ public class RegisterActivity extends AppCompatActivity {
 
 //        mAuth= FirebaseAuth.getInstance();
 
-        btnRegister.setOnClickListener(view ->{
-            createUser();
-        });
-        tvLoginHere.setOnClickListener(view->{
-            startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
-        });
+        btnRegister.setOnClickListener(view -> createUser());
+        tvLoginHere.setOnClickListener(view-> startActivity(new Intent(RegisterActivity.this,LoginActivity.class)));
     }
     private  void createUser(){
         String email=etRegEmail.getText().toString();

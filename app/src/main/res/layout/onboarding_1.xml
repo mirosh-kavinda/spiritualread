@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context="Onboarding.OnboardingActivity">
-<!--    android:background="@color/next_1"-->
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
@@ -18,10 +17,10 @@
         android:id="@+id/imageView4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:contentDescription="TODO"
+        android:contentDescription=" feature that offer 1"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline6"
         app:srcCompat="@drawable/onboarding_activity_ic_waves_1" />
@@ -34,10 +33,10 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toEndOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/guideline12"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/onboarding_activity_ic_image_1" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -115,10 +114,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-
         android:text="you can view view books imediately when it make available by admin."
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/md_black_1000"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
