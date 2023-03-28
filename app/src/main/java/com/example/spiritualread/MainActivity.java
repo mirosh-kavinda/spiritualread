@@ -8,7 +8,7 @@ import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.spiritualread.Auth.loginOnboard;
+import com.example.spiritualread.Onboarding.OnboardingActivity;
 
 public class MainActivity extends AppCompatActivity {
     int SPLASH_TIME = 3000; //This is 3 seconds
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         //Code to start timer and take action after the timer ends
         new Handler(getMainLooper()).postDelayed(() -> {
             //Do any action here. Now we are moving to next page
-            Intent mySuperIntent = new Intent(MainActivity.this, loginOnboard.class);
+            Intent mySuperIntent = new Intent(MainActivity.this, OnboardingActivity.class);
             startActivity(mySuperIntent);
 
             //This 'finish()' is for exiting the app when back button pressed from Home page which is ActivityHome

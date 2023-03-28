@@ -18,11 +18,11 @@ public class Homepage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
-
+//
 //            btnlogout=findViewById(R.id.btnLogout);
 //            mAuth = FirebaseAuth.getInstance());
 //            btnlogout.setOnClickListener(view->{
-//                mAuth.signOut();
+////                mAuth.signOut();
 //                startActivity(new Intent(Homepage.this, loginOnboard.class));
 //
 //            });

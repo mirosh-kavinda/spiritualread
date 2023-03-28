@@ -22,17 +22,8 @@ public class loginOnboard extends AppCompatActivity {
         b2=findViewById(R.id.btn2);
         b3=findViewById(R.id.btn3);
 
-//        b1.setOnClickListener(view -> {
-//            startActivity(new Intent(loginOnboard.this,LoginActivity.class));
-//
-//        });
-//        b2.setOnClickListener(view -> {
-//            startActivity(new Intent(loginOnboard.this,RegisterActivity.class));
-//
-//        });
-        b3.setOnClickListener(view -> {
-            startActivity(new Intent(loginOnboard.this, Homepage.class));
-
-        });
+        b1.setOnClickListener(view -> startActivity(new Intent(loginOnboard.this,LoginActivity.class)));
+        b2.setOnClickListener(view -> startActivity(new Intent(loginOnboard.this,RegisterActivity.class)));
+        b3.setOnClickListener(view -> startActivity(new Intent(loginOnboard.this, Homepage.class)));
     }
 }
