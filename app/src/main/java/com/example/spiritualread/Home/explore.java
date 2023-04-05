@@ -11,10 +11,10 @@ import com.example.spiritualread.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link overview#newInstance} factory method to
+ * Use the {@link explore#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class overview extends Fragment {
+public class explore extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +25,7 @@ public class overview extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public overview() {
+    public explore() {
         // Required empty public constructor
     }
 
@@ -35,11 +35,11 @@ public class overview extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment overview.
+     * @return A new instance of fragment explore.
      */
     // TODO: Rename and change types and number of parameters
-    public static overview newInstance(String param1, String param2) {
-        overview fragment = new overview();
+    public static explore newInstance(String param1, String param2) {
+        explore fragment = new explore();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -50,6 +50,7 @@ public class overview extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -60,6 +61,10 @@ public class overview extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_overview, container, false);
+        return inflater.inflate(R.layout.explore_list, container, false);
+
+
     }
 }
+
+

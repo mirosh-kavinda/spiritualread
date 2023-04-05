@@ -13,8 +13,8 @@ import com.example.spiritualread.R;
 
 public class OnboardingAdapter extends PagerAdapter {
 
-    private Context context;
-    private int[] layouts = {
+    private final Context context;
+    private final int[] layouts = {
             R.layout.onboarding_1,
             R.layout.onboarding_2,
             R.layout.onboarding_3,

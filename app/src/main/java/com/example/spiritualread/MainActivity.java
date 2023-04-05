@@ -13,6 +13,7 @@ import com.example.spiritualread.Onboarding.OnboardingActivity;
 public class MainActivity extends AppCompatActivity {
     int SPLASH_TIME = 3000; //This is 3 seconds
     ProgressBar splashProgress;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

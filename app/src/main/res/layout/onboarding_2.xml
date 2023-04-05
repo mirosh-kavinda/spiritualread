@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@color/colorPrimary"
     tools:context="Onboarding.OnboardingActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -75,57 +75,34 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.85" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/onboarding_activity_button_2"
-
-        android:onClick="nextPage"
-        android:text="Next"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline14"
-        app:layout_constraintStart_toStartOf="@+id/guideline13"
-        app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="45dp"
-        android:layout_marginEnd="8dp"
-
         android:text="User can request new Books"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/dark_blue"
         android:textSize="32sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/guideline7"
-        tools:text="sdsdsd" />
+         />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-
         android:text="When the particular book need to available on library , user can simply place an request."
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/dark_blue"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        tools:text="dssds" />
+         />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline12"
@@ -133,6 +110,20 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.05" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:onClick="nextPage"
+        android:text="Next"
+        android:textColor="@android:color/primary_text_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/dark_blue"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintStart_toStartOf="@+id/guideline13"
+        app:layout_constraintTop_toTopOf="@+id/guideline8"
+        />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline13"

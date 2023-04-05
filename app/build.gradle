@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
 
+
+
 }
 android {
     namespace 'com.example.spiritualread'
@@ -26,22 +28,21 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
-    implementation'com.google.gms:google-services:3.0.0'
+
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'com.android.support:appcompat-v7'
     implementation 'com.android.support.constraint:constraint-layout:2.0.4'
-    // Import the BoM for the Firebase platform
-    implementation platform('com.google.firebase:firebase-bom:31.3.0')
-
-    // Add the dependency for the Firebase Authentication library
-    // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation 'com.google.firebase:firebase-auth'
-
-    // Also add the dependency for the Google Play services library and specify its version
-    implementation 'com.google.android.gms:play-services-auth:20.4.1'
+    implementation 'com.google.firebase:firebase-auth:21.1.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
 
     androidTestImplementation 'com.android.support.test:runner'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

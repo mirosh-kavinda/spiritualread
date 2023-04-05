@@ -23,29 +23,31 @@ public class Homepage extends AppCompatActivity implements BottomNavigationView.
 
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
-        bottomNavigationView.setSelectedItemId(R.id.person);
+        bottomNavigationView.setSelectedItemId(R.id.explore);
     }
-   message firstFragment = new message();
-    overview secondFragment = new overview();
-   person thirdFragment = new person();
-
+   explore exploreFragment = new explore();
+    search searchFragment = new search();
+   recent recentFragment = new recent();
+    profile profileFragment= new profile();
 
     public boolean onNavigationItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.person:
-                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, firstFragment).commit();
+            case R.id.explore:
+                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, exploreFragment).commit();
                 return true;
 
-            case R.id.home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, secondFragment).commit();
+            case R.id.search:
+                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, searchFragment).commit();
                 return true;
 
-            case R.id.settings:
-                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, thirdFragment).commit();
+            case R.id.recent:
+                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, recentFragment).commit();
                 return true;
+//            case R.id.profile:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, profileFragment).commit();
+//                return true;
         }
         return false;
     }
