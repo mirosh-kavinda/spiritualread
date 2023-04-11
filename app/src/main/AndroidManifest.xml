@@ -6,12 +6,26 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_hello"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         tools:targetApi="31">
-
+        <activity
+            android:name=".PdfListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".model.PdfAddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".model.CategoryAdd"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboards.User"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboards.Admin"
+            android:exported="false" />
         <activity
             android:name=".Auth.RegisterActivity"
             android:exported="false" />

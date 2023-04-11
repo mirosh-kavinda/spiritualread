@@ -44,7 +44,7 @@ public class OnboardingActivity extends AppCompatActivity {
                     Intent mySuperIntent = new Intent(OnboardingActivity.this, loginOnboard.class);
                     startActivity(mySuperIntent);
                     finish();
-                }, 50);
+                }, 1000);
             }
             }
 

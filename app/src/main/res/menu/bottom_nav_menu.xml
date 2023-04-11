@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
     <item
         android:id="@+id/explore"
-        android:title="Person"
-        android:icon="@drawable/ic_menu_camera"/>
+        android:title="Explore"
+        android:icon="@drawable/ic_favorite_black_24dp"/>
     <item
         android:id="@+id/search"
-        android:title="Home"
-        android:icon="@drawable/ic_menu_gallery"/>
+        android:title="Search"
+        android:icon="@drawable/ic_favorite_black_24dp"/>
     <item
         android:id="@+id/recent"
-        android:title="Settings"
-        android:icon="@drawable/ic_menu_manage"/>
+        android:title=""
+        android:icon="@drawable/ic_favorite_black_24dp"/>
 </menu>

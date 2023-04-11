@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dashboards.User">
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="91dp"
+        android:layout_height="wrap_content"
+        android:text="Hello"
+        android:textColor="@color/colorAccent"
+        tools:ignore="MissingConstraints" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn1"
+        android:text="Logout"
+        android:layout_toRightOf="@id/tv1"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is User View "
+        android:textSize="50dp"
+        android:textColor="@color/colorAccent"
+        android:layout_below="@id/btn1"
+        />
+
+</RelativeLayout>

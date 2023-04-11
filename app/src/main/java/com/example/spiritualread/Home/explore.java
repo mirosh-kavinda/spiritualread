@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.spiritualread.R;
 
@@ -15,7 +16,7 @@ import com.example.spiritualread.R;
  * create an instance of this fragment.
  */
 public class explore extends Fragment {
-
+    private RecyclerView recyclerView;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -61,7 +62,15 @@ public class explore extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.explore_list, container, false);
+       View view= inflater.inflate(R.layout.fragment_explore, container, false);
+
+//         Add the following lines to create RecyclerView
+//        recyclerView = view.findViewById(R.id.recyclerview);
+//        recyclerView.setHasFixedSize(true);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+//        recyclerView.setAdapter(new RandomNumListAdapter(1234));
+return view;
+
 
 
     }
