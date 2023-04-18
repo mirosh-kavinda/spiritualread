@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:901699265821:android:c7d1c30646ee4e940f6df4",
         "android_client_info": {
-          "package_name": "com.example.spiritualread"
+          "package_name": "me.mirosh.spiritualread"
         }
       },
       "oauth_client": [

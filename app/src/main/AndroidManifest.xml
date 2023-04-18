@@ -2,7 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -10,15 +18,36 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <receiver
+            android:name=".model.ConnectionReceiver"
+            android:label="NetworkChangeReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
         <activity
-            android:name=".PdfListActivity"
+
+            android:name=".activities.PdfViewActivity"
             android:exported="false" />
         <activity
-            android:name=".model.PdfAddActivity"
+            android:name=".activities.PdfDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".model.CategoryAdd"
+            android:name=".activities.PdfEditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.PdfListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.PdfAddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CategoryAdd"
             android:exported="false" />
         <activity
             android:name=".Dashboards.User"
@@ -33,16 +62,13 @@
             android:name=".Auth.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".Home.Homepage"
-            android:exported="false" />
-        <activity
             android:name=".Auth.loginOnboard"
             android:exported="false" />
         <activity
             android:name=".Onboarding.OnboardingActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

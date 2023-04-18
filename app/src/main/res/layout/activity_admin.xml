@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back01"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Dashboards.Admin">
 
@@ -10,8 +11,8 @@
 <RelativeLayout
     android:id="@+id/toolbarRl"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:background="@color/md_amber_100"
+    android:layout_height="?actionBarSize"
+    android:background="@drawable/shape_toolbar02"
     >
 
     <TextView
@@ -20,9 +21,8 @@
         android:layout_marginTop="8dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-
         android:text="DashboardAdmin"
-        android:textColor="@color/white"
+        android:textColor="@color/md_white_1000"
         android:textStyle="bold"
        />
     <TextView
@@ -33,42 +33,48 @@
         android:layout_centerHorizontal="true"
 android:layout_below="@id/tv2"
         android:text="User"
-        android:textColor="@color/white"
+        android:textColor="@color/md_white_1000"
         android:textStyle="bold"
         />
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btn1"
-        android:text="Logout"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_logout_white"
         android:layout_alignParentEnd="true"
-        tools:ignore="MissingConstraints" />
+      />
 
 </RelativeLayout>
 
 <!--    Search -->
+
+    <!--    categories-->
 
     <EditText
         android:id="@+id/searchEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbarRl"
-        android:hint="Search"
-        android:drawableStart="@drawable/ic_favorite_black_24dp"
-        android:background="@color/white"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="10dp"
-        android:textColorHint="@color/light_grey"/>
-
-<!--    categories-->
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape_edittext01"
+        android:drawableStart="@drawable/ic_search_gray"
+        android:drawablePadding="10dp"
+        android:hint="Search"
+        android:padding="10dp"
+        android:textColorHint="@color/light_grey" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
+        android:id="@+id/categoriesRv"
         android:layout_width="407dp"
         android:layout_height="477dp"
         android:layout_above="@id/bottomLl"
+        android:background="@color/md_blue_grey_50"
         android:layout_below="@id/toolbarRl"
         android:layout_marginStart="5dp"
         android:layout_marginTop="74dp"
@@ -90,7 +96,10 @@ android:layout_below="@id/tv2"
     android:id="@+id/addCategory"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:background="@drawable/shape_button01"
     android:text="+ Add Category"
+    android:textColor="@color/md_white_1000"
     android:minHeight="50dp"
     android:layout_marginEnd="10dp"
     android:textAllCaps="false"

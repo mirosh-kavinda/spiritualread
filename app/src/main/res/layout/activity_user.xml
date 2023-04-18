@@ -1,32 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dashboards.User">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Dashboards.User"
+    android:background="@drawable/back01">
+<!--    Toolbar-->
 
-    <TextView
-        android:id="@+id/tv1"
-        android:layout_width="91dp"
-        android:layout_height="wrap_content"
-        android:text="Hello"
-        android:textColor="@color/colorAccent"
-        tools:ignore="MissingConstraints" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn1"
-        android:text="Logout"
-        android:layout_toRightOf="@id/tv1"
-        tools:ignore="MissingConstraints" />
-    <TextView
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/shape_toolbar02"
+        android:id="@+id/toolbarRl"
+        >
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content"
+            android:text="Dashboard User"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/md_white_1000"
+        />
+        <TextView
+            android:id="@+id/subtitileTV"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:text="dd@gmail.com"
+            android:layout_below="@id/tv1"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/md_white_1000"
+            />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn1"
+            android:text="Logout"
+            android:src="@drawable/ic_logout_white"
+            android:background="@android:color/transparent"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+
+            />
+
+    </RelativeLayout>
+<!--Tabs-->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="This is User View "
-        android:textSize="50dp"
-        android:textColor="@color/colorAccent"
-        android:layout_below="@id/btn1"
+        android:layout_below="@id/toolbarRl"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/transparent"
+        app:tabBackground="@drawable/tab_selector"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorHeight="0dp"
+        app:tabMode="scrollable"
+        app:tabUnboundedRipple="false" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/viewPager"
+        android:layout_below="@id/tabLayout"
         />
 
 </RelativeLayout>

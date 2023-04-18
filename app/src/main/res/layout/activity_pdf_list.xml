@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".model.PdfListActivity">
+    android:background="@drawable/back01"
+    tools:context=".activities.PdfListActivity">
 <!--    Toolbar-->
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?actionBarSize"
         android:id="@+id/toolbarRl"
-        android:background="@drawable/shape_btn_03"
+        android:background="@drawable/shape_toolbar01"
 
         >
 <!--        Back Button-->
@@ -21,17 +22,16 @@
             android:id="@+id/backBtn"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
-            android:src="@drawable/shape_btn_03"
+            android:src="@drawable/ic_back_white"
             android:background="@android:color/transparent"/>
 <TextView
     android:id="@+id/titleTv"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-
     android:text="Books"
     android:layout_centerHorizontal="true"
     android:layout_marginTop="10dp"
-    android:textColor="@color/white"
+    android:textColor="@color/md_white_1000"
     android:textStyle="bold" />
 
 <!--        Subtitle category -->
@@ -41,7 +41,7 @@
             android:layout_centerHorizontal="true"
             android:id="@+id/subtitleTv"
             android:text="Category"
-            android:textColor="@color/white"
+            android:textColor="@color/md_white_1000"
             android:layout_below="@id/titleTv"/>
     </RelativeLayout>
 
@@ -51,28 +51,31 @@
         android:layout_height="wrap_content"
         android:id="@+id/searchEt"
         android:layout_marginTop="10dp"
-        android:background="@color/white"
+        android:background="@color/md_white_1000"
         android:layout_below="@id/toolbarRl"
         android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
         android:padding="10dp"
         android:hint="Search"
- android:textColorHint="@color/light_grey"
-        android:drawableStart="@drawable/category"
+        android:textColorHint="@color/light_grey"
+        android:drawableStart="@drawable/ic_search_gray"
         android:drawablePadding="10dp"
         android:textColor="@color/md_black_1000"
         />
-<!--    Pdf
- list-->
+
+<!--    Pdflist-->
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bookRv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/bookRv"
-     android:layout_margin="10dp"
+
+        android:layout_below="@id/searchEt"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/row_pdf_admin"
-        />
-
-
+        tools:listitem="@layout/row_pdf_admin" />
 
 </RelativeLayout
     >

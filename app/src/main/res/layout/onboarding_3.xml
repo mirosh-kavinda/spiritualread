@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
 
-    tools:context="Onboarding.OnboardingActivity">
+    tools:context="com.example.spiritualread.me.example.spiritualread.Onboarding.OnboardingActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"

@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".model.CategoryAdd">
+    android:background="@drawable/back01"
+    tools:context=".activities.CategoryAdd">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:background="@color/md_green_50"
+        android:background="@drawable/shape_toolbar01"
         >
 
         <ImageButton
@@ -21,24 +22,26 @@
             android:layout_marginBottom="10dp"
             android:background="@android:color/transparent"
             android:padding="5dp"
-            android:src="@drawable/baseline_pdf_add_black" />
+            android:src="@drawable/ic_back_white" />
+
         <ImageButton
             android:id="@+id/iconIv"
             android:layout_width="110dp"
             android:layout_height="110dp"
             android:src="@drawable/ic_hello"
             android:background="@android:color/transparent"
-            android:layout_margin="40dp"
+            android:layout_marginTop="40dp"
             android:layout_centerHorizontal="true"
-            android:padding="5dp"
+
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
            android:layout_below="@id/iconIv"
             android:text="Add a new Category"
-            android:textColor="@color/white"
+            android:textColor="@color/md_white_1000"
             android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
             android:textSize="28sp"
             />
 
@@ -47,7 +50,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/categoryTil"
-
         android:layout_marginEnd="30dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="225dp">
@@ -57,8 +59,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/categoryEt"
-            android:background="@color/colorPrimaryDark"
-            android:drawableStart="@drawable/category"
+            android:background="@drawable/shape_edittext01"
+            android:drawableStart="@drawable/ic_category_gray"
             android:hint="Category Title"
             android:drawablePadding="10dp"
             android:inputType="textPersonName|textCapWords"
@@ -75,6 +77,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:text="submit"
+        android:textColor="@color/md_white_1000"
+        android:background="@drawable/shape_button01"
         android:layout_marginTop="20dp"
         android:id="@+id/submit"
         android:layout_below="@id/categoryTil" />

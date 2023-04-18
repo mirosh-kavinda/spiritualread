@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:contentPadding="10dp"
-    app:cardBackgroundColor="@color/md_blue_grey_100"
+    app:cardBackgroundColor="@color/md_white_1000"
     app:cardUseCompatPadding="true"
     app:cardCornerRadius="8dp"
     app:cardElevation="0dp">
@@ -29,7 +30,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/ic_delete_white"
-        android:background="@color/md_black_1000"
+        android:background="@drawable/sahpe_button03"
         android:contentDescription="this is delte button"
 
         />

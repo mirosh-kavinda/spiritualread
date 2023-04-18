@@ -5,11 +5,11 @@ plugins {
 
 }
 android {
-    namespace 'com.example.spiritualread'
+    namespace 'me.mirosh.spiritualread'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.spiritualread"
+        applicationId 'me.mirosh.spiritualread'
         minSdk 24
         targetSdk 33
         versionCode 1
