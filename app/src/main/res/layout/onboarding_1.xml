@@ -14,6 +14,7 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.1" />
 
+
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="0dp"
@@ -77,15 +78,16 @@
         android:id="@+id/button2"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/shape_button01"
         android:onClick="nextPage"
         android:text="@string/onboarding_btn_1"
         android:textColor="@android:color/primary_text_dark"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@color/dark_blue"
         app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="@+id/guideline13"
         app:layout_constraintTop_toTopOf="@+id/guideline8"
-        />
+        app:layout_constraintVertical_bias="0.95" />
 
     <TextView
         android:id="@+id/textView7"

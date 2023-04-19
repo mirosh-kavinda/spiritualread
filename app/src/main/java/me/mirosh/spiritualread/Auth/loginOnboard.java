@@ -15,6 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import me.mirosh.spiritualread.Dashboards.Admin;
+import me.mirosh.spiritualread.Dashboards.Guest;
 import me.mirosh.spiritualread.Dashboards.User;
 import me.mirosh.spiritualread.Onboarding.OnboardingActivity;
 import me.mirosh.spiritualread.databinding.ActivityLoginOnboardBinding;
@@ -33,7 +34,7 @@ public class loginOnboard extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         CheckUser();
         binding.btn1.setOnClickListener(view -> startActivity(new Intent(loginOnboard.this,LoginActivity.class)));
-        binding.btn3.setOnClickListener(view -> startActivity(new Intent(loginOnboard.this, User.class)));
+        binding.btn3.setOnClickListener(view -> startActivity(new Intent(loginOnboard.this, Guest.class)));
         binding.learnBtn.setOnClickListener(v -> startActivity(new Intent(loginOnboard.this, OnboardingActivity.class)));
     }
     private void CheckUser() {

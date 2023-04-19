@@ -24,7 +24,7 @@ public class FilterPdfUser extends Filter {
     protected FilterResults performFiltering(CharSequence constraint) {
       FilterResults results=new FilterResults();
       //value to be searched should not be null/empty
-        if(constraint!=null&& constraint.length()>0){
+        if(constraint!=null ||constraint.length()>0){
             //not null nor empty
             //chnage to uppercase or lowe case to aboid case sensitivity
             constraint=constraint.toString().toUpperCase();

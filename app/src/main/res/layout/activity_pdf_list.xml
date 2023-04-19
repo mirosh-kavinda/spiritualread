@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/searchEt"
         android:layout_marginTop="10dp"
-        android:background="@color/md_white_1000"
+        android:background="@drawable/shape_edittext01"
         android:layout_below="@id/toolbarRl"
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"

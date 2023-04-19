@@ -16,7 +16,7 @@
             android:background="@drawable/shape_toolbar02"
             android:drawablePadding="10dp"
             android:padding="10dp"
-            android:drawableStart="@drawable/ic_arrow_back_black_24dp"
+            android:drawableStart="@drawable/baseline_help_24"
 
             />
 
@@ -37,9 +37,11 @@
             android:padding="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/md_black_1000"
             android:text="'reading makes a man , so pick a book start readning now'"
             android:textSize="20sp"
-            android:layout_gravity="center"
+            android:textAlignment="center"
+
 
             />
 

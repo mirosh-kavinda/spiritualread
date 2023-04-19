@@ -29,19 +29,24 @@ public class BooksUserFragment extends Fragment {
     private static final String TAG = "BOOKS_USER_TAG";
 
 
-    private String categoryId,category,uid;
+    private String categoryId;
+    private String category;
+    private String uid;
+
+
     private ArrayList<ModelPdf>pdfArrayList;
     private AdapterPdfUser adapterPdfUser;
 private FragmentBooksUserBinding binding;
+
 
     public BooksUserFragment() {
         // Required empty public constructor
     }
 
-    public static BooksUserFragment newInstance(String id, String category, String uid) {
+    public static BooksUserFragment newInstance(String categoryId, String category, String uid) {
         BooksUserFragment fragment = new BooksUserFragment();
         Bundle args = new Bundle();
-        args.putString("categoryId", id);
+        args.putString("categoryId", categoryId);
         args.putString("category", category);
         args.putString("uid", uid);
 
@@ -57,8 +62,6 @@ private FragmentBooksUserBinding binding;
             category = getArguments().getString("category");
             uid = getArguments().getString("uid");
 
-
-
         }
     }
 
@@ -72,10 +75,10 @@ private FragmentBooksUserBinding binding;
             //load all books
             loadAllBooks();
 
-        }else if(category.equals("Most Viewed")){
+        }else if(category.equals("Most_Viewed")){
             //most view ones load
             LoadMostViewedDownloadedBooks("viewsCount");
-        }else if(category.equals("Most Downloaded")){
+        }else if(category.equals("Most_Downloaded")){
             //most Downloaded ones load
             LoadMostViewedDownloadedBooks("downloadsCount");
         }else{
@@ -153,10 +156,10 @@ private FragmentBooksUserBinding binding;
                 pdfArrayList.clear();
 
                 for(DataSnapshot ds:snapshot.getChildren()){
-                    //get data
-//                    ModelPdf model=ds.getValue(ModelPdf.class);
-                    //add to list
-//                    pdfArrayList.add(model);
+//                    get data
+                    ModelPdf model=ds.getValue(ModelPdf.class);
+//                    add to list
+                    pdfArrayList.add(model);
                 }
                 ///setup adapter
                 adapterPdfUser=new AdapterPdfUser(getContext(),pdfArrayList);
@@ -191,7 +194,7 @@ private FragmentBooksUserBinding binding;
                 }
                 ///setup adapter
                 adapterPdfUser=new AdapterPdfUser(getContext(),pdfArrayList);
-                //set adapter to recycler view
+
                 binding.booksRv.setAdapter(adapterPdfUser);
             }
 

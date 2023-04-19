@@ -109,7 +109,7 @@ public class PdfDetailActivity extends AppCompatActivity {
                         //get data
                         bookTitle=""+snapshot.child("title").getValue();
                         String description=""+snapshot.child("description").getValue();
-                        String categoryId=""+snapshot.child("categoryid").getValue();
+                        String categoryId=""+snapshot.child("categoryId").getValue();
                         String viewsCount=""+snapshot.child("viewsCount").getValue();
                         String downloadsCount=""+snapshot.child("downloadsCount").getValue();
                         bookUrl=""+snapshot.child("url").getValue();
@@ -140,8 +140,8 @@ public class PdfDetailActivity extends AppCompatActivity {
                         //set data
                         binding.titleTv.setText(bookTitle);
                         binding.decriptionTv.setText(description);
-                        binding.viewTv.setText(viewsCount.replace("null","N/A"));
-                        binding.downloadsTv.setText(downloadsCount.replace("null","N/A"));
+                        binding.viewTv.setText(viewsCount.replace("null",viewsCount));
+                        binding.downloadsTv.setText(downloadsCount.replace("null",downloadsCount));
                         binding.dateTv.setText(date);
 
                     }

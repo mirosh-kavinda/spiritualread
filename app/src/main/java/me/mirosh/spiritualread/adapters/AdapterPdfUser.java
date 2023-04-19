@@ -106,7 +106,6 @@ public class AdapterPdfUser extends RecyclerView.Adapter<AdapterPdfUser.HolderPd
     public Filter getFilter() {
         if(filter==null){
             filter=new FilterPdfUser(filterList,this);
-
         }
         return filter;
     }

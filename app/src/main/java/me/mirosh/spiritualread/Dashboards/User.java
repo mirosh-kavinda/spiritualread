@@ -111,8 +111,9 @@ public class User extends AppCompatActivity {
                     ModelCategory model=ds.getValue(ModelCategory.class);
                     //add data to list
                     categoryArrayList.add(model);
+
                     //add data to viewpger adapter
-                    assert model != null;
+
                     viewPagerAdapter.addFragment(BooksUserFragment.newInstance(
                             ""+model.getId(),
                             ""+model.getCategory(),
@@ -183,7 +184,7 @@ public class User extends AppCompatActivity {
             //logged in , get user info
             String email=firebaseUser.getEmail();
             //set in text view of toolbar
-            binding.tv1.setText(email);
+            binding.subtitileTV.setText(email);
 
         }
     }

@@ -52,7 +52,6 @@ public class FilterCategory extends Filter {
     protected void publishResults(CharSequence constraint, FilterResults results) {
         //app filtere changes
         adapterCategory.categoryArrayList=(ArrayList<ModelCategory>)results.values;
-
         //notify changes
         adapterCategory.notifyDataSetChanged();
     }

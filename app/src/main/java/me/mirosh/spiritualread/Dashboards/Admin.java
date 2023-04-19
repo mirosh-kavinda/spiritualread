@@ -1,9 +1,12 @@
 package me.mirosh.spiritualread.Dashboards;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -68,7 +71,7 @@ public class Admin extends AppCompatActivity {
                 try {
                     adapterCategory.getFilter().filter(s);
                 }catch (Exception e) {
-                    throw new RuntimeException(e);
+                    Log.d(TAG, "onTextChanged: "+e.getMessage());
                 }
 
             }
@@ -153,8 +156,10 @@ binding.addCategory.setOnClickListener(new View.OnClickListener() {
         }else {
             //logged in , get user info
             String email=firebaseUser.getEmail();
+
             //set in text view of toolbar
            binding.tv1.setText(email);
+
 
         }
     }

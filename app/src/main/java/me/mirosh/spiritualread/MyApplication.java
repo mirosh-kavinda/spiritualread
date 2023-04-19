@@ -155,34 +155,39 @@ public class MyApplication extends Application {
                         Log.d(TAG,"onSuccess :"+pdfTitle+"succesfully got the file  ");
 
                         //set to pdf view
-                        pdfView.fromBytes(bytes)
-                                .pages(0)//show only first page
-                                .spacing(0)
-                                .swipeHorizontal(false)
-                                .enableSwipe(false)
-                                .onError(new OnErrorListener() {
-                                    @Override
-                                    public void onError(Throwable t) {
-                                        //hide progress
-                                        progressBar.setVisibility(View.INVISIBLE);
-                                        Log.d(TAG,"onError : "+t.getMessage());
-                                    }
-                                }).onPageError(new OnPageErrorListener() {
-                                    @Override
-                                    public void onPageError(int page, Throwable t) {
-                                        Log.d(TAG,"onPageError : "+t.getMessage());
-                                    }
-                                })
-                                .onLoad(new OnLoadCompleteListener() {
-                                    @Override
-                                    public void loadComplete(int nbPages) {
-                                        //pdf loaded
-                                        //hide progress
-                                        progressBar.setVisibility(View.INVISIBLE);
-                                        Log.d(TAG,"LoadComplete:pdf loaded");
-                                    }
-                                })
-                                .load();
+                        try{
+                            pdfView.fromBytes(bytes)
+                                    .pages(0)//show only first page
+                                    .spacing(0)
+                                    .swipeHorizontal(false)
+                                    .enableSwipe(false)
+                                    .onError(new OnErrorListener() {
+                                        @Override
+                                        public void onError(Throwable t) {
+                                            //hide progress
+                                            progressBar.setVisibility(View.INVISIBLE);
+                                            Log.d(TAG,"onError : "+t.getMessage());
+                                        }
+                                    }).onPageError(new OnPageErrorListener() {
+                                        @Override
+                                        public void onPageError(int page, Throwable t) {
+                                            Log.d(TAG,"onPageError : "+t.getMessage());
+                                        }
+                                    })
+                                    .onLoad(new OnLoadCompleteListener() {
+                                        @Override
+                                        public void loadComplete(int nbPages) {
+                                            //pdf loaded
+                                            //hide progress
+                                            progressBar.setVisibility(View.INVISIBLE);
+                                            Log.d(TAG,"LoadComplete:pdf loaded");
+                                        }
+                                    })
+                                    .load();
+                        }catch (Exception e){
+
+                        }
+
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -297,7 +302,7 @@ public class MyApplication extends Application {
             out.close();
 
             Toast.makeText(context, "Saved to Download Folder", Toast.LENGTH_SHORT).show();
-            Log.d(TAG_DOWNLOAD, "saveDownloadedBook: Saved to Donlod Folder");
+            Log.d(TAG_DOWNLOAD, "saveDownloadedBook: Saved to Download Folder");
             progressDialog.dismiss();
 
             incrementBookDownloadCount(bookId);
@@ -356,5 +361,6 @@ public class MyApplication extends Application {
                     }
                 });
     }
+
 
 }

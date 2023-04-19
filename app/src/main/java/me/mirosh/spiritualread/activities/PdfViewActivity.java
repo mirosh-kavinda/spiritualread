@@ -23,7 +23,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import me.mirosh.spiritualread.Constants;
+import me.mirosh.spiritualread.MyApplication;
 import me.mirosh.spiritualread.databinding.ActivityPdfViewBinding;
+
 
 public class PdfViewActivity extends AppCompatActivity {
 
@@ -75,6 +77,8 @@ public class PdfViewActivity extends AppCompatActivity {
                         Log.d(TAG, "onDataChange: Pdf URL :" +pdfUrl);
                         //load pdf using that url from firebase storage
                         loadBooksFromUrl(pdfUrl);
+
+
                     }
 
                     @Override
@@ -93,7 +97,7 @@ public class PdfViewActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<byte[]>() {
                     @Override
                     public void onSuccess(byte[] bytes) {
-
+                        MyApplication.incrementBookViewCount(bookId);
                         //load pdf using bytes
                         binding .pdfView.fromBytes(bytes)
                                 .swipeHorizontal(false)
