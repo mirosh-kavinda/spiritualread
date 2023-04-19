@@ -43,10 +43,10 @@ private FragmentBooksUserBinding binding;
         // Required empty public constructor
     }
 
-    public static BooksUserFragment newInstance(String categoryId, String category, String uid) {
+    public static BooksUserFragment newInstance(String id, String category, String uid) {
         BooksUserFragment fragment = new BooksUserFragment();
         Bundle args = new Bundle();
-        args.putString("categoryId", categoryId);
+        args.putString("categoryId", id);
         args.putString("category", category);
         args.putString("uid", uid);
 
@@ -178,19 +178,22 @@ private FragmentBooksUserBinding binding;
     private void loadAllBooks() {
         //init list
         pdfArrayList =new ArrayList<>();
-
+        Log.d(TAG, "onDataChange: Get the data ");
         DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Books");
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Log.d(TAG, "onDataChange: Get the data ");
                 //clear list before starting adding data into it
                 pdfArrayList.clear();
 
-                for(DataSnapshot ds:snapshot.getChildren()){
+                for(DataSnapshot ds: snapshot.getChildren()){
                     //get data
+
                     ModelPdf model=ds.getValue(ModelPdf.class);
                     //add to list
                     pdfArrayList.add(model);
+
                 }
                 ///setup adapter
                 adapterPdfUser=new AdapterPdfUser(getContext(),pdfArrayList);

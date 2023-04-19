@@ -24,15 +24,15 @@ public class FilterPdfUser extends Filter {
     protected FilterResults performFiltering(CharSequence constraint) {
       FilterResults results=new FilterResults();
       //value to be searched should not be null/empty
-        if(constraint!=null ||constraint.length()>0){
+        if(constraint!=null && constraint.length()>0){
             //not null nor empty
             //chnage to uppercase or lowe case to aboid case sensitivity
             constraint=constraint.toString().toUpperCase();
             ArrayList<ModelPdf> filteredModels=new ArrayList<>();
 
-            for(int i=0;i<filteredModels.size();i++){
+            for(int i=0;i<filterList.size();i++){
                 //validate
-                if(filteredModels.get(i).getTitle().toUpperCase().contains(constraint)){
+                if(filterList.get(i).getTitle().toUpperCase().contains(constraint)){
                     //search matches,add to list
                     filteredModels.add(filterList.get(i));
                 }

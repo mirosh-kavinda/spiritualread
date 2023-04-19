@@ -67,8 +67,8 @@ public class Guest extends AppCompatActivity {
                 //load categories static
                 //add data to models
 
-                ModelCategory modelMostViewed=new ModelCategory("01","Most Viewed","",1);
-                ModelCategory modelMostDownloaded=new ModelCategory("02","Most Downloaded","",1);
+                ModelCategory modelMostViewed=new ModelCategory("01","Most_Viewed","",1);
+                ModelCategory modelMostDownloaded=new ModelCategory("02","Most_Downloaded","",1);
 
 
                 //add model to list
@@ -87,11 +87,10 @@ public class Guest extends AppCompatActivity {
                         ""+modelMostViewed.getUid()
                 ), modelMostViewed.getCategory());
 
-                //now load from firebase
-                for(DataSnapshot ds:snapshot.getChildren()){
+                //REFRESH THE LIST
+                viewPagerAdapter.notifyDataSetChanged();
 
-                    viewPagerAdapter.notifyDataSetChanged();
-                }
+
             }
 
             @Override

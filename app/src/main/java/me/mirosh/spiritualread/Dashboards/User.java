@@ -77,9 +77,9 @@ public class User extends AppCompatActivity {
 
                 //load categories static
                 //add data to models
-                ModelCategory modelAll =new ModelCategory("01","All","",1);
-                ModelCategory modelMostViewed=new ModelCategory("02","Most Viewed","",1);
-                ModelCategory modelMostDownloaded=new ModelCategory("03","Most Downloaded","",1);
+                ModelCategory modelAll =new ModelCategory("01","ALL","",1);
+                ModelCategory modelMostViewed=new ModelCategory("02","Most_Viewed","",1);
+                ModelCategory modelMostDownloaded=new ModelCategory("03","Most_Downloaded","",1);
 
 
                 //add model to list
@@ -104,6 +104,8 @@ public class User extends AppCompatActivity {
                         ""+modelMostViewed.getCategory(),
                         ""+modelMostViewed.getUid()
                 ), modelMostViewed.getCategory());
+                //refresh the list
+                viewPagerAdapter.notifyDataSetChanged();
 
                 //now load from firebase
                 for(DataSnapshot ds:snapshot.getChildren()){

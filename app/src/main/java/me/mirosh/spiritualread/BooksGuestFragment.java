@@ -68,10 +68,10 @@ public class BooksGuestFragment extends Fragment {
         Log.d(TAG, "onCreateView: Category :"+category);
 
 
-        if(category.equals("Most Viewed")){
+        if(category.equals("Most_Viewed")){
             //most view ones load
             LoadMostViewedDownloadedBooks("viewsCount");
-        }else if(category.equals("Most Downloaded")){
+        }else if(category.equals("Most_Downloaded")){
             //most Downloaded ones load
             LoadMostViewedDownloadedBooks("downloadsCount");
         }
@@ -88,8 +88,9 @@ public class BooksGuestFragment extends Fragment {
                 try {
                     adapterPdfUser.getFilter().filter(s);
 
+
                 }catch (Exception e){
-                    Log.d(TAG, "onTextChanged: "+e.getMessage());
+                    Log.d("Search_View", "onTextChanged: "+e.getMessage());
                 }
             }
 
@@ -117,9 +118,9 @@ public class BooksGuestFragment extends Fragment {
 
                         for(DataSnapshot ds:snapshot.getChildren()){
                             //get data
-//                    ModelPdf model=ds.getValue(ModelPdf.class);
-                            //add to list
-//                    pdfArrayList.add(model);
+                    ModelPdf model=ds.getValue(ModelPdf.class);
+//                            add to list
+                    pdfArrayList.add(model);
                         }
                         ///setup adapter
                         adapterPdfUser=new AdapterPdfUser(getContext(),pdfArrayList);

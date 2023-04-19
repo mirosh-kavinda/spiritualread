@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="24dp"
+    android:background="@drawable/bg_splash_gradient"
+
     tools:context=".Auth.LoginActivity">
 
     <ImageView
