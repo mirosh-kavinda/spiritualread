@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import me.mirosh.spiritualread.BooksGuestFragment;
+import me.mirosh.spiritualread.fragments.BooksGuestFragment;
 import me.mirosh.spiritualread.databinding.ActivityGuestBinding;
 import me.mirosh.spiritualread.model.ModelCategory;
 

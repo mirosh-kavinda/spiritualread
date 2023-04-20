@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
 
     <application
-        android:name=".MyApplication"
+        android:name=".activities.MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -21,18 +21,11 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activities.FavouriteActivity"
+            android:exported="false" />
+        <activity
             android:name=".Dashboards.Guest"
             android:exported="false" />
-
-        <receiver
-            android:name=".model.ConnectionReceiver"
-            android:exported="false"
-            android:label="NetworkChangeReceiver">
-            <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
-            </intent-filter>
-        </receiver>
 
         <activity
             android:name=".activities.PdfViewActivity"

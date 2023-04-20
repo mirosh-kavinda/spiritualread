@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,8 +23,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import me.mirosh.spiritualread.Auth.loginOnboard;
-import me.mirosh.spiritualread.BooksUserFragment;
+import me.mirosh.spiritualread.fragments.BooksUserFragment;
+import me.mirosh.spiritualread.activities.FavouriteActivity;
+import me.mirosh.spiritualread.databinding.ActivityLoginOnboardBinding;
 import me.mirosh.spiritualread.databinding.ActivityUserBinding;
 import me.mirosh.spiritualread.model.ModelCategory;
 
@@ -56,7 +58,16 @@ public class User extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 firebaseAuth.signOut();
-                checkUser();
+                startActivity(new Intent(User.this, ActivityLoginOnboardBinding.class));
+                finish();
+            }
+        });
+
+        binding.btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(User.this, FavouriteActivity.class));
+                finish();
             }
         });
 
@@ -180,7 +191,9 @@ public class User extends AppCompatActivity {
         FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
         if(firebaseUser==null){
             //not logged in , goto main screen
-            startActivity(new Intent(this, loginOnboard.class));
+//            startActivity(new Intent(this, loginOnboard.class));
+            Toast.makeText(this, "not Loged in ", Toast.LENGTH_SHORT).show();
+            binding.subtitileTV.setText("Not Logged In");
 
         }else {
             //logged in , get user info

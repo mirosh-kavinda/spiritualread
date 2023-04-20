@@ -16,14 +16,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import me.mirosh.spiritualread.MyApplication;
+import me.mirosh.spiritualread.R;
 import me.mirosh.spiritualread.databinding.ActivityPdfDetailBinding;
+
 
 public class PdfDetailActivity extends AppCompatActivity {
 
@@ -32,6 +34,11 @@ public class PdfDetailActivity extends AppCompatActivity {
 
     //pdf id, get form intent
     String bookId,bookTitle,bookUrl;
+    boolean IsInMyFavourite=false;
+
+    private FirebaseAuth firebaseAuth;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +53,14 @@ public class PdfDetailActivity extends AppCompatActivity {
         //at start hide download button,
         binding.downloadBookBtn.setVisibility(View.GONE);
 
+        firebaseAuth=FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser()!=null){
+            checkIsFavorite();
+        }
         loadBookDetails();
+
+
+
 
         //increment book view ocount , whenever this page starts
 
@@ -84,6 +98,22 @@ public class PdfDetailActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //handle click favorite
+        binding.favoriteBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                if(firebaseAuth.getCurrentUser()==null){
+                    Toast.makeText(PdfDetailActivity.this, "You're not logged in ", Toast.LENGTH_SHORT).show();
+                }else{
+                    if(IsInMyFavourite){
+                        MyApplication.removeFromFavorite(PdfDetailActivity.this,bookId);
+                    }else{
+                        MyApplication.addToFavorite(PdfDetailActivity.this,bookId);
+                    }
+                }
+            }
+        });
     }
 
     private final ActivityResultLauncher<String> requestPermissionLauncher = registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
@@ -97,6 +127,7 @@ public class PdfDetailActivity extends AppCompatActivity {
         }
         
     });
+
 
 
 
@@ -118,6 +149,7 @@ public class PdfDetailActivity extends AppCompatActivity {
                         //requireined data is loaded , show donwnload button
                         binding.downloadBookBtn.setVisibility(View.VISIBLE);
 
+
                         //format date
                         String date = MyApplication.formatTimestamp(Long.parseLong(timestamp));
 
@@ -129,13 +161,18 @@ public class PdfDetailActivity extends AppCompatActivity {
                                 ""+bookUrl,
                                 ""+bookTitle,
                                 binding.pdfView,
-                                binding.progressBar
+                                binding.progressBar,
+                                binding.pagesTv
                         );
                         MyApplication.LoadPdfSize(
                                 ""+bookUrl,
                                 ""+bookTitle,
                                 binding.sizeTv
                         );
+                        MyApplication.loadPdfPageCount(
+                                PdfDetailActivity.this,
+                                ""+bookUrl,
+                                binding.pagesTv);
 
                         //set data
                         binding.titleTv.setText(bookTitle);
@@ -153,5 +190,29 @@ public class PdfDetailActivity extends AppCompatActivity {
                 });
     }
 
+    private void checkIsFavorite(){
+        //loged in
+        DatabaseReference reference =FirebaseDatabase.getInstance().getReference("Users");
+        reference.child(firebaseAuth.getUid()).child("Favourites").child(bookId)
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        IsInMyFavourite=snapshot.exists();
 
+                        if(IsInMyFavourite){
+                            //exist in favorite
+                            binding.favoriteBtn.setCompoundDrawablesRelativeWithIntrinsicBounds(0, R.drawable.ic_favorite_white,0,0);
+                            binding.favoriteBtn.setText("Remove Favourite");
+                        }else{
+                            binding.favoriteBtn.setCompoundDrawablesRelativeWithIntrinsicBounds(0, R.drawable.ic_favorite_border_white,0,0);
+                            binding.favoriteBtn.setText("Add Favourite");
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+    }
 }

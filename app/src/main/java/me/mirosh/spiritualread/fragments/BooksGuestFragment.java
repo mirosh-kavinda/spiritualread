@@ -1,4 +1,4 @@
-package me.mirosh.spiritualread;
+package me.mirosh.spiritualread.fragments;
 
 import android.os.Bundle;
 import android.text.Editable;

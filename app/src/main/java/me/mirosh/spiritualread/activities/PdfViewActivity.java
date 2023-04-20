@@ -23,7 +23,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import me.mirosh.spiritualread.Constants;
-import me.mirosh.spiritualread.MyApplication;
 import me.mirosh.spiritualread.databinding.ActivityPdfViewBinding;
 
 

@@ -21,7 +21,7 @@ import com.github.barteksc.pdfviewer.PDFView;
 
 import java.util.ArrayList;
 
-import me.mirosh.spiritualread.MyApplication;
+import me.mirosh.spiritualread.activities.MyApplication;
 import me.mirosh.spiritualread.activities.PdfDetailActivity;
 import me.mirosh.spiritualread.activities.PdfEditActivity;
 import me.mirosh.spiritualread.databinding.RowPdfAdminBinding;
@@ -99,7 +99,8 @@ public class AdapterPdfAdmin extends RecyclerView.Adapter<AdapterPdfAdmin.Holder
                 ""+pdfUrl,
                 ""+title,
                 holder.pdfView,
-                holder.progressBar
+                holder.progressBar,
+               null
                 );
 
         MyApplication.LoadPdfSize(

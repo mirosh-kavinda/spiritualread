@@ -1,4 +1,4 @@
-package me.mirosh.spiritualread;
+package me.mirosh.spiritualread.activities;
 
 import static me.mirosh.spiritualread.Constants.MAX_BYTES_PDF;
 
@@ -21,6 +21,7 @@ import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
 import com.github.barteksc.pdfviewer.listener.OnPageErrorListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -36,6 +37,8 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 
+import me.mirosh.spiritualread.Constants;
+
 //application class runs before your launcher acticity
 public class MyApplication extends Application {
     private static final String TAG_DOWNLOAD = "DOWNLOAD_PDF_TAG";
@@ -48,7 +51,7 @@ public class MyApplication extends Application {
 
 
 //created method to convert timestamp into proper date format , so we can use it everywhere ,
-    public static String formatTimestamp(long timestamp){
+    public  static final String formatTimestamp(long timestamp){
         Calendar cal =Calendar.getInstance(Locale.ENGLISH);
         cal.setTimeInMillis(timestamp);
 
@@ -143,7 +146,7 @@ public class MyApplication extends Application {
     }
 
 
-  public static void LoadPdfFromUrlSinglePage(String pdfUrl, String pdfTitle, PDFView pdfView, ProgressBar progressBar) {
+  public static void LoadPdfFromUrlSinglePage(String pdfUrl, String pdfTitle, PDFView pdfView, ProgressBar progressBar,TextView pagesTv) {
 
         String TAG="PDF_LOAD_SINGLE_TAG";
         //using url we can get file and its metadata from firebase storage
@@ -181,6 +184,11 @@ public class MyApplication extends Application {
                                             //hide progress
                                             progressBar.setVisibility(View.INVISIBLE);
                                             Log.d(TAG,"LoadComplete:pdf loaded");
+
+                                            //if pages is not null hten set page number
+                                            if(pagesTv!=null){
+                                                pagesTv.setText(""+nbPages);
+                                            }
                                         }
                                     })
                                     .load();
@@ -363,4 +371,95 @@ public class MyApplication extends Application {
     }
 
 
+
+    public static void loadPdfPageCount(Context context , String pdfUrl, TextView pagesTv){
+        //load pdf  from firebase storage using url
+        StorageReference storageReference= FirebaseStorage.getInstance().getReferenceFromUrl(pdfUrl);
+        storageReference.getBytes(Constants.MAX_BYTES_PDF)
+                .addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                    @Override
+                    public void onSuccess(byte[] bytes) {
+                        ///file reveive
+
+                        //load pdf pages using pdfvie
+                        PDFView pdfView=new PDFView(context,null);
+                        pdfView.fromBytes(bytes)
+                                .onLoad(new OnLoadCompleteListener() {
+                                    @Override
+                                    public void loadComplete(int nbPages) {
+                                        pagesTv.setText(""+nbPages);
+                                    }
+                                });
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                    }
+                });
+
+    }
+
+    public static void addToFavorite(Context context, String bookId){
+        //check if user loged in 
+        FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser()==null){
+            //not logged in , cant add fav
+            Toast.makeText(context, "You 're not loged in ", Toast.LENGTH_SHORT).show();
+        }else{
+            long timestamp =System.currentTimeMillis();
+
+            //setup datat to add firebase db of current use
+            HashMap<String,Object> hashMap=new HashMap<>();
+            hashMap.put("bookId",""+bookId);
+            hashMap.put("timestamp",""+timestamp);
+
+            //save to db
+            DatabaseReference ref=FirebaseDatabase .getInstance().getReference("Users");
+            ref.child(firebaseAuth.getUid()).child("Favourites").child(bookId)
+                    .setValue(hashMap)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(context, "Added to your favoite list", Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(context, "Failed to add your favoite due to "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+        }
+    }
+
+    public static void removeFromFavorite(Context context, String bookId){
+        //check if user loged in
+        FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser()==null){
+            //not logged in , cant remove fav
+            Toast.makeText(context, "You 're not loged in ", Toast.LENGTH_SHORT).show();
+        }else{
+            long timestamp =System.currentTimeMillis();
+
+
+            //remove from
+            DatabaseReference ref=FirebaseDatabase .getInstance().getReference("Users");
+            ref.child(firebaseAuth.getUid()).child("Favourites").child(bookId)
+                    .removeValue()
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(context, "Removed from your  favoite list", Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(context, "Failed to remove your favoite due to "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+        }
+    }
 }
