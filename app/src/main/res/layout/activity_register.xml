@@ -5,15 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp"
+
+    android:background="@drawable/bg_splash_gradient"
     tools:context=".Auth.RegisterActivity">
 
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_toolbar02"
+        android:drawableStart="@drawable/ic_arrow_back_black_24dp"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:text=""
+        android:textAllCaps="false"
+        android:textColor="@color/md_white_1000"
+        android:textStyle="normal"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp">
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
-        android:layout_marginTop="25dp"
         android:src="@drawable/ic_hello"/>
 
     <LinearLayout
@@ -29,9 +49,9 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="16dp"
             android:gravity="center_horizontal"
-            android:text="SignUp"
-            android:textColor="@color/dark_blue"
-            android:textSize="30sp"
+            android:text="SignUp for new Users"
+            android:textColor="@color/md_black_1000"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
         <EditText
@@ -81,6 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Already registered"
+                android:textColor="@color/md_black_1000"
                 android:textSize="16sp"/>
 
             <TextView
@@ -94,7 +115,7 @@
                 android:textSize="20sp"/>
 
         </LinearLayout>
-
+    </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

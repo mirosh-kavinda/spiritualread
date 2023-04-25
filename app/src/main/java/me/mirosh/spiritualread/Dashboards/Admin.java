@@ -25,6 +25,7 @@ import java.util.ArrayList;
 
 import me.mirosh.spiritualread.Auth.loginOnboard;
 import me.mirosh.spiritualread.activities.CategoryAdd;
+import me.mirosh.spiritualread.activities.FavouriteActivity;
 import me.mirosh.spiritualread.activities.PdfAddActivity;
 import me.mirosh.spiritualread.adapters.AdapterCategory;
 import me.mirosh.spiritualread.databinding.ActivityAdminBinding;
@@ -58,6 +59,14 @@ public class Admin extends AppCompatActivity {
         checkUser();
         loadCategories();
 
+        binding.btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Admin.this, FavouriteActivity.class));
+                finish();
+            }
+        });
+
         //edit text change listen , search
         binding.searchEt.addTextChangedListener(new TextWatcher() {
             @Override
@@ -88,6 +97,7 @@ public class Admin extends AppCompatActivity {
             public void onClick(View v) {
                 firebaseAuth.signOut();
                 checkUser();
+
             }
         });
 
@@ -152,6 +162,7 @@ binding.addCategory.setOnClickListener(new View.OnClickListener() {
         if(firebaseUser==null){
             //not logged in , goto main screen
             startActivity(new Intent(this, loginOnboard.class));
+            finish();
 
         }else {
             //logged in , get user info

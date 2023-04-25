@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -51,6 +52,13 @@ public class LoginActivity extends AppCompatActivity {
     progressDialog.setCanceledOnTouchOutside(false);
 
 
+    binding.backBtn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            startActivity(new Intent(LoginActivity.this,loginOnboard.class));
+            finish();
+        }
+    });
     binding.btnLogin.setOnClickListener(view ->ValidateUser());
     binding.tvRegisterHere.setOnClickListener(view -> startActivity(new Intent(LoginActivity.this, RegisterActivity.class)));
     }

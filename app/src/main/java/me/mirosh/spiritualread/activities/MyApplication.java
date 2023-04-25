@@ -103,8 +103,6 @@ public class MyApplication extends Application {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.d(TAG, "onFailure: Failed to delete from storage due to "+e.getMessage());
-
-
                     }
                 });
     }
@@ -193,7 +191,7 @@ public class MyApplication extends Application {
                                     })
                                     .load();
                         }catch (Exception e){
-
+                            Log.d(TAG, "onSuccess: cause to error"+e.getMessage() );
                         }
 
                     }
@@ -211,7 +209,6 @@ public class MyApplication extends Application {
 
 
    public static void LoadCategory(String categoryId, TextView categoryTv) {
-
 
         DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Categories");
         ref.child(categoryId)

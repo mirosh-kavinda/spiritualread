@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Dashboards.Guest"
-    android:background="@drawable/back01">
+    android:background="@drawable/bg_splash_gradient"
+  >
     <!--    Toolbar-->
 
     <RelativeLayout
@@ -58,18 +59,20 @@
         app:tabMode="scrollable"
         app:tabUnboundedRipple="false"
         app:tabGravity="center"/>
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/tabLayout"
-android:padding="10dp"
-    android:textAlignment="center"
-    android:id="@+id/guestText"
-    android:background="@drawable/tab_background_selected"
-    android:text="You Can view more Books, if you Loged in to the App"
-    android:textColor="@color/md_black_1000"
-    android:textSize="15sp"
-    />
+
+    <TextView
+        android:id="@+id/guestText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tabLayout"
+        android:layout_marginTop="6dp"
+        android:background="@color/md_white_1000"
+        android:padding="10dp"
+        android:text="You Can view more Books, if you Loged in to the App"
+        android:textAlignment="center"
+        android:textColor="@color/md_black_1000"
+        android:textSize="15sp" />
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"

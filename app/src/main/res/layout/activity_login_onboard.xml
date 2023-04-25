@@ -11,7 +11,9 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Learn "
+            android:text="Features"
+            android:textStyle="normal"
+            android:textAllCaps="false"
             android:id="@+id/learnBtn"
             android:textColor="@color/md_white_1000"
             android:background="@drawable/shape_toolbar02"
@@ -25,26 +27,27 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/bg_splash_gradient"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="240dp"
-            android:paddingBottom="0dp"
-            android:src="@drawable/ic_hello"
-            android:contentDescription="spritualread logo"/>
-        <TextView
-            android:padding="30dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/md_black_1000"
-            android:text="'reading makes a man , so pick a book start readning now'"
-            android:textSize="20sp"
-            android:textAlignment="center"
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:contentDescription="spritualread logo"
+                    android:paddingBottom="0dp"
+                    android:src="@drawable/ic_hello" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="30dp"
+                    android:text="'reading makes a man , so pick a book start readning now'"
+                    android:textAlignment="center"
+                    android:textColor="@color/md_black_1000"
+                    android:textSize="20sp"
 
 
-            />
+                    />
 
                 <Button
                     android:id="@+id/btn1"
@@ -59,13 +62,13 @@
                     />
 
                 <Button
-            android:id="@+id/btn3"
-            android:layout_margin="8dp"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Continue As Guest"
-            android:background="@drawable/shape_button01"
-            android:textColor="@color/colorPrimary"/>
+                    android:id="@+id/btn3"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/shape_button01"
+                    android:text="Continue As Guest"
+                    android:textColor="@color/colorPrimary" />
         </LinearLayout>
 </RelativeLayout>

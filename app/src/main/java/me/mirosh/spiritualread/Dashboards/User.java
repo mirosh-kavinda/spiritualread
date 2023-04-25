@@ -23,10 +23,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import me.mirosh.spiritualread.fragments.BooksUserFragment;
+import me.mirosh.spiritualread.Auth.loginOnboard;
 import me.mirosh.spiritualread.activities.FavouriteActivity;
-import me.mirosh.spiritualread.databinding.ActivityLoginOnboardBinding;
 import me.mirosh.spiritualread.databinding.ActivityUserBinding;
+import me.mirosh.spiritualread.fragments.BooksUserFragment;
 import me.mirosh.spiritualread.model.ModelCategory;
 
 public class User extends AppCompatActivity {
@@ -58,8 +58,8 @@ public class User extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 firebaseAuth.signOut();
-                startActivity(new Intent(User.this, ActivityLoginOnboardBinding.class));
-                finish();
+                 checkUser();
+
             }
         });
 
@@ -191,7 +191,8 @@ public class User extends AppCompatActivity {
         FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
         if(firebaseUser==null){
             //not logged in , goto main screen
-//            startActivity(new Intent(this, loginOnboard.class));
+            startActivity(new Intent(this, loginOnboard.class));
+            finish();
             Toast.makeText(this, "not Loged in ", Toast.LENGTH_SHORT).show();
             binding.subtitileTV.setText("Not Logged In");
 

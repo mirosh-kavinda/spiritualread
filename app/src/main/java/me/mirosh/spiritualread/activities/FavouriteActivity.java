@@ -1,5 +1,6 @@
 package me.mirosh.spiritualread.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -15,6 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import me.mirosh.spiritualread.Dashboards.User;
 import me.mirosh.spiritualread.adapters.AdapterFavourite;
 import me.mirosh.spiritualread.databinding.ActivityFavouriteBinding;
 import me.mirosh.spiritualread.model.ModelPdf;
@@ -34,18 +36,15 @@ public class FavouriteActivity extends AppCompatActivity {
         binding= ActivityFavouriteBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
-
         firebaseAuth=FirebaseAuth.getInstance();
-
-
-
 
         loadFavBooks();
         binding.backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+             startActivity(new Intent(FavouriteActivity.this, User.class));
+             finish();
+
             }
         });
 

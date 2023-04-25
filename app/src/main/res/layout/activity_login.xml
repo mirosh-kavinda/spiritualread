@@ -4,36 +4,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp"
-    android:background="@drawable/bg_splash_gradient"
 
+    android:background="@drawable/bg_splash_gradient"
     tools:context=".Auth.LoginActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="25dp"
-        android:src="@drawable/ic_hello"/>
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_toolbar02"
+        android:drawableStart="@drawable/ic_arrow_back_black_24dp"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:text=""
+        android:textAllCaps="false"
+        android:textColor="@color/md_white_1000"
+        android:textStyle="normal"
+
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_gravity="center"
-        android:layout_marginTop="25dp">
+        android:padding="24dp">
 
-        <TextView
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/ic_hello"/>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="SignIn"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textColor="@color/teal_200"
-            android:gravity="center_horizontal"
-            android:layout_marginVertical="16dp"
-            android:layout_margin="10dp"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SignIn to the system "
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/md_black_1000"
+                android:gravity="center_horizontal"
+                android:layout_marginVertical="16dp"
+                android:layout_margin="10dp"/>
 
 
 
@@ -42,7 +63,7 @@
 
                 android:id="@+id/etLoginEmail"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:hint="Email"
                 android:inputType="textEmailAddress"/>
 
@@ -51,48 +72,51 @@
 
 
 
-        <EditText
+            <EditText
                 android:id="@+id/etLoginPass"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:hint="Password"
                 android:inputType="textPassword"/>
 
 
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_button01"
-            android:layout_marginTop="24dp"
-            android:textColor="@color/md_white_1000"
-            android:text="SignIn"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Not registered yet"
-                android:textSize="16sp"/>
+                android:background="@drawable/shape_button01"
+                android:layout_marginTop="24dp"
+                android:textColor="@color/md_white_1000"
+                android:text="SignIn"/>
 
-            <TextView
-                android:id="@+id/tvRegisterHere"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:text="Signup here"
-                android:textColor="@color/md_black_1000"
-                android:textStyle="bold"
-                android:textSize="20sp"/>
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/md_black_1000"
+                    android:text="Not registered yet"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tvRegisterHere"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="Signup here"
+                    android:textColor="@color/md_black_1000"
+                    android:textStyle="bold"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
 
         </LinearLayout>
-
     </LinearLayout>
+
 
 </LinearLayout>

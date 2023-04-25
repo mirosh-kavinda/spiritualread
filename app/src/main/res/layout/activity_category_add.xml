@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back01"
+    android:background="@drawable/bg_splash_gradient"
     tools:context=".activities.CategoryAdd">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
             android:padding="5dp"
             android:src="@drawable/ic_back_white" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/iconIv"
             android:layout_width="110dp"
             android:layout_height="110dp"

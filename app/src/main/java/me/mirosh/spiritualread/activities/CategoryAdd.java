@@ -1,6 +1,7 @@
 package me.mirosh.spiritualread.activities;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
+import me.mirosh.spiritualread.Dashboards.Admin;
 import me.mirosh.spiritualread.databinding.ActivityCategoryAddBinding;
 
 public class CategoryAdd extends AppCompatActivity {
@@ -49,7 +51,12 @@ public class CategoryAdd extends AppCompatActivity {
 
         //handle click , bhgin upload category
         binding.submit.setOnClickListener(v -> validateData());
-        binding.backBtn.setOnClickListener(v -> onBackPressed());
+        binding.backBtn.setOnClickListener(v ->{
+            startActivity(new Intent(CategoryAdd.this, Admin.class));
+            finish();
+                }
+        );
+
 
 
     }

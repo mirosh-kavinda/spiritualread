@@ -31,6 +31,7 @@ import com.google.firebase.storage.UploadTask;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import me.mirosh.spiritualread.Dashboards.Admin;
 import me.mirosh.spiritualread.databinding.ActivityPdfAddBinding;
 
 public class PdfAddActivity extends AppCompatActivity {
@@ -77,7 +78,8 @@ public class PdfAddActivity extends AppCompatActivity {
     binding.backBtn.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        onBackPressed();
+       startActivity(new Intent(PdfAddActivity.this, Admin.class));
+       finish();
         }
     });
     //handle click , attach pdf
@@ -163,7 +165,6 @@ public class PdfAddActivity extends AppCompatActivity {
 
                 }
                 String uploadedPdfUrl=""+uriTask.getResult();
-
                 //upload to firebase db
                 uploadePdfInfoToDb(uploadedPdfUrl,timestamp);
             }
@@ -288,6 +289,7 @@ public class PdfAddActivity extends AppCompatActivity {
         intent.setType("application/pdf");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent,"Select Pdf"),PDF_PICK_CODE);
+        finish();
 
     }
 

@@ -1,5 +1,6 @@
 package me.mirosh.spiritualread.adapters;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -26,7 +27,8 @@ import me.mirosh.spiritualread.model.ModelPdf;
 public class AdapterPdfUser extends RecyclerView.Adapter<AdapterPdfUser.HolderPdfUser> implements Filterable {
     private Context context;
     public ArrayList<ModelPdf> pdfArrayList,filterList;
-
+    //progress dialog
+    private ProgressDialog progressDialog;
     private FilterPdfUser filter;
 
     private RowPdfUserBinding binding;
@@ -46,6 +48,7 @@ public class AdapterPdfUser extends RecyclerView.Adapter<AdapterPdfUser.HolderPd
         //bind the view
         binding=RowPdfUserBinding.inflate(LayoutInflater.from(context),parent,false);
         return new HolderPdfUser(binding.getRoot()) ;
+
     }
 
     @Override
@@ -59,7 +62,10 @@ public class AdapterPdfUser extends RecyclerView.Adapter<AdapterPdfUser.HolderPd
         String pdfUrl=model.getUrl();
         String categoryId=model.getCategoryId();
         long timestamp=model.getTimestamp();
-
+        //setup progress dialog
+        progressDialog= new ProgressDialog(context);
+        progressDialog.setTitle("Please wait");
+        progressDialog.setCanceledOnTouchOutside(false);
         //convert time
         String date = MyApplication.formatTimestamp(timestamp);
 
@@ -83,6 +89,14 @@ public class AdapterPdfUser extends RecyclerView.Adapter<AdapterPdfUser.HolderPd
                  ""+title,
                  holder.sizeTv
          );
+        MyApplication.LoadPdfFromUrlSinglePage(
+                ""+pdfUrl,
+                ""+title,
+                binding.pdfView,
+                binding.progressBar,
+                binding.pagesTv
+
+        );
 
          //handle click show pdf details actitiy
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -124,6 +138,7 @@ public class AdapterPdfUser extends RecyclerView.Adapter<AdapterPdfUser.HolderPd
             sizeTv=binding.sizeTv;
             dateTv=binding.dateTv;
             progressBar=binding.progressBar;
+
 
         }
     }
