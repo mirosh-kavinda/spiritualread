@@ -18,18 +18,29 @@
             android:layout_width="100dp"
             android:layout_height="140dp"
             android:layout_marginEnd="5dp"
-            android:background="@color/light_grey">
+            android:background="@drawable/sahpe_button03"
+          >
 
             <!--            pdf view-->
             <com.github.barteksc.pdfviewer.PDFView
                 android:id="@+id/pdfView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                >
+
+                <ProgressBar
+
+                    android:id="@+id/progressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:indeterminate="true"
+                    android:indeterminateTintMode="src_atop"
+                    android:indeterminateTint="@color/seconColor"
+
+                   />
+            </com.github.barteksc.pdfviewer.PDFView>
             <!--            PROGRESS BAR-->
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
         </RelativeLayout>
 
         <TextView

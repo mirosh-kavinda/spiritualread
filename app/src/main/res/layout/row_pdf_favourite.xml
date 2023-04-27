@@ -17,7 +17,9 @@
         <RelativeLayout
             android:layout_width="100dp"
             android:layout_height="140dp"
-            android:background="@color/md_grey_200"
+            android:layout_marginEnd="5dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/sahpe_button03"
             android:id="@+id/pdfRl">
 
             <com.github.barteksc.pdfviewer.PDFView
@@ -27,7 +29,11 @@
             <ProgressBar
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/progressBar"/>
+                android:id="@+id/progressBar"
+                android:background="@drawable/sahpe_button03"
+                android:indeterminate="true"
+                android:indeterminateTintMode="src_atop"
+                android:indeterminateTint="@color/seconColor"/>
 
 
         </RelativeLayout>
