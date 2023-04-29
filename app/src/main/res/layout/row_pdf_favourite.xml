@@ -48,15 +48,36 @@
             android:maxLines="1"
 
             />
-        <ImageButton
+
+        <LinearLayout
+            android:id="@+id/removeBtnGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/removeFavBtn"
-            android:src="@drawable/ic_favorite_border_white"
-            android:background="@android:color/transparent"
             android:layout_alignParentEnd="true"
-            app:tint="@color/md_black_1000"
-            android:padding="5dp"/>
+            android:background="@drawable/shape_button02">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_toLeftOf="@id/removeFavBtn"
+                android:text="Remove"
+
+
+                />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/removeFavBtn"
+                android:src="@drawable/ic_favorite_white"
+                android:background="@android:color/transparent"
+                android:layout_alignParentEnd="true"
+                app:tint="@color/md_black_1000"
+
+                android:padding="5dp"/>
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -68,6 +89,7 @@
             android:layout_below="@id/titleTv"
             android:layout_toEndOf="@id/pdfRl"
             android:maxLines="1"
+            android:layout_marginTop="10dp"
 
             />
 
@@ -91,6 +113,7 @@
             android:layout_toEndOf="@id/pdfRl"
             android:maxLines="1"
             android:text="13 Mb " />
+
 
         <TextView
             android:id="@+id/dateTv"

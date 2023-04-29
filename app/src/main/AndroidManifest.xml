@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
@@ -21,12 +21,14 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".activities.FavouriteActivity"
+            android:name=".activities.ProfileEditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".Dashboards.Guest"
             android:exported="false" />
-
         <activity
             android:name=".activities.PdfViewActivity"
             android:exported="false" />
@@ -46,7 +48,7 @@
             android:name=".activities.CategoryAdd"
             android:exported="false" />
         <activity
-            android:name=".Dashboards.User"
+            android:name=".Dashboards.UserExplore"
             android:exported="false" />
         <activity
             android:name=".Dashboards.Admin"

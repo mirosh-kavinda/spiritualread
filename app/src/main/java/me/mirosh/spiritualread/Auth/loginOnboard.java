@@ -16,7 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import me.mirosh.spiritualread.Dashboards.Admin;
 import me.mirosh.spiritualread.Dashboards.Guest;
-import me.mirosh.spiritualread.Dashboards.User;
+import me.mirosh.spiritualread.Dashboards.UserExplore;
 import me.mirosh.spiritualread.Onboarding.OnboardingActivity;
 import me.mirosh.spiritualread.databinding.ActivityLoginOnboardBinding;
 
@@ -57,7 +57,7 @@ public class loginOnboard extends AppCompatActivity {
                     assert userType != null;
                     if (userType.equals("user")) {
                         //this is simple user , open user dashboard
-                        startActivity(new Intent(loginOnboard.this, User.class));
+                        startActivity(new Intent(loginOnboard.this, UserExplore.class));
                         finish();
                     } else {
                         //this is admin , open user dashboard

@@ -12,9 +12,8 @@ import me.mirosh.spiritualread.Auth.loginOnboard;
 import me.mirosh.spiritualread.R;
 
 public class MainActivity extends AppCompatActivity {
-    int SPLASH_TIME = 3000; //This is 3 seconds
+    int SPLASH_TIME = 1000; //This is 3 seconds
     ProgressBar splashProgress;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +28,15 @@ public class MainActivity extends AppCompatActivity {
         new Handler(getMainLooper()).postDelayed(() -> {
 
             startActivity(new Intent(MainActivity.this, loginOnboard.class));
+            finish();
 
         }, SPLASH_TIME);
 
     }
 
-
-
     protected void onDestroy(){
             super.onDestroy();
+            finish();
 
         }
 

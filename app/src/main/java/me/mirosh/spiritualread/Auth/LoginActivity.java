@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Objects;
 
 import me.mirosh.spiritualread.Dashboards.Admin;
-import me.mirosh.spiritualread.Dashboards.User;
+import me.mirosh.spiritualread.Dashboards.UserExplore;
 import me.mirosh.spiritualread.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
@@ -119,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
             //check user type
             if (Objects.equals(userType, "user")) {
                 //this is simple user , open user dashboard
-                startActivity(new Intent(LoginActivity.this, User.class));
+                startActivity(new Intent(LoginActivity.this, UserExplore.class));
                 finish();
             } else {
                 //this is admin ,open user dashboard

@@ -25,8 +25,8 @@ import java.util.ArrayList;
 
 import me.mirosh.spiritualread.Auth.loginOnboard;
 import me.mirosh.spiritualread.activities.CategoryAdd;
-import me.mirosh.spiritualread.activities.FavouriteActivity;
 import me.mirosh.spiritualread.activities.PdfAddActivity;
+import me.mirosh.spiritualread.activities.ProfileActivity;
 import me.mirosh.spiritualread.adapters.AdapterCategory;
 import me.mirosh.spiritualread.databinding.ActivityAdminBinding;
 import me.mirosh.spiritualread.model.ModelCategory;
@@ -59,11 +59,11 @@ public class Admin extends AppCompatActivity {
         checkUser();
         loadCategories();
 
-        binding.btn2.setOnClickListener(new View.OnClickListener() {
+        binding.profileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Admin.this, FavouriteActivity.class));
-                finish();
+                startActivity(new Intent(Admin.this, ProfileActivity.class));
+
             }
         });
 
