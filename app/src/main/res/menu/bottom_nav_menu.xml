@@ -4,13 +4,13 @@
     <item
         android:id="@+id/explore"
         android:title="Explore"
-        android:icon="@drawable/ic_favorite_black_24dp"/>
+        android:icon="@drawable/home_icon"/>
     <item
-        android:id="@+id/search"
-        android:title="Search"
-        android:icon="@drawable/ic_favorite_black_24dp"/>
+        android:id="@+id/fav"
+        android:title="Shelf"
+        android:icon="@drawable/book_shelf"/>
     <item
         android:id="@+id/recent"
-        android:title=""
-        android:icon="@drawable/ic_favorite_black_24dp"/>
+        android:title="Profile"
+        android:icon="@drawable/ic_person_white"/>
 </menu>

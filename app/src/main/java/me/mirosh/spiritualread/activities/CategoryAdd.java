@@ -54,11 +54,9 @@ public class CategoryAdd extends AppCompatActivity {
         binding.backBtn.setOnClickListener(v ->{
             startActivity(new Intent(CategoryAdd.this, Admin.class));
             finish();
-                }
+
+            }
         );
-
-
-
     }
 
     private String category="";
@@ -107,7 +105,7 @@ public class CategoryAdd extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-//category add failed
+                        //category add failed
                        progressDialog.dismiss();
                         Toast.makeText(CategoryAdd.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                     }

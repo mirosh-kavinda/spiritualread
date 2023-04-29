@@ -6,7 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -65,7 +65,7 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
             }
         });
 
-        holder.removeFavBtn.setOnClickListener(new View.OnClickListener() {
+        holder.remobeBtnGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MyApplication.removeFromFavorite(context,model.getId());
@@ -131,7 +131,7 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
         PDFView pdfView;
         ProgressBar progressBar;
         TextView titleTv, descriptionTv,categoryTv, sizeTv,dateTv;
-        ImageButton removeFavBtn;
+       LinearLayout remobeBtnGroup;
 
         public HolderPdfFavourite(@NonNull View itemView) {
             super(itemView);
@@ -145,7 +145,8 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
             categoryTv=binding.categoryTv;
             sizeTv=binding.sizeTv;
             dateTv=binding.dateTv;
-            removeFavBtn=binding.removeFavBtn;
+            remobeBtnGroup=binding.removeBtnGroup;
+//            removeFavBtn=binding.removeFavBtn;
 
         }
     }

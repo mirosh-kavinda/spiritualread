@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_splash_gradient"
-    tools:context=".activities.PdfListActivity">
+    tools:context="me.mirosh.spiritualread.activities.PdfListActivity">
 <!--    Toolbar-->
 
     <RelativeLayout
@@ -17,8 +17,8 @@
         >
 <!--        Back Button-->
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:id="@+id/backBtn"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
@@ -48,7 +48,7 @@
 <!--Search -->
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:id="@+id/searchEt"
         android:layout_marginTop="10dp"
         android:background="@drawable/shape_edittext01"

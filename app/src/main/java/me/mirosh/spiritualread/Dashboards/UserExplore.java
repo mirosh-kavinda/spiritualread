@@ -24,12 +24,12 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 import me.mirosh.spiritualread.Auth.loginOnboard;
-import me.mirosh.spiritualread.activities.FavouriteActivity;
+import me.mirosh.spiritualread.activities.ProfileActivity;
 import me.mirosh.spiritualread.databinding.ActivityUserBinding;
 import me.mirosh.spiritualread.fragments.BooksUserFragment;
 import me.mirosh.spiritualread.model.ModelCategory;
 
-public class User extends AppCompatActivity {
+public class UserExplore extends AppCompatActivity {
 
     //to show in tabs
     public ArrayList<ModelCategory> categoryArrayList;
@@ -59,15 +59,14 @@ public class User extends AppCompatActivity {
             public void onClick(View v) {
                 firebaseAuth.signOut();
                  checkUser();
-
             }
         });
 
-        binding.btn2.setOnClickListener(new View.OnClickListener() {
+        binding.profileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(User.this, FavouriteActivity.class));
-                finish();
+                startActivity(new Intent(UserExplore.this, ProfileActivity.class));
+
             }
         });
 

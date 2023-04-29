@@ -17,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Objects;
 
-import me.mirosh.spiritualread.Dashboards.User;
+import me.mirosh.spiritualread.Dashboards.UserExplore;
 import me.mirosh.spiritualread.databinding.ActivityRegisterBinding;
 
 
@@ -136,7 +136,7 @@ private ActivityRegisterBinding binding;
         .addOnSuccessListener(unused -> {
             Toast.makeText(RegisterActivity.this, "Account Created...", Toast.LENGTH_SHORT).show();
 
-            startActivity(new Intent(RegisterActivity.this, User.class));
+            startActivity(new Intent(RegisterActivity.this, UserExplore.class));
             finish();
         })
         .addOnFailureListener(e -> {

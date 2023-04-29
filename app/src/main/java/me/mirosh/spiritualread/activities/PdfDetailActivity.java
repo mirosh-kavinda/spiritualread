@@ -68,7 +68,8 @@ public class PdfDetailActivity extends AppCompatActivity {
         binding.backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+               onBackPressed();
+
             }
         });
 

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".model.ConnectionReceiver">
+ >
 
     <ImageView
         android:layout_width="100dp"

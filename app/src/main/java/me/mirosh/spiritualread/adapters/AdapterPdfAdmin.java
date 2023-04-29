@@ -138,6 +138,7 @@ public class AdapterPdfAdmin extends RecyclerView.Adapter<AdapterPdfAdmin.Holder
 
         //alert dialog
         AlertDialog.Builder builder=new AlertDialog.Builder(context);
+
         builder.setTitle("Choose Option")
                 .setItems(options, new DialogInterface.OnClickListener() {
                     @Override

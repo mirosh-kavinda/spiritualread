@@ -5,32 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_splash_gradient"
-    tools:context=".activities.PdfAddActivity">
+    tools:context="me.mirosh.spiritualread.activities.PdfAddActivity">
 <!--   Toolbar -->
 
     <RelativeLayout
         android:id="@+id/toolbarRl"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="370dp"
         android:background="@drawable/shape_toolbar01">
 
         <!--        back button -->
         <ImageButton
             android:id="@+id/backBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@android:color/transparent"
-            android:padding="5dp"
-            android:src="@drawable/ic_back_white"
-            />
+            android:src="@drawable/ic_back_white" />
 
         <!--        Icon Image-->
 
         <ImageView
             android:id="@+id/iconIv"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_below="@id/backBtn"
             android:layout_centerHorizontal="true"
             android:src="@drawable/ic_hello" />
@@ -46,15 +48,16 @@
             android:text="Add a New Book"
             android:textSize="28sp"
             />
+
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/attachBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_alignParentEnd="true"
-            android:padding="5dp"
+      android:layout_margin="10dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_attach_white"
-            android:layout_margin="10dp"/>
+            android:padding="5dp"
+            android:src="@drawable/ic_attach_white" />
 
 
 
@@ -66,14 +69,14 @@
     android:id="@+id/titleTil"
     android:layout_marginStart="30dp"
     android:layout_marginEnd="30dp"
-    android:layout_marginTop="225dp"
+    android:layout_marginTop="315dp"
     app:hintEnabled="false"
     >
 
     <EditText
         android:id="@+id/titleEt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:background="@drawable/shape_edittext01"
         android:drawableStart="@drawable/ic_pdf_gray"
         android:drawablePadding="10dp"
@@ -87,7 +90,7 @@
     <!--    Input Description-->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:id="@+id/descriptionTil"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
@@ -99,7 +102,7 @@
         <EditText
             android:id="@+id/descriptionEt"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:background="@drawable/shape_edittext01"
             android:drawableStart="@drawable/ic_pdf_gray"
             android:drawablePadding="10dp"
