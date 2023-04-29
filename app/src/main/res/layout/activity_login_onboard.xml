@@ -8,6 +8,11 @@
     android:background="@drawable/bg_splash_gradient"
     tools:context="me.mirosh.spiritualread.Auth.loginOnboard"
     android:orientation="vertical">
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+                android:id="@+id/webView"/>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

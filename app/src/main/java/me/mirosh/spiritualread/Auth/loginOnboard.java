@@ -1,7 +1,19 @@
 package me.mirosh.spiritualread.Auth;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
+import android.view.WindowManager;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,11 +30,15 @@ import me.mirosh.spiritualread.Dashboards.Admin;
 import me.mirosh.spiritualread.Dashboards.Guest;
 import me.mirosh.spiritualread.Dashboards.UserExplore;
 import me.mirosh.spiritualread.Onboarding.OnboardingActivity;
+import me.mirosh.spiritualread.R;
 import me.mirosh.spiritualread.databinding.ActivityLoginOnboardBinding;
+
 
 public class loginOnboard extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
+    WebView webView;
+
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +48,52 @@ public class loginOnboard extends AppCompatActivity {
 
         //init firebase auth
         firebaseAuth = FirebaseAuth.getInstance();
-        CheckUser();
-        binding.btn1.setOnClickListener(view -> startActivity(new Intent(loginOnboard.this,LoginActivity.class)));
-        binding.btn3.setOnClickListener(view -> startActivity(new Intent(loginOnboard.this, Guest.class)));
-        binding.learnBtn.setOnClickListener(v -> startActivity(new Intent(loginOnboard.this, OnboardingActivity.class)));
+//assign variable and initialize it
+        webView=binding.webView;
+        WebSettings webSettings=webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        //initiallis connectivity manager
+        ConnectivityManager connectivityManager= (ConnectivityManager)
+        getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        //get active network info
+        NetworkInfo networkInfo= connectivityManager.getActiveNetworkInfo();
+
+        if (networkInfo==null ||!networkInfo.isConnected()||!networkInfo.isAvailable()){
+            //when internet is inactive
+
+            //initialize the dialog
+            Dialog dialog=new Dialog(this);
+            //set content
+            dialog.setContentView(R.layout.alert_dialog_layout);
+            //set outside touch
+            dialog.setCanceledOnTouchOutside(false);
+            dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,WindowManager.LayoutParams.WRAP_CONTENT);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            dialog.getWindow().setGravity(Gravity.CENTER);
+            dialog.getWindow().getAttributes().windowAnimations= android.R.style.Animation_Dialog;
+
+            Button TryAgain =dialog.findViewById(R.id.btnTry);
+
+            TryAgain.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    recreate();
+                }
+            });
+            dialog.show();
+
+        }else{
+            CheckUser();
+            binding.btn1.setOnClickListener(view -> startActivity(new Intent(loginOnboard.this,LoginActivity.class)));
+            binding.btn3.setOnClickListener(view -> startActivity(new Intent(loginOnboard.this, Guest.class)));
+            binding.learnBtn.setOnClickListener(v -> startActivity(new Intent(loginOnboard.this, OnboardingActivity.class)));
+        }
+
+
+
+
     }
     private void CheckUser() {
         //get current user

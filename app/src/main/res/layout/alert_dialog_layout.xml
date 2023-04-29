@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="25dp"
+    android:layout_margin="10dp"
+
     android:orientation="vertical"
-    android:gravity="center"
- >
+    android:background="@drawable/shape_rect01"
+    android:gravity="center">
 
     <ImageView
         android:layout_width="100dp"
@@ -43,7 +46,7 @@
             android:textFontWeight="1000"
             />
         <Button
-            android:id="@+id/btnOk"
+            android:id="@+id/btnTry"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -51,7 +54,7 @@
             android:textAlignment="center"
             android:background="@drawable/shape_button01"
             android:textColor="@color/md_white_1000"
-            android:text="Ok"
+            android:text="Try Again"
             />
 
     </LinearLayout>
