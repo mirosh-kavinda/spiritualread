@@ -29,7 +29,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SignIn to the system "
+            android:text="@string/sigin_heading"
             android:textSize="25sp"
             android:textStyle="bold"
             android:textColor="@color/md_black_1000"
@@ -58,7 +58,7 @@
                 android:id="@+id/etLoginEmail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Email"
+                android:hint="@string/signup_email"
                 android:textColor="@color/md_black_1000"
                 android:layout_marginTop="10dp"
                 android:inputType="textEmailAddress"
@@ -68,11 +68,11 @@
                 android:id="@+id/etLoginPass"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Password"
-                android:textColor="@color/md_black_1000"
                 android:layout_marginTop="10dp"
+                android:autofillHints=""
+                android:hint="@string/signup_password"
                 android:inputType="textPassword"
-                android:autofillHints="" />
+                android:textColor="@color/md_black_1000" />
 
             <Button
                 android:id="@+id/btnLogin"
@@ -93,17 +93,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/md_black_1000"
-                    android:text="Not registered yet"
-                    android:textSize="16sp"/>
+                    android:text="@string/signin_body_txt"
+                    android:textSize="14sp"/>
+
                 <TextView
                     android:id="@+id/tvRegisterHere"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:text="Signup here"
+                    android:text="@string/signin_signup_btn"
                     android:textColor="@color/md_black_1000"
-                    android:textStyle="bold"
-                    android:textSize="20sp"/>
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 

@@ -31,20 +31,20 @@
             android:layout_width="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_height="wrap_content"
-            android:text="Favourite Books"
+            android:text="@string/view_requests"
             android:textStyle="bold"
             android:layout_centerHorizontal="true"
             android:textColor="@color/md_white_1000"
             />
 
     </RelativeLayout>
-<androidx.recyclerview.widget.RecyclerView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/booksRv"
-    android:layout_below="@id/toolbarRl"
-    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-    tools:listitem="@layout/row_pdf_favourite"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/requestedRv"
+        android:layout_below="@id/toolbarRl"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_requested_books"/>
 
 
 

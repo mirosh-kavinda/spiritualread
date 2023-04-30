@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="16dp"
             android:gravity="center_horizontal"
-            android:text="SignUp for new Users"
+            android:text="@string/signup_heading"
             android:textColor="@color/md_black_1000"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -57,15 +57,15 @@
             android:id="@+id/etRegName"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Name"
             android:layout_marginTop="10dp"
-            android:inputType="textEmailAddress"/>
+            android:hint="@string/signup_name_et"
+            android:inputType="textEmailAddress" />
 
-            <EditText
+        <EditText
                 android:id="@+id/etRegEmail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Email"
+                android:hint="@string/signup_email"
                 android:layout_marginTop="10dp"
                 android:inputType="textEmailAddress"/>
 
@@ -73,7 +73,7 @@
                 android:id="@+id/etRegPass"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Password"
+                android:hint="@string/signup_password"
                 android:layout_marginTop="10dp"
                 android:inputType="textPassword"/>
         <EditText
@@ -81,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:hint="Confirm Password"
+            android:hint="@string/confirm_password"
             android:inputType="textPassword"/>
 
         <Button
@@ -89,7 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Register"
+            android:text="@string/sign_up_btn"
             android:textColor="@color/md_white_1000"
             android:background="@drawable/shape_button01"/>
 
@@ -103,19 +103,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Already registered"
+                android:text="@string/signup_already_registered"
                 android:textColor="@color/md_black_1000"
-                android:textSize="16sp"/>
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/tvLoginHere"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:text="Login here"
+                android:text="@string/login_here_btn"
                 android:textColor="@color/md_black_1000"
                 android:textStyle="bold"
-                android:textSize="20sp"/>
+                android:textSize="15sp"/>
 
         </LinearLayout>
     </LinearLayout>

@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:id="@+id/toolbarTitleTv"
-            android:text="ReadBook"
+            android:text="@string/pdf_view_heading"
             android:layout_centerHorizontal="true"
             android:textStyle="bold"
             android:textColor="@color/md_white_1000"

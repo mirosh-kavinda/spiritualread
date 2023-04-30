@@ -33,8 +33,8 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginTop="10dp"
-            android:textColor="@color/md_white_1000"
-            android:text="Book Details" />
+            android:text="@string/book_book_details"
+            android:textColor="@color/md_white_1000" />
 
     </RelativeLayout>
 
@@ -100,10 +100,10 @@
 
                         <TextView
                             android:id="@+id/categoryLabelTv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="79dp"
+                            android:layout_height="match_parent"
                             android:layout_marginEnd="5dp"
-                            android:text=" Category"
+                            android:text="@string/book_category"
                             android:textColor="@color/md_black_1000" />
 
                         <TextView
@@ -122,7 +122,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="5dp"
-                            android:text=" Date"
+                            android:text="@string/book_Date"
                             android:textColor="@color/md_black_1000" />
 
                         <TextView
@@ -141,7 +141,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="5dp"
-                            android:text=" Size"
+                            android:text="@string/book_size"
                             android:textColor="@color/md_black_1000" />
 
                         <TextView
@@ -161,7 +161,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="5dp"
-                            android:text=" View Count"
+                            android:text="@string/book_view_count"
                             android:textColor="@color/md_black_1000" />
 
                         <TextView
@@ -180,7 +180,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="5dp"
-                            android:text=" Downloads"
+                            android:text="@string/book_downloads"
                             android:textColor="@color/md_black_1000" />
 
                         <TextView
@@ -199,7 +199,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="5dp"
-                            android:text=" Pages"
+                            android:text="@string/book_pages"
                             android:textColor="@color/md_black_1000" />
 
                         <TextView

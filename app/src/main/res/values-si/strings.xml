@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">ආත්මික කියවීම</string>
+
+//onboarding
+    <string name="onboarding1_heading" translatable="false">ක්ෂණිකව පොත් යාවත්කාලීන කරයි</string>
+    <string name="onboarding1_body" translatable="false">එය පරිපාලක විසින් ලබා දෙන විට ඔබට වහාම පොත් නැරඹිය හැක.</string>
+    <string name="onboarding2_heading">පරිශීලකයාට නව පොත් ඉල්ලා සිටිය හැක</string>
+    <string name="onboarding2_body">විශේෂිත පොත පුස්තකාලයේ තිබිය යුතු විට, පරිශීලකයාට හුදෙක් ඉල්ලීමක් කළ හැකිය</string>
+    <string name="onboading3_heading">පරිශීලකයාට පොත් බාගත කළ හැකිය</string>
+    <string name="onboarding3_body">ලියාපදිංචි පරිශීලකයින්ට බාගත කිරීම සඳහා විවිධ පොත් තිබේ</string>
+
+    //buttons
+    <string name="next_btn">ඊළඟ</string>
+    <string name="get_started_btn">ආරම්භ කරන්න</string>
+    <string name="lang_btn">භාෂාව</string>
+    <string name="feature_Btn">විශේෂාංග</string>
+    <string name="login_btn">ඇතුල් වන්න</string>
+    <string name="guest_btn">ආගන්තුකයෙකු ලෙස ඉදිරියට යන්න</string>
+    <string name="view_requests_btn">ඉල්ලීම් බලන්න</string>
+    <string name="add_category_btn">+ කාණ්ඩය එකතු කරන්න</string>
+    <string name="add_btn">එකතු කරන්න</string>
+    <string name="signin_signup_btn">ලියාපදිංචි කිරීම</string>
+    <string name="sign_up_btn">ලියාපදිංචි වන්න</string>
+    <string name="upload_btn">උඩුගත කරන්න</string>
+    <string name="update_btn">යාවත්කාලීන කරන්න</string>
+    <string name="login_here_btn">ලොග්වෙන්න</string>
+    <string name="request_btn">ඉල්ලීම</string>
+    <string name="dashboard_user_request_book_btn">පොතක් ඉල්ලන්න</string>
+    //login
+    <string name="login_onboard_body">කියවීම මිනිසෙකු බවට පත් කරයි, එබැවින් පොතක් තෝරන්න,දැන් කියවීම ආරම්භ කරන්න</string>
+
+    //guest
+    <string name="guest_toolbar_head">උපකරණ පුවරුව අමුත්තා</string>
+    <string name="guest_body">ඔබ යෙදුමට පුරනය වී ඇත්නම් ඔබට තවත් පොත් නැරඹිය හැක</string>
+    <string name="admin_dash_toolbar_head">උපකරණ පුවරුව පරිපාලක</string>
+    <string name="category_add_head">නව ප්‍රවර්ගයක් එක් කරන්න</string>
+    <string name="category_add_Et">කාණ්ඩයේ මාතෘකාව</string>
+    <string name="sigin_heading">පද්ධතියට පුරනය වන්න</string>
+    <string name="signin_body_txt">තවමත් ලියාපදිංචි වී නොමැති නම්</string>
+    <string name="pdf_add_heading">නව පොතක් එක් කරන්න</string>
+    <string name="pdf_add_book_title">පොතේ මාතෘකාව</string>
+    <string name="pdf_add_book_descritpion">පොත් විස්තරය</string>
+    <string name="pdf_add_book_category">පොත් කාණ්ඩය</string>
+    <string name="edit_book_heading">පොත් තොරතුරු සංස්කරණය කරන්න</string>
+    <string name="edit_pdf_book_title">පොතේ මාතෘකාව</string>
+    <string name="edit_pdf_book_description">පොත් විස්තරය</string>
+    <string name="edit_pdf_book_category">පොත් කාණ්ඩය</string>
+    <string name="pdf_list_books">පොත්</string>
+    <string name="pdf_list_category">වර්ගය</string>
+    <string name="pdf_view_heading">පොත කියවන්න</string>
+    <string name="profile_heading">පැතිකඩ</string>
+    <string name="profile_account">ගිණුම</string>
+    <string name="profile_member">සාමාජික</string>
+    <string name="profile_favourite_books">ප්රියතම පොත්</string>
+    <string name="edit_profile">පැතිකඩ සංස්කරණය කරන්න</string>
+    <string name="profile_edit_name">නම</string>
+    <string name="signup_heading">නව පරිශීලකයින් සඳහා ලියාපදිංචි වන්න</string>
+    <string name="signup_name_et">නම</string>
+    <string name="signup_email">විද්යුත් තැපෑල</string>
+    <string name="signup_password">මුරපදය</string>
+    <string name="signup_already_registered">දැනටමත් ලියාපදිංචි වී ඇත්නම්</string>
+    <string name="request_book">පොතක් ඉල්ලන්න</string>
+    <string name="request_book_title">පොතේ මාතෘකාව</string>
+    <string name="request_book_author">පොත් කර්තෘ</string>
+    <string name="request_book_category">පොත් කාණ්ඩය</string>
+    <string name="dashboard_user">උපකරණ පුවරු පරිශීලක</string>
+    <string name="view_requests">ඉල්ලීම් බලන්න</string>
+    <string name="no_internet">අන්තර්ජාලය නැත!</string>
+    <string name="no_internet_body">යෙදුම දිගටම කරගෙන යාමට කරුණාකර අන්තර්ජාලයට සම්බන්ධ වන්න</string>
+    <string name="try_again_btn">නැවත උත්සාහ කරන්න</string>
+    <string name="search_et">සෙවීම</string>
+    <string name="request_book_row_name">පොතේ නම:</string>
+    <string name="request_book_row_category">වර්ගය:</string>
+    <string name="request_book_row_author">කර්තෘ:</string>
+    <string name="book_category">වර්ගය</string>
+    <string name="book_Date">දිනය</string>
+    <string name="book_size">ප්රමාණය</string>
+    <string name="book_view_count">කියවීමේ ගණන</string>
+    <string name="book_downloads">බාගත කිරීම්</string>
+    <string name="book_pages">පිටු</string>
+    <string name="book_book_details">පොතේ විස්තර</string>
+    <string name="confirm_password">මුරපදය තහවුරු කරන්න</string>
+</resources>
