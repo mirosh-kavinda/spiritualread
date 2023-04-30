@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:contentPadding="10dp"
+    android:background="@drawable/shape_button02"
+    android:backgroundTint="@color/md_grey_500"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleTv"
+            android:layout_toEndOf="@id/pdfRl">
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/BookLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:text="@string/request_book_row_name"
+                android:textColor="@color/md_black_1000" />
+
+            <TextView
+                android:id="@+id/bookTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="N/A"
+                android:textColor="@color/md_black_1000" />
+        </TableRow>
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/AuthorLabelTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/request_book_row_author"
+                    android:textColor="@color/md_black_1000" />
+
+                <TextView
+                    android:id="@+id/authorTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="N/A"
+                    android:textColor="@color/md_black_1000" />
+            </TableRow>
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/CategoryLableTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/request_book_row_category"
+                    android:textColor="@color/md_black_1000" />
+
+                <TextView
+                    android:id="@+id/categoryTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="N/A"
+                    android:textColor="@color/md_black_1000" />
+            </TableRow>
+        </TableLayout>
+        <ImageButton
+            android:id="@+id/deleteBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/add_requested_book"
+            android:background="@drawable/shape_button01"
+            android:contentDescription="this is approve button"
+
+            />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -67,6 +67,7 @@ public class PdfViewActivity extends AppCompatActivity {
         //datbase reference to get book details
         // get book url using book id
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Books");
+        ref.keepSynced(true);
         ref.child(bookId)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override

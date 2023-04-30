@@ -45,7 +45,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="7dp"
             android:textColor="@color/md_white_1000"
-            android:text="Add a New Book"
+            android:text="@string/pdf_add_heading"
             android:textSize="28sp"
             />
 
@@ -80,7 +80,7 @@
         android:background="@drawable/shape_edittext01"
         android:drawableStart="@drawable/ic_pdf_gray"
         android:drawablePadding="10dp"
-        android:hint="Book Title"
+        android:hint="@string/pdf_add_book_title"
         android:padding="10dp"
         android:textColor="@color/md_black_1000"
         android:textColorHint="@color/light_grey"
@@ -106,7 +106,7 @@
             android:background="@drawable/shape_edittext01"
             android:drawableStart="@drawable/ic_pdf_gray"
             android:drawablePadding="10dp"
-            android:hint="Book Descritpion "
+            android:hint="@string/pdf_add_book_descritpion"
             android:inputType="textMultiLine|textCapSentences"
             android:padding="10dp"
             android:textColorHint="@color/light_grey"
@@ -132,9 +132,8 @@
        android:padding="10dp"
        android:textColorHint="@color/light_grey"
        android:textColor="@color/md_black_1000"
-       android:hint="Book Category"
+       android:hint="@string/pdf_add_book_category"
        android:textSize="16sp"
-
 
        />
 
@@ -149,6 +148,6 @@
         android:layout_marginTop="10dp"
         android:textColor="@color/md_white_1000"
         android:background="@drawable/shape_button01"
-        android:text="Upload"
+        android:text="@string/upload_btn"
         android:id="@+id/submitBtn"/>
 </RelativeLayout>

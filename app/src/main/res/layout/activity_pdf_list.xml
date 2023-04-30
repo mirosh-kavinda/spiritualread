@@ -28,7 +28,7 @@
     android:id="@+id/titleTv"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Books"
+    android:text="@string/pdf_list_books"
     android:layout_centerHorizontal="true"
     android:layout_marginTop="10dp"
     android:textColor="@color/md_white_1000"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:id="@+id/subtitleTv"
-            android:text="Category"
+            android:text="@string/pdf_list_category"
             android:textColor="@color/md_white_1000"
             android:layout_below="@id/titleTv"/>
     </RelativeLayout>
@@ -56,7 +56,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
         android:padding="10dp"
-        android:hint="Search"
+        android:hint="@string/search_et"
         android:textColorHint="@color/light_grey"
         android:drawableStart="@drawable/ic_search_gray"
         android:drawablePadding="10dp"

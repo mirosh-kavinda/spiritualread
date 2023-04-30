@@ -16,6 +16,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.debug
     }
 
     buildTypes {
@@ -50,6 +51,7 @@ dependencies {
 
     //glide
     implementation'com.github.bumptech.glide:glide:4.12.0'
+    testImplementation 'junit:junit:4.12'
     annotationProcessor'com.github.bumptech.glide:compiler:4.12.0'
 
     //firebase

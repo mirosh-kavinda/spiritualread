@@ -27,6 +27,7 @@ import me.mirosh.spiritualread.Auth.loginOnboard;
 import me.mirosh.spiritualread.activities.CategoryAdd;
 import me.mirosh.spiritualread.activities.PdfAddActivity;
 import me.mirosh.spiritualread.activities.ProfileActivity;
+import me.mirosh.spiritualread.activities.ViewRequests;
 import me.mirosh.spiritualread.adapters.AdapterCategory;
 import me.mirosh.spiritualread.databinding.ActivityAdminBinding;
 import me.mirosh.spiritualread.model.ModelCategory;
@@ -66,7 +67,13 @@ public class Admin extends AppCompatActivity {
 
             }
         });
-
+binding.viewRequests.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        startActivity(new Intent(Admin.this, ViewRequests.class));
+        finish();
+    }
+});
         //edit text change listen , search
         binding.searchEt.addTextChangedListener(new TextWatcher() {
             @Override
