@@ -81,4 +81,6 @@
     <string name="book_pages">පිටු</string>
     <string name="book_book_details">පොතේ විස්තර</string>
     <string name="confirm_password">මුරපදය තහවුරු කරන්න</string>
+    <string name="comments_text">Comments</string>
+    <string name="submit_btn">Submit</string>
 </resources>

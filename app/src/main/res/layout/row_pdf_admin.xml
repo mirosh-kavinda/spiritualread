@@ -59,8 +59,24 @@
             android:layout_marginTop="8dp"
             android:layout_toEndOf="@id/pdfRl"
             android:ellipsize="end"
-            android:maxLines="4"
+            android:maxLines="2"
             android:text="Book Description" />
+        <TextView
+            android:layout_width="70dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/shape_button01"
+            android:contentDescription="this is approve button"
+            android:id="@+id/readme"
+            android:drawableEnd="@drawable/baseline_read_more_24"
+            android:text="View"
+            android:textSize="10sp"
+            android:textColor="@color/md_white_1000"
+            android:padding="5dp"
+            android:layout_below="@id/descriptionTv"
+            android:layout_marginTop="10dp"
+            />
 
         <TextView
             android:id="@+id/categoryTv"

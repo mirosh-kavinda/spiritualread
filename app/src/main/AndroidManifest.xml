@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -11,7 +10,7 @@
         tools:ignore="ScopedStorage" />
 
     <application
-        android:name=".activities.MyApplication"
+        android:name="me.mirosh.spiritualread.activities.MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -22,58 +21,58 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".activities.ViewRequests"
+            android:name="me.mirosh.spiritualread.activities.ViewRequests"
             android:exported="false" />
         <activity
-            android:name=".activities.Request_Book"
+            android:name="me.mirosh.spiritualread.activities.Request_Book"
             android:exported="false" />
         <activity
-            android:name=".activities.ProfileEditActivity"
+            android:name="me.mirosh.spiritualread.activities.ProfileEditActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.ProfileActivity"
+            android:name="me.mirosh.spiritualread.activities.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".Dashboards.Guest"
+            android:name="me.mirosh.spiritualread.Dashboards.Guest"
             android:exported="false" />
         <activity
-            android:name=".activities.PdfViewActivity"
+            android:name="me.mirosh.spiritualread.activities.PdfViewActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.PdfDetailActivity"
+            android:name="me.mirosh.spiritualread.activities.PdfDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.PdfEditActivity"
+            android:name="me.mirosh.spiritualread.activities.PdfEditActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.PdfListActivity"
+            android:name="me.mirosh.spiritualread.activities.PdfListActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.PdfAddActivity"
+            android:name="me.mirosh.spiritualread.activities.PdfAddActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.CategoryAdd"
+            android:name="me.mirosh.spiritualread.activities.CategoryAdd"
             android:exported="false" />
         <activity
-            android:name=".Dashboards.UserExplore"
+            android:name="me.mirosh.spiritualread.Dashboards.UserExplore"
             android:exported="false" />
         <activity
-            android:name=".Dashboards.Admin"
+            android:name="me.mirosh.spiritualread.Dashboards.Admin"
             android:exported="false" />
         <activity
-            android:name=".Auth.RegisterActivity"
+            android:name="me.mirosh.spiritualread.Auth.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".Auth.LoginActivity"
+            android:name="me.mirosh.spiritualread.Auth.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".Auth.loginOnboard"
+            android:name="me.mirosh.spiritualread.Auth.loginOnboard"
             android:exported="false" />
         <activity
-            android:name=".Onboarding.OnboardingActivity"
+            android:name="me.mirosh.spiritualread.Onboarding.OnboardingActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.MainActivity"
+            android:name="me.mirosh.spiritualread.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

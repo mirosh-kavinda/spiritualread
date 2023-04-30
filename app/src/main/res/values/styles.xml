@@ -3,22 +3,25 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.Spiritualread"
         >
+
     </style>
+
+
 
     <style name="AppTheme.NoActionBar">
 
-
         <item name="android:textColorAlertDialogListItem">@color/md_black_1000</item>
-<item name="materialAlertDialogTitleTextStyle">@color/md_black_1000</item>
+        <item name="android:textColorPrimary">@color/md_black_1000</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:statusBarColor">@color/dark_blue</item>
-        <item name="colorPrimary">@color/md_black_1000</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">#134D58</item>
+        <item name="colorPrimary">#134D58</item>
+        <item name="colorPrimaryDark">#0F2B36</item>
+        <item name="colorAccent">#F9734D</item>
 
         <!--  It should be true otherwise action mode will not overlay toolbar -->
         <item name="windowActionModeOverlay">true</item>
+        <item name="android:textColor">@color/md_black_1000</item>
 
         <!--  For Custom Action Mode Background Color/Drawable -->
         <item name="actionModeBackground">@color/md_black_1000</item>
@@ -26,4 +29,8 @@
 
 
 
+    <style name="circleImage" >
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

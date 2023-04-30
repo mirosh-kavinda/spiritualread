@@ -60,7 +60,13 @@ public class LoginActivity extends AppCompatActivity {
         }
     });
     binding.btnLogin.setOnClickListener(view ->ValidateUser());
-    binding.tvRegisterHere.setOnClickListener(view -> startActivity(new Intent(LoginActivity.this, RegisterActivity.class)));
+    binding.tvRegisterHere.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+            finish();
+        }
+    });
     }
 
     private String email="", password="";

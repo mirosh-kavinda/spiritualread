@@ -66,6 +66,7 @@ private ActivityRegisterBinding binding;
 
 
     private void createUser() {
+
         name = binding.etRegName.getText().toString().trim();
         email = binding.etRegEmail.getText().toString();
         password = binding.etRegPass.getText().toString();

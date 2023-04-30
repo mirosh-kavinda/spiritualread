@@ -85,15 +85,30 @@
             android:id="@+id/descriptionTv"
             style="@style/TextAppearance.MaterialComponents.Body2"
             android:text="Book Description"
-            android:layout_alignParentEnd="true"
             android:layout_below="@id/titleTv"
             android:layout_toEndOf="@id/pdfRl"
-            android:maxLines="1"
+            android:maxLines="2"
             android:layout_marginTop="10dp"
 
             />
 
 
+        <TextView
+            android:layout_width="70dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/shape_button01"
+            android:contentDescription="this is approve button"
+            android:id="@+id/readme"
+            android:drawableEnd="@drawable/baseline_read_more_24"
+            android:text="View"
+            android:textSize="10sp"
+            android:textColor="@color/md_white_1000"
+            android:padding="5dp"
+            android:layout_below="@id/descriptionTv"
+            android:layout_marginTop="10dp"
+            />
         <TextView
             android:id="@+id/categoryTv"
             style="@style/TextAppearance.MaterialComponents.Caption"
