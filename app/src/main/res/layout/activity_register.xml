@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-
     android:background="@drawable/bg_splash_gradient"
     tools:context="me.mirosh.spiritualread.Auth.RegisterActivity">
 
@@ -28,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="10dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,38 +50,73 @@
         android:orientation="vertical"
         android:layout_gravity="center"
     >
-
-
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+       >
         <EditText
             android:id="@+id/etRegName"
+            android:background="@drawable/shape_edittext01"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="10dp"
             android:hint="@string/signup_name_et"
+            android:drawableStart="@drawable/ic_person_white"
+            android:drawableTint="@color/md_grey_500"
+            android:drawablePadding="10dp"
             android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+           >
         <EditText
                 android:id="@+id/etRegEmail"
+            android:background="@drawable/shape_edittext01"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+            android:drawableStart="@drawable/ic_email_gray"
+            android:drawablePadding="10dp"
                 android:hint="@string/signup_email"
                 android:layout_marginTop="10dp"
                 android:inputType="textEmailAddress"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:passwordToggleEnabled="true">
 
             <EditText
+                android:background="@drawable/shape_edittext01"
                 android:id="@+id/etRegPass"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:drawableStart="@drawable/ic_lock_gray"
+                android:drawablePadding="10dp"
                 android:hint="@string/signup_password"
-                android:layout_marginTop="10dp"
+
                 android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true">
         <EditText
+            android:background="@drawable/shape_edittext01"
             android:id="@+id/etRegCPass"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_lock_gray"
+            android:drawablePadding="10dp"
             android:hint="@string/confirm_password"
             android:inputType="textPassword"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btnRegister"

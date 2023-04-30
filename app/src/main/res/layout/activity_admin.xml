@@ -134,9 +134,13 @@ android:layout_below="@id/tv2"
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addPdfFab"
+    android:backgroundTint="@color/dark_blue"
+            android:background="@android:color/transparent"
             android:contentDescription="pdf add button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
+
             android:src="@drawable/baseline_pdf_add_black"
             app:fabCustomSize="50dp"
             />

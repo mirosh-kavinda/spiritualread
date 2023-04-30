@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,7 +25,7 @@ public class ViewRequests extends AppCompatActivity {
 
 
     //adapter set in recycle view
-    private FirebaseAuth firebaseAuth;
+
 
 
     //array list to a store categories
@@ -42,7 +41,7 @@ public class ViewRequests extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
-        firebaseAuth=FirebaseAuth.getInstance();
+
         loadRequested();
 
         binding.backBtn.setOnClickListener(new View.OnClickListener() {

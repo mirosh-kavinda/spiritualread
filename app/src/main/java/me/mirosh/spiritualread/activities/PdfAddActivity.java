@@ -289,7 +289,6 @@ public class PdfAddActivity extends AppCompatActivity {
         intent.setType("application/pdf");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent,"Select Pdf"),PDF_PICK_CODE);
-        finish();
 
     }
 

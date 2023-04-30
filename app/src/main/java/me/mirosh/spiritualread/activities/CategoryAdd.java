@@ -24,14 +24,11 @@ public class CategoryAdd extends AppCompatActivity {
 
     private ActivityCategoryAddBinding binding;
 
-
     //firebase auth
     private FirebaseAuth firebaseAuth;
 
     //progress dialog
     private ProgressDialog progressDialog;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +51,6 @@ public class CategoryAdd extends AppCompatActivity {
         binding.backBtn.setOnClickListener(v ->{
             startActivity(new Intent(CategoryAdd.this, Admin.class));
             finish();
-
             }
         );
     }
@@ -100,6 +96,7 @@ public class CategoryAdd extends AppCompatActivity {
                         //category added success
                         progressDialog.dismiss();
                         Toast.makeText(CategoryAdd.this, "Category Added Succesfully.", Toast.LENGTH_SHORT).show();
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

@@ -87,6 +87,9 @@
     <string name="book_pages">Pages</string>
     <string name="book_book_details">Book Details</string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="comments_text">Comments</string>
+    <string name="add_comment_head">Add Comment</string>
+    <string name="submit_btn">Submit</string>
     //categoryadd
 
 </resources>
