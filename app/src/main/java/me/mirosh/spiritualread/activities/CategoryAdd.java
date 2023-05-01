@@ -22,13 +22,14 @@ import me.mirosh.spiritualread.databinding.ActivityCategoryAddBinding;
 
 public class CategoryAdd extends AppCompatActivity {
 
+    //view binding
     private ActivityCategoryAddBinding binding;
-
     //firebase auth
     private FirebaseAuth firebaseAuth;
-
     //progress dialog
     private ProgressDialog progressDialog;
+    private String category="";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +37,8 @@ public class CategoryAdd extends AppCompatActivity {
         binding = ActivityCategoryAddBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
         //init firebase auth
         firebaseAuth=FirebaseAuth.getInstance();
-
 
         //configure progresss dialog
         progressDialog=new ProgressDialog(this);
@@ -54,11 +53,8 @@ public class CategoryAdd extends AppCompatActivity {
             }
         );
     }
-
-    private String category="";
     private void validateData() {
         //before add validate the data
-
         //get data
         category=binding.categoryEt.getText().toString().trim();
         

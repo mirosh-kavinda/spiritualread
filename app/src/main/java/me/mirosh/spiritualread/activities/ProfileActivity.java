@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -84,10 +85,14 @@ public class ProfileActivity extends AppCompatActivity {
                          binding.memberDateTv.setText(formatedDate);
                          binding.accountType.setText(userType);
 
-                         Glide.with(ProfileActivity.this)
-                                 .load(profileImage)
-                                 .placeholder(R.drawable.ic_person_white)
-                                 .into(binding.profileIv);
+                         try{
+                             Glide.with(ProfileActivity.this)
+                                     .load(profileImage)
+                                     .placeholder(R.drawable.ic_person_white)
+                                     .into(binding.profileIv);
+                         }catch (Exception e){
+                             Toast.makeText(ProfileActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                         }
 
 
                     }

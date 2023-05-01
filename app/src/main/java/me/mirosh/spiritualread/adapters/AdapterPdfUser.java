@@ -30,9 +30,7 @@ public class AdapterPdfUser extends RecyclerView.Adapter<AdapterPdfUser.HolderPd
     //progress dialog
     private ProgressDialog progressDialog;
     private FilterPdfUser filter;
-
     private RowPdfUserBinding binding;
-
     private static final String TAG="ADAPTER_PDF_UER_TAG";
 
 
@@ -48,7 +46,6 @@ public class AdapterPdfUser extends RecyclerView.Adapter<AdapterPdfUser.HolderPd
         //bind the view
         binding=RowPdfUserBinding.inflate(LayoutInflater.from(context),parent,false);
         return new HolderPdfUser(binding.getRoot()) ;
-
     }
 
     @Override
@@ -123,7 +120,6 @@ public class AdapterPdfUser extends RecyclerView.Adapter<AdapterPdfUser.HolderPd
         }
         return filter;
     }
-
     class  HolderPdfUser extends RecyclerView.ViewHolder{
 
         TextView titleTv,decriptionTv,cateogryTv,sizeTv,dateTv;

@@ -36,20 +36,15 @@ import me.mirosh.spiritualread.databinding.ActivityPdfAddBinding;
 
 public class PdfAddActivity extends AppCompatActivity {
 
-
     //binding
     private ActivityPdfAddBinding binding;
-
     //firebase auth
     private FirebaseAuth firebaseAuth;
-
-
     //progres bar
     private ProgressDialog progressDialog;
 
     //arraylist to hold pdf categories
     private ArrayList<String> categoryTitleArrayList, categoryIdArrayList;
-
     //uri picked for pdf
     private Uri pdfUri=null;
 

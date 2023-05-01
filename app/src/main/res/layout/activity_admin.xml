@@ -124,19 +124,19 @@ android:layout_below="@id/tv2"
 <Button
     android:id="@+id/addCategory"
     android:layout_width="0dp"
-    android:layout_height="wrap_content"
+    android:layout_height="50dp"
+    android:minHeight="50dp"
     android:layout_weight="1"
     android:background="@drawable/shape_button01"
     android:text="@string/add_category_btn"
     android:textColor="@color/md_white_1000"
-    android:minHeight="50dp"
     android:layout_marginEnd="10dp"
     android:textAllCaps="false"
     />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addPdfFab"
-    android:backgroundTint="@color/dark_blue"
+        android:backgroundTint="@color/dark_blue"
             android:background="@android:color/transparent"
             android:contentDescription="pdf add button"
             android:layout_width="wrap_content"

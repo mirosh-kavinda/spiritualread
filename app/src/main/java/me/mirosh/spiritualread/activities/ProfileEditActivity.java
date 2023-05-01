@@ -224,7 +224,6 @@ private static final String TAG="PROFILE_EDIT_TAG";
 
     }
 
-
 private ActivityResultLauncher<Intent>cameraActivityLauncher=registerForActivityResult(
         new ActivityResultContracts.StartActivityForResult(),
         new ActivityResultCallback<ActivityResult>() {
@@ -265,7 +264,6 @@ private ActivityResultLauncher<Intent>cameraActivityLauncher=registerForActivity
             }
     );
 
-
     private void loadUserInfo() {
         Log.d(TAG, "loadUserInfo: Loading user infor of user "+firebaseAuth.getUid());
 
@@ -282,16 +280,16 @@ private ActivityResultLauncher<Intent>cameraActivityLauncher=registerForActivity
                         String uid= ""+snapshot.child("uid").getValue();
                         String userType=""+snapshot.child("userType").getValue();
 
-
-
                         binding.nameEt.setText(name);
+                        try{
+                            Glide.with(ProfileEditActivity.this)
+                                    .load(profileImage)
+                                    .placeholder(R.drawable.ic_person_white)
+                                    .into(binding.profileIv);
 
-                        Glide.with(ProfileEditActivity.this)
-                                .load(profileImage)
-                                .placeholder(R.drawable.ic_person_white)
-                                .into(binding.profileIv);
-
-
+                        }catch (Exception e){
+                            Toast.makeText(ProfileEditActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
                     }
 
                     @Override

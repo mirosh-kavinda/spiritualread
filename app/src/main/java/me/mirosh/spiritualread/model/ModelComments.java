@@ -3,7 +3,6 @@ package me.mirosh.spiritualread.model;
 public class ModelComments {
     String id, bookId, timestamp,comment,uid;
 
-
     public ModelComments(String id, String bookId, String timestamp, String comment, String uid) {
         this.id = id;
         this.bookId = bookId;

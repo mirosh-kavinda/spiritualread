@@ -34,7 +34,7 @@ import me.mirosh.spiritualread.model.ModelCategory;
 
 public class Admin extends AppCompatActivity {
 
- private ActivityAdminBinding binding;
+    private ActivityAdminBinding binding;
 
     //firebase auth
     private FirebaseAuth firebaseAuth;
@@ -53,7 +53,6 @@ public class Admin extends AppCompatActivity {
         binding = ActivityAdminBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
         //init firebase auth
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -64,16 +63,18 @@ public class Admin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Admin.this, ProfileActivity.class));
+                finish();
 
             }
         });
-binding.viewRequests.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        startActivity(new Intent(Admin.this, ViewRequests.class));
-        finish();
-    }
-});
+
+    binding.viewRequests.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            startActivity(new Intent(Admin.this, ViewRequests.class));
+            finish();
+     }
+    });
         //edit text change listen , search
         binding.searchEt.addTextChangedListener(new TextWatcher() {
             @Override
@@ -109,15 +110,14 @@ binding.viewRequests.setOnClickListener(new View.OnClickListener() {
         });
 
 
-
          // handle click  start category add screen
-binding.addCategory.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-       startActivity(new Intent(Admin.this, CategoryAdd.class));
-       finish();
-    }
-});
+        binding.addCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               startActivity(new Intent(Admin.this, CategoryAdd.class));
+               finish();
+            }
+        });
         // handle click  start pdf add screen
         binding.addPdfFab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -174,10 +174,8 @@ binding.addCategory.setOnClickListener(new View.OnClickListener() {
         }else {
             //logged in , get user info
             String email=firebaseUser.getEmail();
-
             //set in text view of toolbar
            binding.tv1.setText(email);
-
 
         }
     }

@@ -39,18 +39,17 @@ import java.util.Locale;
 
 import me.mirosh.spiritualread.Constants;
 
-//application class runs before your launcher acticity
+    //application class runs before your launcher acticity
 public class MyApplication extends Application {
-    private static final String TAG_DOWNLOAD = "DOWNLOAD_PDF_TAG";
+        private static final String TAG_DOWNLOAD = "DOWNLOAD_PDF_TAG";
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-    }
+        @Override
+        public void onCreate() {
+            super.onCreate();
+        }
 
 
-
-//created method to convert timestamp into proper date format , so we can use it everywhere ,
+    //created method to convert timestamp into proper date format , so we can use it everywhere ,
     public  static final String formatTimestamp(long timestamp){
         Calendar cal =Calendar.getInstance(Locale.ENGLISH);
         cal.setTimeInMillis(timestamp);
@@ -59,6 +58,7 @@ public class MyApplication extends Application {
         return DateFormat.format("dd/MM/yyyy",cal).toString();
     }
 
+    //delete book function
    public static void deleteBook(Context context,String bookId,String bookTitle,String bookUrl) {
         String TAG="DELETE_BOOK_TAG";
 
@@ -107,6 +107,8 @@ public class MyApplication extends Application {
                 });
     }
 
+    //load pdf size
+
     public static void LoadPdfSize(String pdfUrl, String pdfTitle, TextView sizeTv) {
 
         String TAG="PDF_SIZE_TAG";
@@ -143,6 +145,7 @@ public class MyApplication extends Application {
 
     }
 
+//    load pdf from single file
 
   public static void LoadPdfFromUrlSinglePage(String pdfUrl, String pdfTitle, PDFView pdfView, ProgressBar progressBar,TextView pagesTv) {
 
@@ -157,6 +160,7 @@ public class MyApplication extends Application {
 
                         //set to pdf view
                         try{
+
                             pdfView.fromBytes(bytes)
                                     .pages(0)//show only first page
                                     .spacing(0)
@@ -207,7 +211,7 @@ public class MyApplication extends Application {
     }
 
 
-
+//Load category
    public static void LoadCategory(String categoryId, TextView categoryTv) {
 
         DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Categories");
@@ -261,6 +265,7 @@ public class MyApplication extends Application {
                 });
     }
 
+    //download book
     public static void downloadBook(Context context, String bookId, String bookTitle, String bookUrl){
         Log.d(TAG_DOWNLOAD, "downloadBook: downloading book...");
         
@@ -294,6 +299,7 @@ public class MyApplication extends Application {
                 });
     }
 
+    //save dowload book
     private static void saveDownloadedBook(Context context, ProgressDialog progressDialog, byte[] bytes, String nameWithExtension, String bookId) {
         Log.d(TAG_DOWNLOAD, "saveDownloadedBook: Saving Downloaded book");
         try {
@@ -320,6 +326,7 @@ public class MyApplication extends Application {
         }
 
     }
+
 
     private static void incrementBookDownloadCount(String bookId) {
         Log.d(TAG_DOWNLOAD, "incrementBookDownloadCount: Incrementing Book Download Count");

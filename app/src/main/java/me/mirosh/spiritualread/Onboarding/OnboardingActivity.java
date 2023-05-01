@@ -19,11 +19,11 @@ public class OnboardingActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private OnboardingAdapter onboardingAdapter;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onboarding);
+
         makeStatusbarTransparent();
         viewPager = findViewById(R.id.onboarding_view_pager);
         onboardingAdapter = new OnboardingAdapter(this);
@@ -40,17 +40,13 @@ public class OnboardingActivity extends AppCompatActivity {
             }
             else {
                 new Handler(getMainLooper()).postDelayed(() -> {
-
-                    Intent mySuperIntent = new Intent(OnboardingActivity.this, loginOnboard.class);
-                    startActivity(mySuperIntent);
+                    startActivity(new Intent(OnboardingActivity.this, loginOnboard.class));
                     finish();
                 }, 1000);
             }
             }
-
         }
     private void makeStatusbarTransparent() {
-
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);

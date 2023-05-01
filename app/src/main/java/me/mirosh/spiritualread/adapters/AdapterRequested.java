@@ -26,14 +26,11 @@ import me.mirosh.spiritualread.model.ModelRequested;
 
 public class AdapterRequested  extends RecyclerView.Adapter<AdapterRequested.HolderCategory>  {
 
-
     public Context context;
     public ArrayList<ModelRequested> requestedArrayList;
 
-
     private RowRequestedBooksBinding binding;
     //instance of our filter class
-
 
     public AdapterRequested (Context context, ArrayList<ModelRequested> requestedArrayList) {
         this.context = context;
@@ -58,13 +55,10 @@ public class AdapterRequested  extends RecyclerView.Adapter<AdapterRequested.Hol
         long timestamp = model.getTimestamp();
         String title=model.getTitle();
 
-
-
         //set data
         holder.categoryTv.setText(category);
         holder.bookTv.setText(title);
         holder.authorTv.setText(author);
-
 
         holder.deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +73,6 @@ public class AdapterRequested  extends RecyclerView.Adapter<AdapterRequested.Hol
                                 //begin delete
                                 Toast.makeText(context, "Acccepting...", Toast.LENGTH_SHORT).show();
                                 deleteCategory(model, holder);
-
                             }
                         }).setNegativeButton("No", new DialogInterface.OnClickListener() {
                             @Override
@@ -90,7 +83,6 @@ public class AdapterRequested  extends RecyclerView.Adapter<AdapterRequested.Hol
             }
         });
 
-
     }
     class HolderCategory extends RecyclerView.ViewHolder {
 
@@ -100,7 +92,6 @@ public class AdapterRequested  extends RecyclerView.Adapter<AdapterRequested.Hol
 
         public HolderCategory(@NonNull View itemView) {
             super(itemView);
-
             //init ui view
             categoryTv = binding.categoryTv;
             bookTv=binding.bookTv;

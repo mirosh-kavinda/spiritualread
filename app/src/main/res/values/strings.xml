@@ -25,7 +25,7 @@
     <string name="add_category_btn">+ Add Category</string>
 
 //loginonboard
-    <string name="login_onboard_body">\'reading makes a man , so pick a book start readning now\'</string>
+    <string name="login_onboard_body">Books are the keys that unlock the doors to knowledge and wisdom</string>
 
    //guest
     <string name="guest_toolbar_head">Dashboard Guest</string>

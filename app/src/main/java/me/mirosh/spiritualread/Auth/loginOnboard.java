@@ -35,7 +35,7 @@ import java.util.Locale;
 
 import me.mirosh.spiritualread.Dashboards.Admin;
 import me.mirosh.spiritualread.Dashboards.Guest;
-import me.mirosh.spiritualread.Dashboards.UserExplore;
+import me.mirosh.spiritualread.Dashboards.User;
 import me.mirosh.spiritualread.Onboarding.OnboardingActivity;
 import me.mirosh.spiritualread.R;
 import me.mirosh.spiritualread.databinding.ActivityLoginOnboardBinding;
@@ -45,7 +45,6 @@ public class loginOnboard extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     WebView webView;
-
     private ActivityLoginOnboardBinding binding;
     @Override
 
@@ -57,10 +56,6 @@ public class loginOnboard extends AppCompatActivity {
 
         //init firebase auth
         firebaseAuth = FirebaseAuth.getInstance();
-
-        //change actionbar title , if you don't change it will be cacording you system default lang
-//        ActionBar actionBar=getSupportActionBar();
-//        actionBar.setTitle(getResources().getString(R.string.app_name));
 
 
         //assign variable and initialize it
@@ -85,6 +80,7 @@ public class loginOnboard extends AppCompatActivity {
             //set content
             dialog.setContentView(R.layout.alert_dialog_layout);
             //set outside touch
+
             dialog.setCanceledOnTouchOutside(false);
             dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,WindowManager.LayoutParams.WRAP_CONTENT);
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -184,7 +180,7 @@ public class loginOnboard extends AppCompatActivity {
                     assert userType != null;
                     if (userType.equals("user")) {
                         //this is simple user , open user dashboard
-                        startActivity(new Intent(loginOnboard.this, UserExplore.class));
+                        startActivity(new Intent(loginOnboard.this, User.class));
                         finish();
                     } else {
                         //this is admin , open user dashboard

@@ -13,8 +13,8 @@ import me.mirosh.spiritualread.R;
 
 public class MainActivity extends AppCompatActivity {
     int SPLASH_TIME = 1000; //This is 3 seconds
+    //initiate splashProgress
     ProgressBar splashProgress;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,14 +26,12 @@ public class MainActivity extends AppCompatActivity {
 
         //Code to start timer and take action after the timer ends
         new Handler(getMainLooper()).postDelayed(() -> {
-
             startActivity(new Intent(MainActivity.this, loginOnboard.class));
             finish();
 
         }, SPLASH_TIME);
 
     }
-
     protected void onDestroy(){
             super.onDestroy();
             finish();

@@ -12,13 +12,12 @@ public class FilterCategory extends Filter {
     ArrayList<ModelCategory> filterList;
     //adapter in which filter need to be implemtned
     AdapterCategory adapterCategory;
-    //constructorf
 
+    //constructorf
     public FilterCategory(ArrayList<ModelCategory> filterList, AdapterCategory adapterCategory) {
         this.filterList = filterList;
         this.adapterCategory = adapterCategory;
     }
-
 
     @Override
     protected FilterResults performFiltering(CharSequence constraint) {
@@ -34,18 +33,15 @@ public class FilterCategory extends Filter {
                     //add to filtered list
                     filteredModels.add(filterList.get(i));
                 }
-
             }
-
             results.count=filteredModels.size();
             results.values=filteredModels;
         }
         else{
             results.count=filterList.size();
             results.values=filterList;
-
         }
-        return results; //
+        return results;
     }
 
     @Override

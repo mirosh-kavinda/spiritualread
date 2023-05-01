@@ -32,11 +32,8 @@ public class PdfViewActivity extends AppCompatActivity {
 boolean isDark=false;
     // view binding
     private ActivityPdfViewBinding binding;
-
     private String bookId;
-
     private static final String TAG="PDF_VIEW_TAG";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,12 +72,7 @@ boolean isDark=false;
                 onBackPressed();
             }
         });
-
-
     }
-
-
-
     private void loadBookDetails() {
         Log.d(TAG, "loadBookDetails: Get Pdf URl...");
         //datbase reference to get book details
@@ -106,7 +98,6 @@ boolean isDark=false;
                     }
                 });
     }
-
 
     private void loadBooksFromUrl(String pdfUrl){
 

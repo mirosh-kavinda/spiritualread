@@ -40,14 +40,11 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.HolderCo
     //view binding
     private RowCommentBinding binding;
 
-
-
     public AdapterComment(Context context, ArrayList<ModelComments> commentsArrayList) {
         this.context = context;
         this.commentsArrayList = commentsArrayList;
         firebaseAuth=FirebaseAuth.getInstance();
     }
-
     @NonNull
     @Override
     public HolderComment onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -75,8 +72,6 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.HolderCo
                 }
             }
         });
-
-
 
             }
     private void loadUserDetails(ModelComments modelComments,HolderComment holderComment){
@@ -114,6 +109,8 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.HolderCo
                     }
                 });
     }
+
+
     private void deleteComment(ModelComments modelComments, HolderComment holder) {
     //show confirm dialog before deleting comment
         AlertDialog.Builder builder=new AlertDialog.Builder(context);
@@ -140,8 +137,6 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.HolderCo
                 });
 
     }
-
-
 
     @Override
     public int getItemCount() {

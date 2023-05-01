@@ -52,7 +52,7 @@
             android:name="me.mirosh.spiritualread.activities.CategoryAdd"
             android:exported="false" />
         <activity
-            android:name="me.mirosh.spiritualread.Dashboards.UserExplore"
+            android:name="me.mirosh.spiritualread.Dashboards.User"
             android:exported="false" />
         <activity
             android:name="me.mirosh.spiritualread.Dashboards.Admin"

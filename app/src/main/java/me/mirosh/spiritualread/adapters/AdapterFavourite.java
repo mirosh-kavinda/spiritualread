@@ -32,10 +32,8 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
     private Context context;
     private ArrayList<ModelPdf> pdfArrayList;
     private static String TAG="Fav_Books";
-
     //view binding ofor row_pdf_favorite
     private RowPdfFavouriteBinding binding;
-
 
     public AdapterFavourite(Context context, ArrayList<ModelPdf> pdfArrayList) {
         this.context = context;
@@ -88,9 +86,6 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
                         String bookUrl=""+snapshot.child("url").getValue();
                         String timestamp=""+snapshot.child("timestamp").getValue();
                         String uid=""+snapshot.child("uid").getValue();
-                        String viewsCount=""+snapshot.child("viewsCount").getValue();
-                        String downloadsCount=""+snapshot.child("downloadsCount").getValue();
-
 
                         model.setFavorite(true);
                         model.setTitle(bookTitle);
@@ -116,8 +111,6 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
 
                     }
                 });
-
-        
     }
 
     @Override
@@ -131,12 +124,10 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
         PDFView pdfView;
         ProgressBar progressBar;
         TextView titleTv, descriptionTv,categoryTv, sizeTv,dateTv;
-       LinearLayout remobeBtnGroup;
+        LinearLayout remobeBtnGroup;
 
         public HolderPdfFavourite(@NonNull View itemView) {
             super(itemView);
-
-
             //init ui views
             pdfView=binding.pdfView;
             progressBar=binding.progressBar;
@@ -146,8 +137,6 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
             sizeTv=binding.sizeTv;
             dateTv=binding.dateTv;
             remobeBtnGroup=binding.removeFavBtn;
-
-
         }
     }
 }

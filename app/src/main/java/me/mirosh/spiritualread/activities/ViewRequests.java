@@ -22,12 +22,6 @@ import me.mirosh.spiritualread.databinding.ActivityViewRequestsBinding;
 import me.mirosh.spiritualread.model.ModelRequested;
 
 public class ViewRequests extends AppCompatActivity {
-
-
-    //adapter set in recycle view
-
-
-
     //array list to a store categories
     private ArrayList<ModelRequested> requestedArrayList;
 
@@ -39,8 +33,6 @@ public class ViewRequests extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding= ActivityViewRequestsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-
 
         loadRequested();
 
@@ -54,7 +46,6 @@ public class ViewRequests extends AppCompatActivity {
         });
 
     }
-
 
     private void loadRequested() {
         //init array list
@@ -81,9 +72,7 @@ public class ViewRequests extends AppCompatActivity {
                 LinearLayoutManager manager = new LinearLayoutManager(ViewRequests.this);
                 binding.requestedRv.setAdapter(adapterCategory);
                 binding.requestedRv.setLayoutManager(manager);
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 

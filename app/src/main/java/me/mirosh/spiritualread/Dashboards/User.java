@@ -30,7 +30,7 @@ import me.mirosh.spiritualread.databinding.ActivityUserBinding;
 import me.mirosh.spiritualread.fragments.BooksUserFragment;
 import me.mirosh.spiritualread.model.ModelCategory;
 
-public class UserExplore extends AppCompatActivity {
+public class User extends AppCompatActivity {
 
     //to show in tabs
     public ArrayList<ModelCategory> categoryArrayList;
@@ -67,14 +67,14 @@ public class UserExplore extends AppCompatActivity {
         binding.reqBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(UserExplore.this, Request_Book.class));
+                startActivity(new Intent(User.this, Request_Book.class));
                 finish();
             }
         });
         binding.profileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(UserExplore.this, ProfileActivity.class));
+                startActivity(new Intent(User.this, ProfileActivity.class));
 
             }
         });

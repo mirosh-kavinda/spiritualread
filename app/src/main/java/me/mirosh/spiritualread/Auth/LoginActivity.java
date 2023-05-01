@@ -22,25 +22,23 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Objects;
 
 import me.mirosh.spiritualread.Dashboards.Admin;
-import me.mirosh.spiritualread.Dashboards.UserExplore;
+import me.mirosh.spiritualread.Dashboards.User;
 import me.mirosh.spiritualread.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
-
     private ActivityLoginBinding binding;
     //firebase auth
     private FirebaseAuth firebaseAuth;
-
     //progress dialog
     private ProgressDialog progressDialog;
 
+    private String email="", password="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     binding= ActivityLoginBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
-
 
 
     //init firebase auth
@@ -51,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
     progressDialog.setTitle("Please wait");
     progressDialog.setCanceledOnTouchOutside(false);
 
-
     binding.backBtn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -60,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     });
     binding.btnLogin.setOnClickListener(view ->ValidateUser());
+
     binding.tvRegisterHere.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -68,8 +66,6 @@ public class LoginActivity extends AppCompatActivity {
         }
     });
     }
-
-    private String email="", password="";
 
 
     private void ValidateUser() {
@@ -112,8 +108,6 @@ public class LoginActivity extends AppCompatActivity {
     //check if user is user or admin from realtime datbase
     FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
-
-
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
     ref.child(Objects.requireNonNull(firebaseUser).getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
         @Override
@@ -125,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
             //check user type
             if (Objects.equals(userType, "user")) {
                 //this is simple user , open user dashboard
-                startActivity(new Intent(LoginActivity.this, UserExplore.class));
+                startActivity(new Intent(LoginActivity.this, User.class));
                 finish();
             } else {
                 //this is admin ,open user dashboard

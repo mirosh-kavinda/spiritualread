@@ -27,17 +27,14 @@ public class BooksUserFragment extends Fragment {
 
 
     private static final String TAG = "BOOKS_USER_TAG";
-
-
     private String categoryId;
     private String category;
     private String uid;
 
-
     private ArrayList<ModelPdf>pdfArrayList;
     private AdapterPdfUser adapterPdfUser;
-private FragmentBooksUserBinding binding;
 
+    private FragmentBooksUserBinding binding;
 
     public BooksUserFragment() {
         // Required empty public constructor
@@ -49,7 +46,6 @@ private FragmentBooksUserBinding binding;
         args.putString("categoryId", id);
         args.putString("category", category);
         args.putString("uid", uid);
-
         fragment.setArguments(args);
         return fragment;
     }

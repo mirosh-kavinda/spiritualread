@@ -25,35 +25,25 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import me.mirosh.spiritualread.Dashboards.UserExplore;
+import me.mirosh.spiritualread.Dashboards.User;
 import me.mirosh.spiritualread.databinding.ActivityRequestBookBinding;
 
 
 public class Request_Book extends AppCompatActivity {
     private ActivityRequestBookBinding binding;
-
-
     //firebase auth
     private FirebaseAuth firebaseAuth;
-
-
     //progres bar
     private ProgressDialog progressDialog;
-
     //arraylist to hold pdf categories
     private ArrayList<String> categoryTitleArrayList, categoryIdArrayList;
-
-
     //TAG for debugging
     private static final String TAG = "ADD_Book Request_TAG";
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityRequestBookBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
 
         //init firebase auth
         firebaseAuth = FirebaseAuth.getInstance();
@@ -64,17 +54,15 @@ public class Request_Book extends AppCompatActivity {
         progressDialog.setTitle("Please wait");
         progressDialog.setCanceledOnTouchOutside(false);
 
-
         //handle click, go to previous activity
         binding.backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Request_Book.this, UserExplore.class));
+                startActivity(new Intent(Request_Book.this, User.class));
                 finish();
             }
         });
         //handle click , attach pdf
-
 
         //hanlde click , pcik category
         binding.categoryTv.setOnClickListener(new View.OnClickListener() {
@@ -94,7 +82,6 @@ public class Request_Book extends AppCompatActivity {
         });
 
     }
-
     private String title = "", author = "";
 
     private void validateData() {
@@ -104,7 +91,6 @@ public class Request_Book extends AppCompatActivity {
         //get data
         title = binding.titleEt.getText().toString().trim();
         author = binding.descriptionEt.getText().toString().trim();
-
 
         //validate data
         if (TextUtils.isEmpty(title)) {
@@ -120,7 +106,6 @@ public class Request_Book extends AppCompatActivity {
             uploadeRequestInfoToDb(timestamp);
         }
     }
-
 
     private void uploadeRequestInfoToDb(long timestamp) {
         //Step 3: upload pdf infor to firebase db
@@ -160,7 +145,6 @@ public class Request_Book extends AppCompatActivity {
                     }
                 });
     }
-
     private void loadPdfCategories() {
         Log.d(TAG, "Load PdfCategories:Loading pdf categories...");
         categoryTitleArrayList = new ArrayList<>();
