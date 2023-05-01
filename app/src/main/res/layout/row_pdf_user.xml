@@ -31,7 +31,6 @@
                     android:id="@+id/progressBar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
                     android:indeterminate="true"
                     android:indeterminateTint="@color/seconColor"
                     android:indeterminateTintMode="src_atop"
@@ -73,15 +72,7 @@
             android:ellipsize="end"
             android:maxLines="4"
             android:text="Pages" />
-        <ImageButton
-            android:id="@+id/deleteBtn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/add_requested_book"
-            android:background="@drawable/shape_button01"
-            android:contentDescription="this is approve button"
 
-            />
         <TextView
             android:layout_width="70dp"
             android:gravity="center"

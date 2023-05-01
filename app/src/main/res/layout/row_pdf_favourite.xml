@@ -11,104 +11,102 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-     >
+        android:layout_height="wrap_content">
 
         <RelativeLayout
+            android:id="@+id/pdfRl"
             android:layout_width="100dp"
             android:layout_height="140dp"
-            android:layout_marginEnd="5dp"
             android:layout_margin="5dp"
-            android:background="@drawable/sahpe_button03"
-            android:id="@+id/pdfRl">
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/sahpe_button03">
 
             <com.github.barteksc.pdfviewer.PDFView
+                android:id="@+id/pdfView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/pdfView"/>
+                android:layout_height="match_parent" />
+
             <ProgressBar
+                android:id="@+id/progressBar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/progressBar"
                 android:background="@drawable/sahpe_button03"
                 android:indeterminate="true"
-                android:indeterminateTintMode="src_atop"
-                android:indeterminateTint="@color/seconColor"/>
+                android:indeterminateTint="@color/seconColor"
+                android:indeterminateTintMode="src_atop" />
 
 
         </RelativeLayout>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/titleTv"
             style="@style/TextAppearance.MaterialComponents.Headline6"
-            android:text="Book Title"
-            android:layout_toEndOf="@id/pdfRl"
-            android:maxLines="1"
-
-            />
-
-        <LinearLayout
-            android:id="@+id/removeBtnGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:background="@drawable/shape_button02">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="8dp"
-                android:layout_toLeftOf="@id/removeFavBtn"
-                android:text="Remove"
-
-
-                />
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/removeFavBtn"
-                android:src="@drawable/ic_favorite_white"
-                android:background="@android:color/transparent"
-                android:layout_alignParentEnd="true"
-                app:tint="@color/md_black_1000"
-
-                android:padding="5dp"/>
-        </LinearLayout>
-
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/descriptionTv"
-            style="@style/TextAppearance.MaterialComponents.Body2"
-            android:text="Book Description"
-            android:layout_below="@id/titleTv"
             android:layout_toEndOf="@id/pdfRl"
-            android:maxLines="2"
-            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            android:text="Book Title"
 
             />
 
 
         <TextView
-            android:layout_width="70dp"
-            android:gravity="center"
+            android:id="@+id/descriptionTv"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/titleTv"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/pdfRl"
+            android:maxLines="2"
+            android:text="Book Description"
+
+            />
+        <LinearLayout
+            android:layout_toLeftOf="@id/readme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+      android:layout_below="@id/descriptionTv"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:padding="5dp"
+            android:id="@+id/removeFavBtn"
+            android:background="@drawable/shape_button01"
+          >
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@color/md_white_1000"
+    android:layout_marginTop="3dp"
+    android:layout_marginStart="8dp"
+    android:text="Remove"/>
+            <ImageButton
+
+                android:layout_width="20dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_delete_white"
+    android:background="@android:color/transparent"
+                android:contentDescription="this is delte button"
+
+                />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/readme"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descriptionTv"
             android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
             android:background="@drawable/shape_button01"
             android:contentDescription="this is approve button"
-            android:id="@+id/readme"
             android:drawableEnd="@drawable/baseline_read_more_24"
-            android:text="View"
-            android:textSize="10sp"
-            android:textColor="@color/md_white_1000"
+            android:gravity="center"
             android:padding="5dp"
-            android:layout_below="@id/descriptionTv"
-            android:layout_marginTop="10dp"
-            />
+            android:text="View"
+            android:textColor="@color/md_white_1000"
+            android:textSize="10sp" />
+
         <TextView
             android:id="@+id/categoryTv"
             style="@style/TextAppearance.MaterialComponents.Caption"
@@ -138,10 +136,10 @@
             android:layout_alignParentBottom="true"
             android:layout_toStartOf="@id/categoryTv"
             android:layout_toEndOf="@id/sizeTv"
-            android:textColor="@color/md_black_1000"
             android:maxLines="1"
+            android:text="dd/MM/yyyy"
             android:textAlignment="center"
-            android:text="dd/MM/yyyy" />
+            android:textColor="@color/md_black_1000" />
 
 
     </RelativeLayout>
