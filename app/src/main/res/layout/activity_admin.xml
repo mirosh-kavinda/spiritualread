@@ -102,6 +102,8 @@ android:layout_below="@id/tv2"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+
         android:layout_marginBottom="10dp"
         android:orientation="horizontal"
         >
@@ -139,8 +141,6 @@ android:layout_below="@id/tv2"
             android:contentDescription="pdf add button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-
             android:src="@drawable/baseline_pdf_add_black"
             app:fabCustomSize="50dp"
             />

@@ -98,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/forgetTv"
                 android:textColor="@color/md_black_1000"
-                android:text="Forgot Password ?"
+                android:text="@string/forgot_password"
                 android:textAlignment="viewEnd"
                 />
             <Button

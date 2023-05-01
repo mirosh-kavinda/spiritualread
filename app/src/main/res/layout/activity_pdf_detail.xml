@@ -206,7 +206,7 @@
                             android:id="@+id/pagesTv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="5dp"
+                            android:layout_marginEnd="8dp"
                             android:text="N/A"
                             android:textColor="@color/md_black_1000" />
                     </TableRow>
@@ -235,24 +235,28 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <TextView
+                    android:id="@+id/commentsLableTv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/commentsLableTv"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="8dp"
                     android:text="@string/comments_text"
+                    android:textAlignment="center"
                     android:textColor="@color/md_black_1000"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textAlignment="center"
-                    android:padding="8dp"
-                    android:layout_margin="10dp"
-                    />
+                    android:textStyle="bold" />
 
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/addCommentBtn"
-                    android:padding="5dp"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
                     android:layout_alignParentEnd="true"
                     android:background="@color/md_black_1000"
                     android:src="@drawable/add_comment"

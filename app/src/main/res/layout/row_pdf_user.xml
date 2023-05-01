@@ -74,7 +74,7 @@
             android:text="Pages" />
 
         <TextView
-            android:layout_width="70dp"
+            android:layout_width="wrap_content"
             android:gravity="center"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -82,10 +82,11 @@
             android:contentDescription="this is approve button"
             android:id="@+id/readme"
             android:drawableEnd="@drawable/baseline_read_more_24"
-            android:text="View"
-            android:textSize="10sp"
+            android:text="@string/view"
+            android:textSize="13sp"
             android:textColor="@color/md_white_1000"
             android:padding="5dp"
+
             android:layout_below="@id/descriptionTv"
             android:layout_marginTop="10dp"
             />

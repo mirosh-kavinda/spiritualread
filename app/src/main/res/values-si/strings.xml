@@ -83,4 +83,8 @@
     <string name="confirm_password">මුරපදය තහවුරු කරන්න</string>
     <string name="comments_text">Comments</string>
     <string name="submit_btn">Submit</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="add_comment_head">Add Comment</string>
+    <string name="view">View</string>
+    <string name="remove">Remove</string>
 </resources>

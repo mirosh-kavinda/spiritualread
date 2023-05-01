@@ -19,12 +19,20 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:id="@+id/backBtn"
-            android:layout_margin="10dp"
-
             android:background="@android:color/transparent"
             android:src="@drawable/ic_back_white"
 
             />
+
+        <ImageButton
+            android:id="@+id/toggleDark"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/dark_mode_whilte" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
