@@ -106,7 +106,7 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
                         MyApplication.LoadPdfFromUrlSinglePage(""+bookUrl,""+bookTitle,holder.pdfView,holder.progressBar,null);
                         MyApplication.LoadPdfSize(""+bookUrl,""+bookTitle,holder.sizeTv);
 
-                        holder.titleTv.setText(date);
+                        holder.titleTv.setText(bookTitle);
                         holder.descriptionTv.setText(bookDesc);
                         holder.dateTv.setText(date);
                     }
@@ -145,8 +145,8 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
             categoryTv=binding.categoryTv;
             sizeTv=binding.sizeTv;
             dateTv=binding.dateTv;
-            remobeBtnGroup=binding.removeBtnGroup;
-//            removeFavBtn=binding.removeFavBtn;
+            remobeBtnGroup=binding.removeFavBtn;
+
 
         }
     }

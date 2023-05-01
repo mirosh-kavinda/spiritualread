@@ -289,7 +289,7 @@ public class MyApplication extends Application {
                     public void onFailure(@NonNull Exception e) {
                         Log.d(TAG_DOWNLOAD, "onFailure: Failed to download dur to "+e.getMessage());
                         progressDialog.dismiss();
-                        Toast.makeText(context, "Failed to download dur to "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Failed to download due to "+e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }

@@ -1,7 +1,5 @@
 package me.mirosh.spiritualread.activities;
 
-import static android.content.ContentValues.TAG;
-
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -49,7 +47,7 @@ public class PdfDetailActivity extends AppCompatActivity {
     String bookId="";
     String bookTitle="";
     String bookUrl="";
-
+private static final String TAG="Download_PDF_File";
     //arraylist for hlde comment
     private ArrayList<ModelComments> commentsArrayList;
 
@@ -155,7 +153,7 @@ binding.addCommentBtn.setOnClickListener(new View.OnClickListener() {
         commentsArrayList=new ArrayList<>();
 
         DatabaseReference ref=FirebaseDatabase.getInstance().getReference("Books");
-        ref.child(bookId).child("Comments").orderByChild(Objects.requireNonNull(firebaseAuth.getUid()))
+        ref.child(bookId).child("Comments")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
