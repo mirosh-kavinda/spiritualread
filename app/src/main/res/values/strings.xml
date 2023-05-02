@@ -1,35 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Onboarding ViewPager Examples</string>
+    <string name="app_name" translatable="false">spiritualread</string>
 
-    <string name="title_onboarding_1">Welcome to Onboarding App !</string>
-    <string name="description_onboarding_1">Here is an open-source project which shows sweet &amp; original onboarding ViewPagers that follows Material Design Guidelines</string>
 
-    <string name="title_onboarding_2">Try AirBnB Lottie</string>
-    <string name="description_onboarding_2">We use Lottie Animations on our Intro to make it interactive &amp; pleasant. Did you already tried it ? If no, let\'s start now. It\'s just awesome</string>
 
-    <string name="title_onboarding_3">Code beautiful apps</string>
-    <string name="description_onboarding_3">Our mission is to make useful &amp; subtle apps. We love help people to save time with open-source stuffs, but we also make life easier by creating new things. Good Coding!</string>
 
-    <string name="start_text_advice">By continuing on this application you agree to our Terms of Use and Privacy Policy</string>
 
-    <string name="start">start</string>
-    <string name="skip">Skip</string>
-    <string name="finish">finish</string>
-    <string name="next">next</string>
-    <string name="back">back</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_explorepage">explorepage</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="previous">Previous</string>
+  //Onboarding screens
+    <string name="onboarding1_heading" translatable="false">Instantly updates the books</string>
+    <string name="onboarding1_body" translatable="false">you can view view books imediately when it make available by admin.</string>
+    <string name="onboarding2_heading">User can request new Books</string>
+    <string name="onboarding2_body">When the particular book need to available on library , user can simply place an request.</string>
+    <string name="onboading3_heading">User can download books</string>
+    <string name="onboarding3_body">Registered users have more variety of books available for download</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="onboarding_textV_1">feature that offer 1</string>
-    <string name="onboarding_textV_2">Picture of person giving test</string>
-    <string name="onboarding_btn_1">Next</string>
-    <string name="onboarding_textV_4">Instantly update the books</string>
-    <string name="onboarding_textV_5">you can view view books imediately when it make available by admin.</string>
+    //buttons
+    <string name="next_btn">Next</string>
+    <string name="get_started_btn">Get Started</string>
+    <string name="lang_btn">Language</string>
+    <string name="feature_Btn">Features</string>
+    <string name="login_btn">Login</string>
+    <string name="guest_btn">Continue As Guest</string>
+    <string name="view_requests_btn">View Requests</string>
+    <string name="add_category_btn">+ Add Category</string>
+
+//loginonboard
+    <string name="login_onboard_body">Books are the keys that unlock the doors to knowledge and wisdom</string>
+
+   //guest
+    <string name="guest_toolbar_head">Dashboard Guest</string>
+    <string name="guest_body">You Can view more Books, if you Loged in to the App</string>
+    //admin
+    <string name="admin_dash_toolbar_head">DashboardAdmin</string>
+    <string name="category_add_head">Add a new Category</string>
+    <string name="category_add_Et">Category Title</string>
+    <string name="add_btn">Add</string>
+    <string name="sigin_heading">SignIn to the system</string>
+    <string name="signin_body_txt">Not registered yet</string>
+    <string name="signin_signup_btn">Signup here</string>
+    <string name="pdf_add_heading">Add a New Book</string>
+    <string name="pdf_add_book_title">Book Title</string>
+    <string name="pdf_add_book_descritpion">Book Descritpion</string>
+    <string name="pdf_add_book_category">Book Category</string>
+    <string name="upload_btn">Upload</string>
+    <string name="edit_book_heading">Edit Book Info</string>
+    <string name="edit_pdf_book_title">Book Title</string>
+    <string name="edit_pdf_book_description">Book Description</string>
+    <string name="edit_pdf_book_category">Book Category</string>
+    <string name="update_btn">Update</string>
+    <string name="pdf_list_books">Books</string>
+    <string name="pdf_list_category">Category</string>
+    <string name="pdf_view_heading">ReadBook</string>
+    <string name="profile_heading">Profile</string>
+    <string name="profile_account">Account</string>
+    <string name="profile_member">Member</string>
+    <string name="profile_favourite_books">Favourite Books</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="profile_edit_name">Name</string>
+    <string name="signup_heading">SignUp for new Users</string>
+    <string name="signup_name_et">Name</string>
+    <string name="signup_email">Email</string>
+    <string name="signup_password">Password</string>
+    <string name="sign_up_btn">Sign Up</string>
+    <string name="signup_already_registered">Already registered</string>
+    <string name="login_here_btn">Login here</string>
+    <string name="request_book">Request A Book</string>
+    <string name="request_book_title">Book Title</string>
+    <string name="request_book_author">Book Author</string>
+    <string name="request_book_category">Book Category</string>
+    <string name="request_btn">Request</string>
+    <string name="dashboard_user">Dashboard User</string>
+    <string name="dashboard_user_request_book_btn">Request Book</string>
+    <string name="view_requests">View Requests</string>
+    <string name="no_internet">No Internet !</string>
+    <string name="no_internet_body">Please Connect to the Internet to continue to application</string>
+    <string name="try_again_btn">Try Again</string>
+    <string name="search_et">Search</string>
+    <string name="request_book_row_name">Book_Name:</string>
+    <string name="request_book_row_author">Author:</string>
+    <string name="request_book_row_category">Category:</string>
+    <string name="book_category">Category</string>
+    <string name="book_Date">Date</string>
+    <string name="book_size">Size</string>
+    <string name="book_view_count">View Count</string>
+    <string name="book_downloads">Downloads</string>
+    <string name="book_pages">Pages</string>
+    <string name="book_book_details">Book Details</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="comments_text">Comments</string>
+    <string name="add_comment_head">Add Comment</string>
+    <string name="submit_btn">Submit</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="view">View</string>
+    <string name="remove">Remove</string>
+    //categoryadd
+
 </resources>

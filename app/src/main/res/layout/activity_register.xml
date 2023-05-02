@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-
     android:background="@drawable/bg_splash_gradient"
-    tools:context=".Auth.RegisterActivity">
+    tools:context="me.mirosh.spiritualread.Auth.RegisterActivity">
 
     <Button
         android:id="@+id/backBtn"
@@ -28,7 +27,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/signup_heading"
+            android:textColor="@color/md_black_1000"
+            android:textSize="25sp"
+            android:textStyle="bold" />
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="200dp"
@@ -41,52 +49,81 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_marginTop="25dp">
-
-
-        <TextView
+    >
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="16dp"
-            android:gravity="center_horizontal"
-            android:text="SignUp for new Users"
-            android:textColor="@color/md_black_1000"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
+       >
         <EditText
             android:id="@+id/etRegName"
+            android:background="@drawable/shape_edittext01"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/signup_name_et"
+            android:drawableStart="@drawable/ic_person_white"
+            android:drawableTint="@color/md_grey_500"
+            android:drawablePadding="10dp"
+            android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name"
-            android:inputType="textEmailAddress"/>
 
-            <EditText
+
+           >
+        <EditText
                 android:id="@+id/etRegEmail"
+            android:background="@drawable/shape_edittext01"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Email"
+                android:layout_height="50dp"
+            android:drawableStart="@drawable/ic_email_gray"
+            android:drawablePadding="10dp"
+                android:hint="@string/signup_email"
+                android:layout_marginTop="10dp"
                 android:inputType="textEmailAddress"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:passwordToggleEnabled="true">
 
             <EditText
+                android:background="@drawable/shape_edittext01"
                 android:id="@+id/etRegPass"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Password"
+                android:layout_height="50dp"
+                android:drawableStart="@drawable/ic_lock_gray"
+                android:drawablePadding="10dp"
+                android:hint="@string/signup_password"
+
                 android:inputType="textPassword"/>
-        <EditText
-            android:id="@+id/etRegCPass"
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Confirm Password"
+            app:passwordToggleEnabled="true">
+        <EditText
+            android:background="@drawable/shape_edittext01"
+            android:id="@+id/etRegCPass"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableStart="@drawable/ic_lock_gray"
+            android:drawablePadding="10dp"
+            android:hint="@string/confirm_password"
             android:inputType="textPassword"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Register"
+            android:text="@string/sign_up_btn"
             android:textColor="@color/md_white_1000"
             android:background="@drawable/shape_button01"/>
 
@@ -100,19 +137,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Already registered"
+                android:text="@string/signup_already_registered"
                 android:textColor="@color/md_black_1000"
-                android:textSize="16sp"/>
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/tvLoginHere"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:text="Login here"
+                android:text="@string/login_here_btn"
                 android:textColor="@color/md_black_1000"
                 android:textStyle="bold"
-                android:textSize="20sp"/>
+                android:textSize="15sp"/>
 
         </LinearLayout>
     </LinearLayout>

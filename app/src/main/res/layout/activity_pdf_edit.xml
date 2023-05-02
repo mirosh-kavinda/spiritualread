@@ -3,56 +3,55 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
     android:background="@drawable/bg_splash_gradient"
-    tools:context=".activities.PdfEditActivity">
+    tools:context="me.mirosh.spiritualread.activities.PdfEditActivity">
 
 
-<!--    Toolbar-->
+    <!--    Scroll View-->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@drawable/shape_toolbar01"
-        >
-<!--        Back Button -->
+        android:layout_height="320dp"
+        android:background="@drawable/shape_toolbar01">
+        <!--        Back Button -->
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/backBtn"
-            android:src="@drawable/ic_back_white"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@android:color/transparent"
             android:padding="5dp"
-            android:layout_margin="10dp"
-            />
-<!--        Logo-->
+            android:src="@drawable/ic_back_white" />
+        <!--        Logo-->
         <ImageView
-            android:layout_width="110dp"
-            android:layout_height="110dp"
             android:id="@+id/iconIv"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_hello"
-            />
-        
-<!--        Title-->
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_hello" />
+
+        <!--        Title-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/iconIv"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-           android:text="Edit Book Info"
+            android:layout_marginBottom="30dp"
+            android:textAlignment="center"
+            android:text="@string/edit_book_heading"
             android:textColor="@color/md_white_1000"
-            android:textSize="28sp"
-            />
+            android:textSize="28sp" />
     </RelativeLayout>
 
-
-<!--    Scroll View-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="225dp">
+        android:layout_marginTop="295dp">
 
 <RelativeLayout
     android:layout_width="match_parent"
@@ -64,7 +63,7 @@
 <!--    input Book Title-->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         app:hintEnabled="false"
@@ -74,24 +73,24 @@
         <EditText
             android:id="@+id/titleEt"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:background="@drawable/shape_edittext01"
             android:drawableStart="@drawable/ic_pdf_gray"
             android:drawablePadding="10dp"
-            android:hint="Book Title"
+            android:hint="@string/edit_pdf_book_title"
             android:inputType="textPersonName|textCapSentences"
             android:padding="10dp"
-            android:textColorHint="@color/light_grey"
             android:textColor="@color/md_black_1000"
+            android:textColorHint="@color/light_grey"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!--    input Book Description-->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
+
         android:layout_marginEnd="30dp"
         android:layout_below="@id/titleTil"
         app:hintEnabled="false"
@@ -101,12 +100,12 @@
         <EditText
             android:id="@+id/descriptionEt"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:background="@drawable/shape_edittext01"
             android:drawableStart="@drawable/ic_pdf_gray"
             android:drawablePadding="10dp"
             android:gravity="top"
-            android:hint="Book Description"
+            android:hint="@string/edit_pdf_book_description"
             android:inputType="textMultiLine|textCapSentences"
             android:padding="10dp"
             android:textColor="@color/md_black_1000"
@@ -124,6 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/descriptionTil"
         android:layout_marginStart="30dp"
+
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/shape_edittext01"
@@ -131,7 +131,7 @@
         android:drawableEnd="@drawable/ic_down_gray"
         android:drawablePadding="10dp"
         android:gravity="center_vertical"
-        android:hint="Book Category"
+        android:hint="@string/edit_pdf_book_category"
         android:padding="10dp"
         android:textColor="@color/md_black_1000"
         android:textColorHint="@color/light_grey"
@@ -145,7 +145,7 @@
         android:layout_marginEnd="30dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/shape_button01"
-        android:text="Update"
+        android:text="@string/update_btn"
 android:layout_below="@id/categoryTv"
         android:textColor="@color/md_white_1000"
         />

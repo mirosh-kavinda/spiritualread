@@ -6,7 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -32,10 +32,8 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
     private Context context;
     private ArrayList<ModelPdf> pdfArrayList;
     private static String TAG="Fav_Books";
-
     //view binding ofor row_pdf_favorite
     private RowPdfFavouriteBinding binding;
-
 
     public AdapterFavourite(Context context, ArrayList<ModelPdf> pdfArrayList) {
         this.context = context;
@@ -65,7 +63,7 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
             }
         });
 
-        holder.removeFavBtn.setOnClickListener(new View.OnClickListener() {
+        holder.remobeBtnGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MyApplication.removeFromFavorite(context,model.getId());
@@ -88,9 +86,6 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
                         String bookUrl=""+snapshot.child("url").getValue();
                         String timestamp=""+snapshot.child("timestamp").getValue();
                         String uid=""+snapshot.child("uid").getValue();
-                        String viewsCount=""+snapshot.child("viewsCount").getValue();
-                        String downloadsCount=""+snapshot.child("downloadsCount").getValue();
-
 
                         model.setFavorite(true);
                         model.setTitle(bookTitle);
@@ -106,7 +101,7 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
                         MyApplication.LoadPdfFromUrlSinglePage(""+bookUrl,""+bookTitle,holder.pdfView,holder.progressBar,null);
                         MyApplication.LoadPdfSize(""+bookUrl,""+bookTitle,holder.sizeTv);
 
-                        holder.titleTv.setText(date);
+                        holder.titleTv.setText(bookTitle);
                         holder.descriptionTv.setText(bookDesc);
                         holder.dateTv.setText(date);
                     }
@@ -116,8 +111,6 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
 
                     }
                 });
-
-        
     }
 
     @Override
@@ -131,12 +124,10 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
         PDFView pdfView;
         ProgressBar progressBar;
         TextView titleTv, descriptionTv,categoryTv, sizeTv,dateTv;
-        ImageButton removeFavBtn;
+        LinearLayout remobeBtnGroup;
 
         public HolderPdfFavourite(@NonNull View itemView) {
             super(itemView);
-
-
             //init ui views
             pdfView=binding.pdfView;
             progressBar=binding.progressBar;
@@ -145,8 +136,7 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
             categoryTv=binding.categoryTv;
             sizeTv=binding.sizeTv;
             dateTv=binding.dateTv;
-            removeFavBtn=binding.removeFavBtn;
-
+            remobeBtnGroup=binding.removeFavBtn;
         }
     }
 }

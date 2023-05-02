@@ -37,23 +37,18 @@ public class Guest extends AppCompatActivity {
         binding= ActivityGuestBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
         setupViewPagerAdapter(binding.viewPager);
         binding.tabLayout.setupWithViewPager(binding.viewPager);
-
         binding.backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
           onBackPressed();
             }
         });
-
-
     }
 
     private void setupViewPagerAdapter(ViewPager viewPager){
         viewPagerAdapter= new Guest.ViewPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT,this);
-
         categoryArrayList=new ArrayList<>();
 
         //load categories
@@ -66,16 +61,12 @@ public class Guest extends AppCompatActivity {
 
                 //load categories static
                 //add data to models
-
                 ModelCategory modelMostViewed=new ModelCategory("01","Most_Viewed","",1);
                 ModelCategory modelMostDownloaded=new ModelCategory("02","Most_Downloaded","",1);
 
-
                 //add model to list
-
                 categoryArrayList.add(modelMostViewed);
                 categoryArrayList.add(modelMostDownloaded);
-
                 viewPagerAdapter.addFragment(BooksGuestFragment.newInstance(
                         ""+modelMostDownloaded.getId(),
                         ""+modelMostDownloaded.getCategory(),
@@ -90,7 +81,6 @@ public class Guest extends AppCompatActivity {
                 //REFRESH THE LIST
                 viewPagerAdapter.notifyDataSetChanged();
 
-
             }
 
             @Override
@@ -101,7 +91,6 @@ public class Guest extends AppCompatActivity {
 
         //set adapter to pager
         viewPager.setAdapter(viewPagerAdapter);
-
     }
 
 public class ViewPagerAdapter extends FragmentPagerAdapter{
@@ -138,6 +127,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter{
 
     @Override
     public CharSequence getPageTitle(int position) {
+
         return fragmentTitleList.get(position);
     }
 }

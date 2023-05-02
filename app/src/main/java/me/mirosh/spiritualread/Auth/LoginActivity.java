@@ -26,21 +26,19 @@ import me.mirosh.spiritualread.Dashboards.User;
 import me.mirosh.spiritualread.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
-
     private ActivityLoginBinding binding;
     //firebase auth
     private FirebaseAuth firebaseAuth;
-
     //progress dialog
     private ProgressDialog progressDialog;
 
+    private String email="", password="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     binding= ActivityLoginBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
-
 
 
     //init firebase auth
@@ -51,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
     progressDialog.setTitle("Please wait");
     progressDialog.setCanceledOnTouchOutside(false);
 
-
     binding.backBtn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -60,10 +57,15 @@ public class LoginActivity extends AppCompatActivity {
         }
     });
     binding.btnLogin.setOnClickListener(view ->ValidateUser());
-    binding.tvRegisterHere.setOnClickListener(view -> startActivity(new Intent(LoginActivity.this, RegisterActivity.class)));
-    }
 
-    private String email="", password="";
+    binding.tvRegisterHere.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+            finish();
+        }
+    });
+    }
 
 
     private void ValidateUser() {
@@ -105,8 +107,6 @@ public class LoginActivity extends AppCompatActivity {
 
     //check if user is user or admin from realtime datbase
     FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-
-
 
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
     ref.child(Objects.requireNonNull(firebaseUser).getUid()).addListenerForSingleValueEvent(new ValueEventListener() {

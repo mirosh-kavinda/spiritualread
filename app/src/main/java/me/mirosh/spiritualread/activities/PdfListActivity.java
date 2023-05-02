@@ -26,15 +26,11 @@ import me.mirosh.spiritualread.model.ModelPdf;
 public class PdfListActivity extends AppCompatActivity {
 //view binding
     private ActivityPdfListBinding binding;
-
     //array list to hold list of data of type model pdf
     private ArrayList<ModelPdf> pdfArrayList;
-
     //adapter
     private AdapterPdfAdmin adapterPdfAdmin;
-
     private static final String TAG="PDF_LIST_TAG";
-
 
 private String categoryId,categoryTitle;
     @Override
@@ -50,14 +46,12 @@ private String categoryId,categoryTitle;
 
     //set pdf category
         binding.subtitleTv.setText(categoryTitle);
-
         LoadPdfList();
 
         //searcch
         binding.searchEt.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
@@ -68,12 +62,10 @@ private String categoryId,categoryTitle;
                 }catch(Exception e){
                     Log.d(TAG,"onTextChanged: "+e.getMessage());
                 }
-
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-
             }
         });
 
@@ -81,7 +73,9 @@ private String categoryId,categoryTitle;
         binding.backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+            finish();
+            onBackPressed();
+
             }
         });
     }
@@ -92,6 +86,7 @@ private String categoryId,categoryTitle;
 
         DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Books");
         ref.orderByChild("categoryId").equalTo(categoryId)
+
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -101,6 +96,7 @@ private String categoryId,categoryTitle;
                             ModelPdf model=ds.getValue(ModelPdf.class);
                             //add to list
                             pdfArrayList.add(model);
+                            assert model != null;
                             Log.d(TAG,"onDataChange: "+model.getId()+" "+model.getTitle());
                         }
                         //setup adapter

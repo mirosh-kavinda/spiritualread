@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.BooksGuestFragment"
+    tools:context="me.mirosh.spiritualread.fragments.BooksGuestFragment"
     android:background="@drawable/bg_splash_gradient"
     android:orientation="vertical">
 
@@ -14,12 +14,12 @@
     <EditText
         android:id="@+id/searchEt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_margin="10dp"
         android:background="@color/md_white_1000"
         android:drawableStart="@drawable/ic_search_gray"
         android:drawablePadding="10dp"
-        android:hint="Search"
+        android:hint="@string/search_et"
         android:padding="10dp"
         android:textColorHint="@color/light_grey" />
 

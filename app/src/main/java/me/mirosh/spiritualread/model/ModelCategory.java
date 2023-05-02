@@ -6,8 +6,6 @@ public class ModelCategory {
     String id, category,uid;
     long timestamp;
 
-
-
     //constructor empty requried for firebase
     public ModelCategory(){
     }

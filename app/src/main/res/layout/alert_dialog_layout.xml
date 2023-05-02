@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="25dp"
+    android:layout_margin="10dp"
     android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".model.ConnectionReceiver">
+    android:background="@drawable/shape_rect01"
+    android:gravity="center">
 
     <ImageView
         android:layout_width="100dp"
@@ -25,17 +27,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No Internet !"
-            android:textStyle="bold|italic"
-            android:textSize="30sp"
-
-            android:textFontWeight="1000"
             android:layout_gravity="center"
-            />
+            android:text="@string/no_internet"
+            android:textFontWeight="1000"
+
+            android:textSize="30sp"
+            android:textStyle="bold|italic" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Please Connect to the Internet to continue to application "
+            android:text="@string/no_internet_body"
             android:textStyle="bold|italic"
             android:textSize="20sp"
             android:textAlignment="center"
@@ -43,7 +45,7 @@
             android:textFontWeight="1000"
             />
         <Button
-            android:id="@+id/btnOk"
+            android:id="@+id/btnTry"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -51,7 +53,7 @@
             android:textAlignment="center"
             android:background="@drawable/shape_button01"
             android:textColor="@color/md_white_1000"
-            android:text="Ok"
+            android:text="@string/try_again_btn"
             />
 
     </LinearLayout>

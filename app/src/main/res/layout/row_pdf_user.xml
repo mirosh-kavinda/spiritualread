@@ -18,18 +18,26 @@
             android:layout_width="100dp"
             android:layout_height="140dp"
             android:layout_marginEnd="5dp"
-            android:background="@color/light_grey">
+            android:background="@drawable/sahpe_button03">
 
             <!--            pdf view-->
             <com.github.barteksc.pdfviewer.PDFView
                 android:id="@+id/pdfView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent">
+
+                <ProgressBar
+
+                    android:id="@+id/progressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:indeterminate="true"
+                    android:indeterminateTint="@color/seconColor"
+                    android:indeterminateTintMode="src_atop"
+
+                    />
+            </com.github.barteksc.pdfviewer.PDFView>
             <!--            PROGRESS BAR-->
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
         </RelativeLayout>
 
         <TextView
@@ -50,12 +58,13 @@
             android:layout_marginTop="8dp"
             android:layout_toEndOf="@id/pdfRl"
             android:ellipsize="end"
-            android:maxLines="4"
+            android:maxLines="2"
             android:text="Book Description" />
+
         <TextView
             android:id="@+id/pagesTv"
             style="@style/TextAppearance.MaterialComponents.Body2"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/descriptionTv"
             android:layout_marginTop="8dp"
@@ -63,6 +72,24 @@
             android:ellipsize="end"
             android:maxLines="4"
             android:text="Pages" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/shape_button01"
+            android:contentDescription="this is approve button"
+            android:id="@+id/readme"
+            android:drawableEnd="@drawable/baseline_read_more_24"
+            android:text="@string/view"
+            android:textSize="13sp"
+            android:textColor="@color/md_white_1000"
+            android:padding="5dp"
+
+            android:layout_below="@id/descriptionTv"
+            android:layout_marginTop="10dp"
+            />
 
         <TextView
             android:id="@+id/categoryTv"
@@ -92,10 +119,10 @@
             android:layout_alignParentBottom="true"
             android:layout_toStartOf="@id/categoryTv"
             android:layout_toEndOf="@id/sizeTv"
-            android:textColor="@color/md_black_1000"
             android:maxLines="1"
+            android:text="dd/MM/yyyy"
             android:textAlignment="center"
-            android:text="dd/MM/yyyy" />
+            android:textColor="@color/md_black_1000" />
 
 
     </RelativeLayout>

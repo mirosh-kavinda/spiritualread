@@ -3,31 +3,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-
     android:background="@drawable/bg_splash_gradient"
-    tools:context=".Auth.LoginActivity">
+    tools:context="me.mirosh.spiritualread.Auth.LoginActivity">
 
-    <Button
-        android:id="@+id/backBtn"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_toolbar02"
-        android:drawableStart="@drawable/ic_arrow_back_black_24dp"
-        android:drawablePadding="10dp"
-        android:padding="10dp"
-        android:text=""
-        android:textAllCaps="false"
-        android:textColor="@color/md_white_1000"
-        android:textStyle="normal"
-
-        />
-
+        android:background="@drawable/shape_toolbar02">
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:contentDescription="this is back button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            />
+    </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="24dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sigin_heading"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/md_black_1000"
+            android:gravity="center_horizontal"
+            android:layout_marginVertical="16dp"
+            android:layout_margin="10dp"/>
 
 
         <ImageView
@@ -35,7 +44,6 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:layout_marginTop="25dp"
             android:src="@drawable/ic_hello"/>
 
         <LinearLayout
@@ -43,51 +51,64 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_gravity="center"
-            android:layout_marginTop="25dp">
+            android:layout_marginTop="20dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+              >
+            <EditText
+                android:background="@drawable/shape_edittext01"
+                android:drawableStart="@drawable/ic_email_gray"
+                android:drawablePadding="15dp"
+                android:id="@+id/etLoginEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/signup_email"
+                android:textColor="@color/md_black_1000"
+
+                android:inputType="textEmailAddress"
+                android:autofillHints="" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:passwordToggleEnabled="true">
+                <EditText
+                    android:id="@+id/etLoginPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:drawablePadding="15dp"
+                    android:drawableStart="@drawable/ic_lock_gray"
+                    android:autofillHints=""
+                    android:hint="@string/signup_password"
+                    android:background="@drawable/shape_edittext01"
+                    android:inputType="textPassword"
+                    android:textColor="@color/md_black_1000" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="SignIn to the system "
-                android:textSize="20sp"
-                android:textStyle="bold"
+                android:id="@+id/forgetTv"
                 android:textColor="@color/md_black_1000"
-                android:gravity="center_horizontal"
-                android:layout_marginVertical="16dp"
-                android:layout_margin="10dp"/>
-
-
-
-
-            <EditText
-
-                android:id="@+id/etLoginEmail"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="Email"
-                android:inputType="textEmailAddress"/>
-
-
-
-
-
-
-            <EditText
-                android:id="@+id/etLoginPass"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="Password"
-                android:inputType="textPassword"/>
-
-
+                android:text="@string/forgot_password"
+                android:textAlignment="viewEnd"
+                />
             <Button
                 android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape_button01"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="40dp"
                 android:textColor="@color/md_white_1000"
-                android:text="SignIn"/>
+                android:text="@string/common_signin_button_text"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -95,23 +116,22 @@
                 android:layout_marginTop="15dp"
                 android:gravity="center"
                 android:orientation="horizontal">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/md_black_1000"
-                    android:text="Not registered yet"
-                    android:textSize="16sp"/>
+                    android:text="@string/signin_body_txt"
+                    android:textSize="14sp"/>
 
                 <TextView
                     android:id="@+id/tvRegisterHere"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:text="Signup here"
+                    android:text="@string/signin_signup_btn"
                     android:textColor="@color/md_black_1000"
-                    android:textStyle="bold"
-                    android:textSize="20sp"/>
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 

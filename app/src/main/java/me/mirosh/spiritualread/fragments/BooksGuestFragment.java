@@ -24,11 +24,7 @@ import me.mirosh.spiritualread.databinding.FragmentBooksGuestBinding;
 import me.mirosh.spiritualread.model.ModelPdf;
 
 public class BooksGuestFragment extends Fragment {
-
-
     private static final String TAG = "BOOKS_USER_TAG";
-
-
     private String categoryId,category,uid;
     private ArrayList<ModelPdf>pdfArrayList;
     private AdapterPdfUser adapterPdfUser;
@@ -56,7 +52,6 @@ public class BooksGuestFragment extends Fragment {
             categoryId = getArguments().getString("categoryId");
             category = getArguments().getString("category");
             uid = getArguments().getString("uid");
-
         }
     }
 
@@ -67,7 +62,6 @@ public class BooksGuestFragment extends Fragment {
 
         Log.d(TAG, "onCreateView: Category :"+category);
 
-
         if(category.equals("Most_Viewed")){
             //most view ones load
             LoadMostViewedDownloadedBooks("viewsCount");
@@ -75,7 +69,6 @@ public class BooksGuestFragment extends Fragment {
             //most Downloaded ones load
             LoadMostViewedDownloadedBooks("downloadsCount");
         }
-
         //search
         binding.searchEt.addTextChangedListener(new TextWatcher() {
             @Override
@@ -87,21 +80,16 @@ public class BooksGuestFragment extends Fragment {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 try {
                     adapterPdfUser.getFilter().filter(s);
-
-
                 }catch (Exception e){
                     Log.d("Search_View", "onTextChanged: "+e.getMessage());
                 }
             }
-
             @Override
             public void afterTextChanged(Editable s) {
             }
         });
         return binding.getRoot();
     }
-
-
 
     private void LoadMostViewedDownloadedBooks(String orderBy) {
         //init list

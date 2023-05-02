@@ -22,15 +22,13 @@ import me.mirosh.spiritualread.databinding.ActivityCategoryAddBinding;
 
 public class CategoryAdd extends AppCompatActivity {
 
+    //view binding
     private ActivityCategoryAddBinding binding;
-
-
     //firebase auth
     private FirebaseAuth firebaseAuth;
-
     //progress dialog
     private ProgressDialog progressDialog;
-
+    private String category="";
 
 
     @Override
@@ -39,10 +37,8 @@ public class CategoryAdd extends AppCompatActivity {
         binding = ActivityCategoryAddBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
         //init firebase auth
         firebaseAuth=FirebaseAuth.getInstance();
-
 
         //configure progresss dialog
         progressDialog=new ProgressDialog(this);
@@ -54,17 +50,11 @@ public class CategoryAdd extends AppCompatActivity {
         binding.backBtn.setOnClickListener(v ->{
             startActivity(new Intent(CategoryAdd.this, Admin.class));
             finish();
-                }
+            }
         );
-
-
-
     }
-
-    private String category="";
     private void validateData() {
         //before add validate the data
-
         //get data
         category=binding.categoryEt.getText().toString().trim();
         
@@ -102,12 +92,13 @@ public class CategoryAdd extends AppCompatActivity {
                         //category added success
                         progressDialog.dismiss();
                         Toast.makeText(CategoryAdd.this, "Category Added Succesfully.", Toast.LENGTH_SHORT).show();
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-//category add failed
+                        //category add failed
                        progressDialog.dismiss();
                         Toast.makeText(CategoryAdd.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                     }

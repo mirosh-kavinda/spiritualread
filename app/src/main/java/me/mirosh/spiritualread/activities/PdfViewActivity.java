@@ -23,19 +23,17 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import me.mirosh.spiritualread.Constants;
+import me.mirosh.spiritualread.R;
 import me.mirosh.spiritualread.databinding.ActivityPdfViewBinding;
 
 
 public class PdfViewActivity extends AppCompatActivity {
 
-
+boolean isDark=false;
     // view binding
     private ActivityPdfViewBinding binding;
-
     private String bookId;
-
     private static final String TAG="PDF_VIEW_TAG";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +45,23 @@ public class PdfViewActivity extends AppCompatActivity {
         Intent intent =getIntent();
         bookId=intent.getStringExtra("bookId");
         Log.d(TAG, "onCreate: BookId : "+ bookId);
+        binding.toggleDark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!isDark){
+                    binding.pdfView.setNightMode(true);
+                    binding.pdfView.loadPages();
+                    binding.toggleDark.setBackgroundResource(R.drawable.light_mode);
+                    isDark=true;
+                }else{
+                    binding.pdfView.setNightMode(false);
+                    binding.pdfView.loadPages();
+                    binding.toggleDark.setBackgroundResource(R.drawable.dark_mode_whilte);
+                    isDark=false;
+                }
 
+            }
+        });
         loadBookDetails();
 
 
@@ -58,15 +72,13 @@ public class PdfViewActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-
-
     }
-
     private void loadBookDetails() {
         Log.d(TAG, "loadBookDetails: Get Pdf URl...");
         //datbase reference to get book details
         // get book url using book id
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Books");
+        ref.keepSynced(true);
         ref.child(bookId)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -87,7 +99,6 @@ public class PdfViewActivity extends AppCompatActivity {
                 });
     }
 
-
     private void loadBooksFromUrl(String pdfUrl){
 
 
@@ -98,8 +109,9 @@ public class PdfViewActivity extends AppCompatActivity {
                     public void onSuccess(byte[] bytes) {
                         MyApplication.incrementBookViewCount(bookId);
                         //load pdf using bytes
-                        binding .pdfView.fromBytes(bytes)
+                        binding.pdfView.fromBytes(bytes)
                                 .swipeHorizontal(false)
+
                                 .onPageChange(new OnPageChangeListener() {
                                     @Override
                                     public void onPageChanged(int page, int pageCount) {

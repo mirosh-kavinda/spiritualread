@@ -38,10 +38,7 @@ public class AdapterPdfAdmin extends RecyclerView.Adapter<AdapterPdfAdmin.Holder
 
     //view binding row_pdf_admin.xml
     private RowPdfAdminBinding binding;
-
-
     private FilterPdfAdmin filter;
-
 
     //constructor
     public AdapterPdfAdmin(Context context, ArrayList<ModelPdf> pdfArrayList) {
@@ -54,7 +51,6 @@ public class AdapterPdfAdmin extends RecyclerView.Adapter<AdapterPdfAdmin.Holder
         ProgressDialog progressDialog = new ProgressDialog(context);
         progressDialog.setTitle("Please Wait ..0");
         progressDialog.setCanceledOnTouchOutside(false);
-
 
     }
 
@@ -100,7 +96,7 @@ public class AdapterPdfAdmin extends RecyclerView.Adapter<AdapterPdfAdmin.Holder
                 ""+title,
                 holder.pdfView,
                 holder.progressBar,
-               null
+             holder.pagesTv
                 );
 
         MyApplication.LoadPdfSize(
@@ -138,6 +134,7 @@ public class AdapterPdfAdmin extends RecyclerView.Adapter<AdapterPdfAdmin.Holder
 
         //alert dialog
         AlertDialog.Builder builder=new AlertDialog.Builder(context);
+
         builder.setTitle("Choose Option")
                 .setItems(options, new DialogInterface.OnClickListener() {
                     @Override
@@ -164,13 +161,12 @@ public class AdapterPdfAdmin extends RecyclerView.Adapter<AdapterPdfAdmin.Holder
 
     }
 
-
     /*View holder class for row_pdf_admin.xma*/
     class HolderPdfAdmin extends RecyclerView.ViewHolder {
 //Ui views of row_pdf andmin.xml
         PDFView pdfView;
         ProgressBar progressBar;
-        TextView titleTv,descriptionTv,categoryTv, sizeTv,dateTv;
+        TextView titleTv,descriptionTv,categoryTv, sizeTv,dateTv,pagesTv;
         ImageButton moreBtn;
 
         public HolderPdfAdmin(@NonNull View itemView) {
@@ -185,6 +181,7 @@ public class AdapterPdfAdmin extends RecyclerView.Adapter<AdapterPdfAdmin.Holder
             sizeTv=binding.sizeTv;
             dateTv=binding.dateTv;
             moreBtn=binding.moreBtn;
+            pagesTv=binding.pagesTv;
 
         }
     }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_splash_gradient"
-    tools:context=".activities.CategoryAdd">
+    tools:context="me.mirosh.spiritualread.activities.CategoryAdd">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="250dp"
@@ -13,37 +13,38 @@
         >
 
         <ImageButton
+
             android:id="@+id/backBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
+
             android:background="@android:color/transparent"
-            android:padding="5dp"
             android:src="@drawable/ic_back_white" />
 
         <ImageView
             android:id="@+id/iconIv"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:src="@drawable/ic_hello"
             android:background="@android:color/transparent"
-            android:layout_marginTop="40dp"
+
             android:layout_centerHorizontal="true"
 
             />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-           android:layout_below="@id/iconIv"
-            android:text="Add a new Category"
-            android:textColor="@color/md_white_1000"
+            android:layout_below="@id/iconIv"
             android:layout_centerHorizontal="true"
-            android:layout_margin="10dp"
-            android:textSize="28sp"
-            />
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/category_add_head"
+            android:textColor="@color/md_white_1000"
+            android:textSize="28sp" />
 
     </RelativeLayout>
     <com.google.android.material.textfield.TextInputLayout
@@ -52,16 +53,17 @@
         android:id="@+id/categoryTil"
         android:layout_marginEnd="30dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="225dp">
+        android:layout_marginTop="265dp">
 
 
         <EditText
+            android:text=""
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:id="@+id/categoryEt"
             android:background="@drawable/shape_edittext01"
             android:drawableStart="@drawable/ic_category_gray"
-            android:hint="Category Title"
+            android:hint="@string/category_add_Et"
             android:drawablePadding="10dp"
             android:inputType="textPersonName|textCapWords"
             android:padding="10dp"
@@ -76,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:text="submit"
+        android:text="@string/add_btn"
         android:textColor="@color/md_white_1000"
         android:background="@drawable/shape_button01"
         android:layout_marginTop="20dp"

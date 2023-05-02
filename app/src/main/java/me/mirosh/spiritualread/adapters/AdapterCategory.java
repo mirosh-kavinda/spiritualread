@@ -35,8 +35,6 @@ public class AdapterCategory extends RecyclerView.Adapter<AdapterCategory.Holder
 
     public Context context;
     public ArrayList<ModelCategory> categoryArrayList, filterList;
-
-
     private RowCategoryBinding binding;
     //instance of our filter class
     private FilterCategory filter;
@@ -58,10 +56,8 @@ public class AdapterCategory extends RecyclerView.Adapter<AdapterCategory.Holder
         //ui views of row category.xml
         TextView categoryTv;
         ImageButton deleteBtn;
-
         public HolderCategory(@NonNull View itemView) {
             super(itemView);
-
             //init ui view
             categoryTv = binding.categoryTv;
             deleteBtn = binding.deleteBtn;
@@ -73,14 +69,9 @@ public class AdapterCategory extends RecyclerView.Adapter<AdapterCategory.Holder
         ModelCategory model = categoryArrayList.get(position);
         String id = model.getId();
         String category = model.getCategory();
-        String uid = model.getUid();
-        long timestamp = model.getTimestamp();
-
-
 
         //set data
         holder.categoryTv.setText(category);
-
         holder.deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,14 +96,11 @@ public class AdapterCategory extends RecyclerView.Adapter<AdapterCategory.Holder
             }
         });
 
-
-
-
         //handleitem click, goto PdfListActivity, also pass pdf category and categoryid
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, PdfListActivity.class);
+                Intent intent = new  Intent(context, PdfListActivity.class);
                 intent.putExtra("categoryId", id);
                 intent.putExtra("categoryTitle", category);
                 context.startActivity(intent);
@@ -145,16 +133,12 @@ public class AdapterCategory extends RecyclerView.Adapter<AdapterCategory.Holder
                     }
                 });
     }
-
     @Override
     public int getItemCount() {
         return categoryArrayList.size();
     }
 
     //view holder class o hld UI views for row_category.xml
-    
-
-
     @Override
     public Filter getFilter() {
         if (filter == null) {

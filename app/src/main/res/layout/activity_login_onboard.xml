@@ -6,12 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_splash_gradient"
-    tools:context=".Auth.loginOnboard"
+    tools:context="me.mirosh.spiritualread.Auth.loginOnboard"
     android:orientation="vertical">
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+                android:id="@+id/webView"/>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Features"
+            android:text="@string/feature_Btn"
             android:textStyle="normal"
             android:textAllCaps="false"
             android:id="@+id/learnBtn"
@@ -23,6 +28,21 @@
 
             />
 
+        <Button
+            android:id="@+id/langBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/tab_background_selected"
+            android:drawableEnd="@drawable/ic_down_gray"
+            android:drawableTint="@color/md_black_1000"
+            android:padding="10dp"
+            android:text="@string/lang_btn"
+            android:textAllCaps="false"
+            android:textColor="@color/md_black_1000"
+            android:textStyle="normal"
+
+            />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -41,7 +61,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="30dp"
-                    android:text="'reading makes a man , so pick a book start readning now'"
+                    android:text="@string/login_onboard_body"
                     android:textAlignment="center"
                     android:textColor="@color/md_black_1000"
                     android:textSize="20sp"
@@ -56,7 +76,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
                     android:background="@drawable/shape_button01"
-                    android:text="Login"
+                    android:text="@string/login_btn"
                     android:textColor="@color/colorPrimary"
 
                     />
@@ -68,7 +88,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
                     android:background="@drawable/shape_button01"
-                    android:text="Continue As Guest"
+                    android:text="@string/guest_btn"
                     android:textColor="@color/colorPrimary" />
         </LinearLayout>
 </RelativeLayout>

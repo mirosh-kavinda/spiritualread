@@ -16,21 +16,29 @@
         android:id="@+id/toolbarRl">
 
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:id="@+id/backBtn"
-            android:layout_margin="10dp"
-
             android:background="@android:color/transparent"
             android:src="@drawable/ic_back_white"
 
             />
+
+        <ImageButton
+            android:id="@+id/toggleDark"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/dark_mode_whilte" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:id="@+id/toolbarTitleTv"
-            android:text="ReadBook"
+            android:text="@string/pdf_view_heading"
             android:layout_centerHorizontal="true"
             android:textStyle="bold"
             android:textColor="@color/md_white_1000"
@@ -52,13 +60,17 @@
         android:id="@+id/pdfView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:layout_below="@id/toolbarRl"
         android:layout_marginTop="-3dp" />
 
     <ProgressBar
+        android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/progressBar"
         android:layout_centerInParent="true"
-        />
+
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/seconColor"/>
 </RelativeLayout>

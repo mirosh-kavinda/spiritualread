@@ -1,12 +1,14 @@
 package me.mirosh.spiritualread.activities;
 
-import static android.content.ContentValues.TAG;
-
 import android.Manifest;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
@@ -16,6 +18,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,8 +27,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Objects;
+
 import me.mirosh.spiritualread.R;
+import me.mirosh.spiritualread.adapters.AdapterComment;
 import me.mirosh.spiritualread.databinding.ActivityPdfDetailBinding;
+import me.mirosh.spiritualread.databinding.DialogCommentAddBinding;
+import me.mirosh.spiritualread.model.ModelComments;
 
 
 public class PdfDetailActivity extends AppCompatActivity {
@@ -33,12 +44,20 @@ public class PdfDetailActivity extends AppCompatActivity {
     private ActivityPdfDetailBinding binding;
 
     //pdf id, get form intent
-    String bookId,bookTitle,bookUrl;
+    String bookId="";
+    String bookTitle="";
+    String bookUrl="";
+private static final String TAG="Download_PDF_File";
+    //arraylist for hlde comment
+    private ArrayList<ModelComments> commentsArrayList;
+
+    //array adapter for hold commen
+    private AdapterComment adapterComment;
+
+    private ProgressDialog progressDialog;
     boolean IsInMyFavourite=false;
 
     private FirebaseAuth firebaseAuth;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,22 +72,35 @@ public class PdfDetailActivity extends AppCompatActivity {
         //at start hide download button,
         binding.downloadBookBtn.setVisibility(View.GONE);
 
+        //initialize progress dialog
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setTitle("Please Wait...");
+        progressDialog.setCanceledOnTouchOutside(false);
+
         firebaseAuth=FirebaseAuth.getInstance();
         if(firebaseAuth.getCurrentUser()!=null){
             checkIsFavorite();
         }
         loadBookDetails();
+        loadComments();
 
-
-
-
-        //increment book view ocount , whenever this page starts
+binding.addCommentBtn.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        if(firebaseAuth.getCurrentUser()==null){
+            Toast.makeText(PdfDetailActivity.this, "You 're not loged in..", Toast.LENGTH_SHORT).show();
+        }else{
+            addCommentDialog();
+        }
+    }
+});
 
         //handle click ,go back
         binding.backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+               onBackPressed();
+
             }
         });
 
@@ -114,6 +146,116 @@ public class PdfDetailActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void loadComments() {
+        //init arraylist
+        commentsArrayList=new ArrayList<>();
+
+        DatabaseReference ref=FirebaseDatabase.getInstance().getReference("Books");
+        ref.child(bookId).child("Comments")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        //clear arraylist
+                        commentsArrayList.clear();
+
+                        for(DataSnapshot ds:snapshot.getChildren()) {
+                            //get data as model,
+                            ModelComments model = ds.getValue(ModelComments.class);
+                            //add to arraylist
+                            commentsArrayList.add(model);
+                        }
+                        //setup adapter
+                        adapterComment=new AdapterComment(PdfDetailActivity.this,commentsArrayList);
+                        //set adapter to recyclerview
+                        binding.commentRv.setAdapter(adapterComment);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+    }
+
+    private String comment="";
+
+    private void addCommentDialog() {
+        //inflate bind view
+        DialogCommentAddBinding commentAddBinding=DialogCommentAddBinding.inflate(LayoutInflater.from(this));
+        //set alert dialog builder
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setView(commentAddBinding.getRoot());
+
+        //create add show alert dialog
+        AlertDialog alertDialog=builder.create();
+        alertDialog.show();
+
+        //handle click add comment
+        commentAddBinding.backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+            }
+        });
+
+        //handle click , add commentc
+        commentAddBinding.submitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //get data
+                comment= Objects.requireNonNull(commentAddBinding.commentEt.getText()).toString().trim();
+                
+                //validate data 
+                if(TextUtils.isEmpty(comment)){
+                    Toast.makeText(PdfDetailActivity.this, "Comment can't be empty", Toast.LENGTH_SHORT).show();
+
+                }
+                else{
+                    alertDialog.dismiss();
+                    addComment();
+                }
+            }
+        });
+    }
+
+    private void addComment() {
+        //show progress
+        progressDialog.setMessage("Adding Comment...");
+        progressDialog.show();
+
+        //timestamp for comment id, commetn tme
+        String timestamp=""+ System.currentTimeMillis();
+
+        //setup data to add in db for cmment
+        HashMap<String, Object>hashMap=new HashMap<>();
+        hashMap.put("id",""+timestamp);
+        hashMap.put("bookId",""+bookId);
+        hashMap.put("timestamp",""+timestamp);
+        hashMap.put("comment",""+comment);
+        hashMap.put("uid",""+firebaseAuth.getUid());
+
+        //db patht o add data into it
+        DatabaseReference ref=FirebaseDatabase.getInstance().getReference("Books");
+        ref.child(bookId).child("Comments").child(timestamp)
+                .setValue(hashMap)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(PdfDetailActivity.this, "Comment Added ...", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        progressDialog.dismiss();
+                        Toast.makeText(PdfDetailActivity.this, "Error encounter :"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
     }
 
     private final ActivityResultLauncher<String> requestPermissionLauncher = registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
@@ -193,7 +335,7 @@ public class PdfDetailActivity extends AppCompatActivity {
     private void checkIsFavorite(){
         //loged in
         DatabaseReference reference =FirebaseDatabase.getInstance().getReference("Users");
-        reference.child(firebaseAuth.getUid()).child("Favourites").child(bookId)
+        reference.child(Objects.requireNonNull(firebaseAuth.getUid())).child("Favourites").child(bookId)
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {

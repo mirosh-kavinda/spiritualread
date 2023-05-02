@@ -15,11 +15,12 @@
         android:layout_height="wrap_content">
 
         <RelativeLayout
+
             android:id="@+id/pdfRl"
             android:layout_width="100dp"
             android:layout_height="140dp"
             android:layout_marginEnd="5dp"
-            android:background="@color/light_grey">
+            android:background="@drawable/sahpe_button03">
 
             <!--pdf view-->
             <com.github.barteksc.pdfviewer.PDFView
@@ -30,7 +31,11 @@
             <ProgressBar
                 android:id="@+id/progressBar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:background="@drawable/sahpe_button03"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/seconColor"
+                android:indeterminateTintMode="src_atop" />
         </RelativeLayout>
 
         <TextView
@@ -53,8 +58,34 @@
             android:layout_marginTop="8dp"
             android:layout_toEndOf="@id/pdfRl"
             android:ellipsize="end"
-            android:maxLines="4"
+            android:maxLines="2"
             android:text="Book Description" />
+        <TextView
+            android:id="@+id/pagesTv"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descriptionTv"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@id/pdfRl"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Pages" />
+
+        <TextView
+            android:id="@+id/readme"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descriptionTv"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/shape_button01"
+            android:contentDescription="this is approve button"
+            android:drawableEnd="@drawable/baseline_read_more_24"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/view"
+            android:textColor="@color/md_white_1000"
+            android:textSize="13sp" />
 
         <TextView
             android:id="@+id/categoryTv"
@@ -76,7 +107,7 @@
             android:maxLines="1"
             android:text="13 Mb " />
 
-       <TextView
+        <TextView
             android:id="@+id/dateTv"
             style="@style/TextAppearance.MaterialComponents.Caption"
             android:layout_width="wrap_content"
@@ -84,12 +115,13 @@
             android:layout_alignParentBottom="true"
             android:layout_toStartOf="@id/categoryTv"
             android:layout_toEndOf="@id/sizeTv"
-            android:textColor="@color/md_black_1000"
             android:maxLines="1"
-           android:textAlignment="center"
-            android:text="dd/MM/yyyy" />
+            android:text="dd/MM/yyyy"
+            android:textAlignment="center"
+            android:textColor="@color/md_black_1000" />
 
         <ImageButton
+
             android:id="@+id/moreBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

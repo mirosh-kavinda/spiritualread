@@ -12,14 +12,13 @@ public class FilterPdfUser extends Filter {
     ArrayList<ModelPdf> filterList;
     //adapter inwchich filter need to be implementd
     AdapterPdfUser adapterPdfUser;
+
+
     //constructure
-
-
     public FilterPdfUser(ArrayList<ModelPdf> filterList, AdapterPdfUser adapterPdfUser) {
         this.filterList = filterList;
         this.adapterPdfUser = adapterPdfUser;
     }
-
     @Override
     protected FilterResults performFiltering(CharSequence constraint) {
       FilterResults results=new FilterResults();
@@ -39,13 +38,10 @@ public class FilterPdfUser extends Filter {
             }
             results.count=filteredModels.size();
             results.values=filteredModels;
-
         }
         else{
-
             results.count=filterList.size();
             results.values=filterList;
-
         }
         return results;
     }

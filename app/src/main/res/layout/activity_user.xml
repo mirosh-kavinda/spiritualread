@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Dashboards.User"
+    tools:context="me.mirosh.spiritualread.Dashboards.User"
     android:background="@drawable/bg_splash_gradient">
 <!--    Toolbar-->
 
@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_height="wrap_content"
-            android:text="Dashboard User"
+            android:text="@string/dashboard_user"
             android:textStyle="bold"
             android:layout_centerHorizontal="true"
             android:textColor="@color/md_white_1000"
@@ -35,12 +35,12 @@
             android:textColor="@color/md_white_1000"
             />
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn2"
-            android:text="Logout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/profileBtn"
+
             android:padding="8dp"
-            android:src="@drawable/ic_favorite_white"
+            android:src="@drawable/person_white"
             android:background="@android:color/transparent"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
@@ -48,11 +48,11 @@
 
             />
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:id="@+id/btn1"
             android:text="Logout"
-            android:src="@drawable/ic_logout_white"
+            android:src="@drawable/logout_btn"
             android:background="@android:color/transparent"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
@@ -62,13 +62,15 @@
 
     </RelativeLayout>
 <!--Tabs-->
+
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbarRl"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="7dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
         android:background="@android:color/transparent"
@@ -83,6 +85,28 @@
         android:layout_height="wrap_content"
         android:id="@+id/viewPager"
         android:layout_below="@id/tabLayout"
-        />
+        >
+    </androidx.viewpager.widget.ViewPager>
+
+
+    <Button
+        android:id="@+id/reqBook"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape_button01"
+        android:drawableStart="@drawable/book_shelf"
+        android:minHeight="50dp"
+        android:text="@string/dashboard_user_request_book_btn"
+        android:textAllCaps="false"
+        android:textColor="@color/md_white_1000" />
+
+
+
 
 </RelativeLayout>

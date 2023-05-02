@@ -17,8 +17,8 @@
         >
 <!--        Back button -->
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:id="@+id/backBtn"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
@@ -33,12 +33,13 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginTop="10dp"
-            android:text="Book Details"
-            android:textColor="@color/md_white_1000"/>
+            android:text="@string/book_book_details"
+            android:textColor="@color/md_white_1000" />
 
     </RelativeLayout>
 
     <ScrollView
+        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/toolbarRl"
@@ -60,18 +61,21 @@
                     android:layout_width="110dp"
                     android:layout_height="150dp"
                     android:layout_marginEnd="5dp"
-                    android:background="@color/md_blue_grey_500">
+                   >
 
                     <com.github.barteksc.pdfviewer.PDFView
                         android:id="@+id/pdfView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/light_grey">
+                        android:background="@drawable/sahpe_button03">
 
                         <ProgressBar
                             android:id="@+id/progressBar"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent"
+                            android:indeterminate="true"
+                            android:indeterminateTintMode="src_atop"
+                            android:indeterminateTint="@color/seconColor"/>
                     </com.github.barteksc.pdfviewer.PDFView>
 
                 </RelativeLayout>
@@ -96,10 +100,10 @@
 
                         <TextView
                             android:id="@+id/categoryLabelTv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="79dp"
+                            android:layout_height="match_parent"
                             android:layout_marginEnd="5dp"
-                            android:text=" Category"
+                            android:text="@string/book_category"
                             android:textColor="@color/md_black_1000" />
 
                         <TextView
@@ -118,7 +122,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="5dp"
-                            android:text=" Date"
+                            android:text="@string/book_Date"
                             android:textColor="@color/md_black_1000" />
 
                         <TextView
@@ -137,7 +141,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="5dp"
-                            android:text=" Size"
+                            android:text="@string/book_size"
                             android:textColor="@color/md_black_1000" />
 
                         <TextView
@@ -157,7 +161,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="5dp"
-                            android:text=" View Count"
+                            android:text="@string/book_view_count"
                             android:textColor="@color/md_black_1000" />
 
                         <TextView
@@ -176,7 +180,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="5dp"
-                            android:text=" Downloads"
+                            android:text="@string/book_downloads"
                             android:textColor="@color/md_black_1000" />
 
                         <TextView
@@ -195,14 +199,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="5dp"
-                            android:text=" Pages"
+                            android:text="@string/book_pages"
                             android:textColor="@color/md_black_1000" />
 
                         <TextView
                             android:id="@+id/pagesTv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="5dp"
+                            android:layout_marginEnd="8dp"
                             android:text="N/A"
                             android:textColor="@color/md_black_1000" />
                     </TableRow>
@@ -220,6 +224,57 @@
                 android:layout_marginTop="5dp"
                 android:text="The description of the book"
                 android:textColor="@color/md_black_1000" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/md_green_500"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/commentsLableTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="8dp"
+                    android:text="@string/comments_text"
+                    android:textAlignment="center"
+                    android:textColor="@color/md_black_1000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/addCommentBtn"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentEnd="true"
+                    android:background="@color/md_black_1000"
+                    android:src="@drawable/add_comment"
+                    />
+
+
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/commentRv"
+
+                tools:listitem="@layout/row_comment"
+                android:layout_below="@id/addCommentBtn"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                />
 
         </LinearLayout>
 
@@ -269,6 +324,9 @@
 
             android:drawableTop="@drawable/ic_favorite_border_white"
             />
+
+
+
 
     </LinearLayout>
 

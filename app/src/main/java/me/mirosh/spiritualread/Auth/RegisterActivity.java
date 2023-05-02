@@ -23,7 +23,7 @@ import me.mirosh.spiritualread.databinding.ActivityRegisterBinding;
 
 public class RegisterActivity extends AppCompatActivity {
 
-private ActivityRegisterBinding binding;
+    private ActivityRegisterBinding binding;
 
     //firebase Auth
     private FirebaseAuth firebaseAuth;
@@ -31,13 +31,11 @@ private ActivityRegisterBinding binding;
     //progress dialog
     private ProgressDialog progressDialog;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
 
         //init firebase auth
         firebaseAuth=FirebaseAuth.getInstance();
@@ -45,7 +43,6 @@ private ActivityRegisterBinding binding;
         progressDialog=new ProgressDialog(this);
         progressDialog.setTitle("Please wait");
         progressDialog.setCanceledOnTouchOutside(false);
-
 
         binding.backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,9 +53,11 @@ private ActivityRegisterBinding binding;
         });
 
         binding.btnRegister.setOnClickListener(view -> createUser());
-        binding.tvLoginHere.setOnClickListener(view -> startActivity(new Intent(RegisterActivity.this, LoginActivity.class)));
+        binding.tvLoginHere.setOnClickListener(view ->
+        {
+            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+            finish();});
         }
-
 
     private String name="";
     private String email="";
@@ -66,6 +65,7 @@ private ActivityRegisterBinding binding;
 
 
     private void createUser() {
+
         name = binding.etRegName.getText().toString().trim();
         email = binding.etRegEmail.getText().toString();
         password = binding.etRegPass.getText().toString();
@@ -87,11 +87,11 @@ private ActivityRegisterBinding binding;
             binding.etRegCPass.setError("mismatch with previous password");
             binding. etRegCPass.requestFocus();
         } else {
-            createUserAccont();
+            createUserAccount();
         }
     }
 
-    private void createUserAccont() {
+    private void createUserAccount() {
     //show progress
     progressDialog.setMessage("Creating Account ...");
     progressDialog.show();

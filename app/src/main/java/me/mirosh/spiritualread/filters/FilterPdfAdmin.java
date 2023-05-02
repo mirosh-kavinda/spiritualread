@@ -19,7 +19,6 @@ public class FilterPdfAdmin extends Filter {
         this.adapterPdfAdmin = adapterPdfAdmin;
     }
 
-
     @Override
     protected FilterResults performFiltering(CharSequence constraint) {
         FilterResults results= new FilterResults();
