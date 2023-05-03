@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "415100335714",
-    "project_id": "spiritualread1",
-    "storage_bucket": "spiritualread1.appspot.com"
+    "project_number": "901699265821",
+    "project_id": "spiritualread-5ec1f",
+    "storage_bucket": "spiritualread-5ec1f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:415100335714:android:a4278c3dea9d4b9819c33b",
+        "mobilesdk_app_id": "1:901699265821:android:c7d1c30646ee4e940f6df4",
         "android_client_info": {
           "package_name": "me.mirosh.spiritualread"
         }
       },
       "oauth_client": [
         {
-          "client_id": "415100335714-n2gn331t1qrpgcqp27mbuchampi3hh1b.apps.googleusercontent.com",
+          "client_id": "901699265821-t3rguig0glncveg0isi3dle0vdk5up4h.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBtCUwNwy_0hWbGyeuv82ILEXXk_HhUBwA"
+          "current_key": "AIzaSyBtTmBDYeqqvcNJp9h3-ianKb9-iadcqMQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "415100335714-n2gn331t1qrpgcqp27mbuchampi3hh1b.apps.googleusercontent.com",
+              "client_id": "901699265821-t3rguig0glncveg0isi3dle0vdk5up4h.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

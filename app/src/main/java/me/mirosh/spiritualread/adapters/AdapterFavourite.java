@@ -86,6 +86,9 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
                         String bookUrl=""+snapshot.child("url").getValue();
                         String timestamp=""+snapshot.child("timestamp").getValue();
                         String uid=""+snapshot.child("uid").getValue();
+                        String viewsCount=""+snapshot.child("viewsCount").getValue();
+                        String downloadsCount=""+snapshot.child("downloadsCount").getValue();
+
 
                         model.setFavorite(true);
                         model.setTitle(bookTitle);
@@ -101,7 +104,7 @@ public class AdapterFavourite  extends  RecyclerView.Adapter<AdapterFavourite.Ho
                         MyApplication.LoadPdfFromUrlSinglePage(""+bookUrl,""+bookTitle,holder.pdfView,holder.progressBar,null);
                         MyApplication.LoadPdfSize(""+bookUrl,""+bookTitle,holder.sizeTv);
 
-                        holder.titleTv.setText(bookTitle);
+                        holder.titleTv.setText(date);
                         holder.descriptionTv.setText(bookDesc);
                         holder.dateTv.setText(date);
                     }
