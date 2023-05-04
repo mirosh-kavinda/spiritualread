@@ -1,5 +1,10 @@
 # spiritualRead - Your Ultimate Reading Companion
-spiritualRead is a mobile app that offers a convenient way for book lovers to explore and discover new books across a wide range of categories. With our easy-to-use interface and powerful features, you can quickly find and download your favorite books, and add them to your personal library for easy access anytime, anywhere.
+spiritualRead is a mobile app that offers a convenient way for book lovers to explore and discover new books across a wide range of categories. With our easy-to-use interface and powerful features, you can quickly find and download your favorite books, and add them to your personal library for easy access anytime, anywhere.<br>
+<h5>UI DESIGN :  https://www.figma.com/file/u1UDfPreINPbDsbZyFt2H8/spiritualread?node-id=267%3A990&t=UOqbt8CyhNh5JNIg-1 </h5> 
+Releases : Version 1
+
+![Frame 4](https://user-images.githubusercontent.com/74175084/235842526-2f66a9f4-2ea0-4cf2-adba-0812d7fb6e53.png)
+
 
 # Features
   - Explore and discover new books across a wide range of categories
@@ -13,7 +18,7 @@ To get started with Bookify, simply download the app from the app store and crea
 When you find a book you like, simply tap the download button to save it to your device. You can also add it to your favorites list, so you can easily find it again later.
 
 # Support
-We're committed to providing you with the best possible user experience. If you have any questions or feedback, please don't hesitate to reach out to our customer support team at support@bookify.com.
+We're committed to providing you with the best possible user experience. If you have any questions or feedback, please don't hesitate to reach out to me , @kavindahgm@gmail.com
 
 # Release Notes
 Version 1.0
