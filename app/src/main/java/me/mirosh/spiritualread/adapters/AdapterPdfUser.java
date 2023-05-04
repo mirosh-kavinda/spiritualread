@@ -91,7 +91,7 @@ public class AdapterPdfUser extends RecyclerView.Adapter<AdapterPdfUser.HolderPd
                 ""+title,
                 binding.pdfView,
                 binding.progressBar,
-                binding.pagesTv
+             null
 
         );
 

@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnErrorListener;
 import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
@@ -42,10 +43,11 @@ import me.mirosh.spiritualread.Constants;
     //application class runs before your launcher acticity
 public class MyApplication extends Application {
         private static final String TAG_DOWNLOAD = "DOWNLOAD_PDF_TAG";
-
+        private boolean isPdfLoaded=false;
         @Override
         public void onCreate() {
             super.onCreate();
+            isPdfLoaded=false;
         }
 
 
@@ -160,9 +162,8 @@ public class MyApplication extends Application {
 
                         //set to pdf view
                         try{
-
                             pdfView.fromBytes(bytes)
-                                    .pages(0)//show only first page
+                                    .pages(1,2,3)//show only first page
                                     .spacing(0)
                                     .swipeHorizontal(false)
                                     .enableSwipe(false)
@@ -172,6 +173,7 @@ public class MyApplication extends Application {
                                             //hide progress
                                             progressBar.setVisibility(View.INVISIBLE);
                                             Log.d(TAG,"onError : "+t.getMessage());
+
                                         }
                                     }).onPageError(new OnPageErrorListener() {
                                         @Override
@@ -187,13 +189,19 @@ public class MyApplication extends Application {
                                             progressBar.setVisibility(View.INVISIBLE);
                                             Log.d(TAG,"LoadComplete:pdf loaded");
 
+
+
                                             //if pages is not null hten set page number
-                                            if(pagesTv!=null){
-                                                pagesTv.setText(""+nbPages);
-                                            }
+//                                            if(pagesTv!=null){
+//                                                pagesTv.setText(""+nbPages);
+//                                            }
                                         }
+
                                     })
                                     .load();
+
+
+
                         }catch (Exception e){
                             Log.d(TAG, "onSuccess: cause to error"+e.getMessage() );
                         }
@@ -402,6 +410,8 @@ public class MyApplication extends Application {
 
                     }
                 });
+
+
 
     }
 

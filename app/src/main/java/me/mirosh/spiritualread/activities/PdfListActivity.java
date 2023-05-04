@@ -73,8 +73,9 @@ private String categoryId,categoryTitle;
         binding.backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            finish();
+
             onBackPressed();
+
 
             }
         });
@@ -110,7 +111,14 @@ private String categoryId,categoryTitle;
                     public void onCancelled(@NonNull DatabaseError error) {
 
                     }
+
+
                 });
+
+    }
+    protected void onDestroy(){
+
+        super.onDestroy();
 
     }
 }

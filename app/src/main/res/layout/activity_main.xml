@@ -3,32 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/splash"
     tools:context="me.mirosh.spiritualread.activities.MainActivity">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg_splash_gradient"
-    android:gravity="center"
-    android:orientation="vertical">
 
-        <ImageView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:paddingBottom="0dp"
-            android:src="@drawable/ic_hello"
-            android:contentDescription="spiritualread logo"/>
+            android:layout_height="match_parent"
 
-        <ProgressBar
-            android:id="@+id/splashProgress"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:progressBackgroundTint="@color/seconColor"
-            android:progressBackgroundTintMode="multiply"
-            android:progressTint="@color/seconColor"
-            android:layout_marginTop="12dp" />
+            android:gravity="center_horizontal"
+            android:layout_marginTop="180dp"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    android:contentDescription="spiritualread logo"
+                    android:paddingBottom="0dp"
+                    android:src="@drawable/ic_hello" />
+
+                <ProgressBar
+                    android:id="@+id/splashProgress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="200dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="10dp"
+                    android:progressBackgroundTint="@color/seconColor"
+                    android:progressBackgroundTintMode="multiply"
+                    android:progressTint="@color/seconColor" />
 
 
-
-</LinearLayout>
+        </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

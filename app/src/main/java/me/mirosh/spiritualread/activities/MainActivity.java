@@ -27,14 +27,14 @@ public class MainActivity extends AppCompatActivity {
         //Code to start timer and take action after the timer ends
         new Handler(getMainLooper()).postDelayed(() -> {
             startActivity(new Intent(MainActivity.this, loginOnboard.class));
-            finish();
+
 
         }, SPLASH_TIME);
 
     }
     protected void onDestroy(){
+
             super.onDestroy();
-            finish();
 
         }
 

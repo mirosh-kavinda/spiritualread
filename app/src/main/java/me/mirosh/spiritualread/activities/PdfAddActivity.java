@@ -74,7 +74,7 @@ public class PdfAddActivity extends AppCompatActivity {
     @Override
     public void onClick(View v) {
        startActivity(new Intent(PdfAddActivity.this, Admin.class));
-       finish();
+
         }
     });
     //handle click , attach pdf

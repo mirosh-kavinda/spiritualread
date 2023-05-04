@@ -60,6 +60,8 @@ public class User extends AppCompatActivity {
             public void onClick(View v) {
                 firebaseAuth.signOut();
                  checkUser();
+                finish();
+
             }
         });
 
@@ -68,7 +70,7 @@ public class User extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(User.this, Request_Book.class));
-                finish();
+
             }
         });
         binding.profileBtn.setOnClickListener(new View.OnClickListener() {
@@ -76,10 +78,12 @@ public class User extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(User.this, ProfileActivity.class));
 
+
             }
         });
 
     }
+
 
     private void setupViewPagerAdapter(ViewPager viewPager){
     viewPagerAdapter=new ViewPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT,this);

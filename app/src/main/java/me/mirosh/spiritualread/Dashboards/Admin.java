@@ -63,7 +63,7 @@ public class Admin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Admin.this, ProfileActivity.class));
-                finish();
+
 
             }
         });
@@ -72,7 +72,7 @@ public class Admin extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             startActivity(new Intent(Admin.this, ViewRequests.class));
-            finish();
+
      }
     });
         //edit text change listen , search
@@ -115,7 +115,7 @@ public class Admin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                startActivity(new Intent(Admin.this, CategoryAdd.class));
-               finish();
+
             }
         });
         // handle click  start pdf add screen
@@ -123,7 +123,7 @@ public class Admin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Admin.this, PdfAddActivity.class));
-                finish();
+
             }
         });
 

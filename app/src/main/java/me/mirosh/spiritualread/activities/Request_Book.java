@@ -60,6 +60,7 @@ public class Request_Book extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(Request_Book.this, User.class));
                 finish();
+
             }
         });
         //handle click , attach pdf

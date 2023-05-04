@@ -28,7 +28,7 @@
     <string name="request_btn">ඉල්ලීම</string>
     <string name="dashboard_user_request_book_btn">පොතක් ඉල්ලන්න</string>
     //login
-    <string name="login_onboard_body">පොත් යනු දැනුම හා ප්‍රඥාව සඳහා දොරටු විවර කරන යතුරු ය</string>
+    <string name="login_onboard_body">ඔබේ මනස ආලෝකමත් කරන්න, ඔබේ ආත්මය පෝෂණය කරන්න, අධ්‍යාත්මික කියවීම සමඟ ගිලෙන්න!</string>
 
     //guest
     <string name="guest_toolbar_head">උපකරණ පුවරුව අමුත්තා</string>

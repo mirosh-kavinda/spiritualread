@@ -96,7 +96,8 @@ public class AdapterPdfAdmin extends RecyclerView.Adapter<AdapterPdfAdmin.Holder
                 ""+title,
                 holder.pdfView,
                 holder.progressBar,
-             holder.pagesTv
+            null
+
                 );
 
         MyApplication.LoadPdfSize(
@@ -181,7 +182,7 @@ public class AdapterPdfAdmin extends RecyclerView.Adapter<AdapterPdfAdmin.Holder
             sizeTv=binding.sizeTv;
             dateTv=binding.dateTv;
             moreBtn=binding.moreBtn;
-            pagesTv=binding.pagesTv;
+
 
         }
     }

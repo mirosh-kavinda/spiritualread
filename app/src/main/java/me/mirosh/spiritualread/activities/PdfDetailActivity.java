@@ -343,11 +343,11 @@ binding.addCommentBtn.setOnClickListener(new View.OnClickListener() {
 
                         if(IsInMyFavourite){
                             //exist in favorite
-                            binding.favoriteBtn.setCompoundDrawablesRelativeWithIntrinsicBounds(0, R.drawable.ic_favorite_white,0,0);
-                            binding.favoriteBtn.setText("Remove Favourite");
+                            binding.favoriteBtn.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_favorite_white,0);
+                            binding.favoriteBtn.setText("Remove  ");
                         }else{
-                            binding.favoriteBtn.setCompoundDrawablesRelativeWithIntrinsicBounds(0, R.drawable.ic_favorite_border_white,0,0);
-                            binding.favoriteBtn.setText("Add Favourite");
+                            binding.favoriteBtn.setCompoundDrawablesRelativeWithIntrinsicBounds( 0,0,R.drawable.ic_favorite_border_white,0);
+                            binding.favoriteBtn.setText("Add to");
                         }
                     }
 
