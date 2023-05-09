@@ -2,8 +2,8 @@
 spiritualRead is a mobile app that offers a convenient way for book lovers to explore and discover new books across a wide range of categories. With our easy-to-use interface and powerful features, you can quickly find and download your favorite books, and add them to your personal library for easy access anytime, anywhere.<br>
 <h5>UI DESIGN :  https://www.figma.com/file/u1UDfPreINPbDsbZyFt2H8/spiritualread?node-id=267%3A990&t=UOqbt8CyhNh5JNIg-1 </h5> 
 Releases : Version 1
+![Flyer](https://github.com/mirosh-kavinda/spiritualread/assets/74175084/2e2826de-14b1-4084-ac53-23f46f0826cd)
 
-![Frame 4](https://user-images.githubusercontent.com/74175084/235842526-2f66a9f4-2ea0-4cf2-adba-0812d7fb6e53.png)
 
 
 # Features
@@ -22,7 +22,7 @@ We're committed to providing you with the best possible user experience. If you 
 
 # Release Notes
 Version 1.0
-Initial release of Bookify app
+Initial release of spiritualread app
 Explore and discover new books across a wide range of categories
 Convenient download and add to favorites options
 Personalized book recommendations based on your reading history and preferences
