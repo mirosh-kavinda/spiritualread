@@ -40,6 +40,7 @@ public class User extends AppCompatActivity {
 
     //firebase auth
     private FirebaseAuth firebaseAuth;
+    public static boolean isDestroyed=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

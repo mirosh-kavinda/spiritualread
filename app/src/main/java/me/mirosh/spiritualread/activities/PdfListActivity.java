@@ -31,7 +31,7 @@ public class PdfListActivity extends AppCompatActivity {
     //adapter
     private AdapterPdfAdmin adapterPdfAdmin;
     private static final String TAG="PDF_LIST_TAG";
-
+public static boolean isDistroyed=false;
 private String categoryId,categoryTitle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,7 +117,7 @@ private String categoryId,categoryTitle;
 
     }
     protected void onDestroy(){
-
+        isDistroyed=true;
         super.onDestroy();
 
     }
